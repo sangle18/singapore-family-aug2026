@@ -24,44 +24,44 @@
 | 12:20 | Landing Changi |
 | 12:20–13:30 | Immigration + luggage + **mua SIM** (nếu chưa eSIM) |
 | 13:30–15:30 | **Jewel** – Rain Vortex, lunch, baby room B2–L4 |
-| 15:30–16:00 | Grab → Novotel |
+| 15:30–16:10 | Grab → Novotel (~25–40 phút, chiều Thứ Sáu dễ kẹt) |
 | 16:00–18:30 | Check-in + bé nghỉ |
 | 18:30–20:00 | Dinner (Novotel / GRUB Stevens) |
 | 20:30 | Ngủ |
 
-### DAY 2 — Thứ Bảy 29/8 | Zoo + River Wonders
+### DAY 2 — Thứ Bảy 29/8 | Zoo + River (tùy sức)
 | Giờ | Việc |
 |-----|------|
-| 07:30 | Breakfast |
-| 08:15 | Grab → Mandai |
-| 09:00–12:00 | **Singapore Zoo** (bé FREE <3) |
+| 07:30 | Breakfast hotel |
+| 08:15 | Grab → Mandai (Zoo mở 8:30) |
+| 08:45–12:00 | **Singapore Zoo** — orangutan, tram, KidzWorld. Gấu trúc **không** ở Zoo |
 | 12:00–13:00 | Lunch Ah Meng / KidzWorld Cafe |
-| 13:00–15:00 | **River Wonders** (nếu mệt → bỏ) |
+| 13:00–15:00 | **River Wonders chỉ nếu bé còn vui** — ưu tiên Giant Panda (máy lạnh). Mệt → về |
 | 15:00 | Grab về hotel |
 | 15:30–18:00 | **MANDATORY REST** |
-| 18:30 | Dinner → ngủ |
+| 18:30 | Dinner gần hotel → ngủ |
 
-### DAY 3 — Chủ Nhật 30/8 | Bugis → Gardens
+### DAY 3 — Chủ Nhật 30/8 | Chơi nước gần hotel → Gardens
 | Giờ | Việc |
 |-----|------|
-| 08:30–10:30 | Pool / Kids Room Novotel |
-| 11:00–14:00 | Bugis + Haji Lane + Arab Street + lunch |
-| 14:00 | Grab → Gardens by the Bay |
-| 14:30–18:00 | Cloud Forest → Flower Dome → Supertree |
-| 18:00–19:15 | Dinner tại Gardens |
-| 19:45 | **Garden Rhapsody** (free) |
+| 08:30–10:00 | Pool / Kids Room (ngắn) |
+| 10:15–12:30 | **Chọn 1:** Jacob Ballas Children's Garden (ưu tiên, free, Grab ~10 phút) **hoặc** Bugis Junction máy lạnh. Không ưu tiên Haji Lane |
+| 13:00–15:30 | **Nghỉ hotel** — đừng kéo thẳng sang Gardens |
+| 16:00–18:15 | Cloud Forest (máy lạnh). Flower Dome / Children's Garden GBTB chỉ nếu còn sức |
+| 18:15–19:20 | Dinner Shake Shack The Canopy |
+| 19:45 | **Garden Rhapsody** (free, ~10 phút) |
 | 20:15 | Grab về hotel |
 
 ### DAY 4 — Thứ Hai 31/8 | Oceanarium + Sentosa
 | Giờ | Việc |
 |-----|------|
-| 08:30 | Grab → Sentosa / RWS |
-| 10:00–12:30 | **Singapore Oceanarium** (bé FREE <4) |
+| 09:20 | Grab → RWS — Oceanarium **mở 10:00** |
+| 10:00–12:30 | **Singapore Oceanarium** (bé FREE <4, stroller OK) |
 | 12:30–13:30 | Lunch PUTIEN / Chatterbox |
-| 13:30–14:30 | REST |
-| 14:30–16:30 | Palawan Beach walk (không thêm vé) |
+| 13:30–14:30 | REST máy lạnh tại RWS |
+| 14:30–16:30 | Palawan chỉ nếu bé còn vui (nắng gắt). Không thì WEAVE/kem rồi về hotel pool |
 | 16:30 | Grab → Novotel → pool |
-| 19:00 | Dinner → ngủ |
+| 19:00 | Dinner gần hotel hoặc shuttle Orchard nếu muốn đổi món |
 
 ### DAY 5 — Thứ Ba 1/9 | Hotel → Changi → SGN
 | Giờ | Việc |

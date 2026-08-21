@@ -7,43 +7,48 @@
       { id: "all", label: "Tất cả", sticker: "🗺️" },
       {
         id: "1",
-        label: "28/8",
+        label: "Ngày 1",
         weekday: "Thứ Sáu",
         date: "28/8",
         theme: "Jewel & khách sạn",
-        sticker: "✈️"
+        sticker: "✈️",
+        tone: "coral"
       },
       {
         id: "2",
-        label: "29/8",
+        label: "Ngày 2",
         weekday: "Thứ Bảy",
         date: "29/8",
         theme: "Zoo & River",
-        sticker: "🦧"
+        sticker: "🦧",
+        tone: "amber"
       },
       {
         id: "3",
-        label: "30/8",
+        label: "Ngày 3",
         weekday: "Chủ Nhật",
         date: "30/8",
-        theme: "Bugis & Gardens",
-        sticker: "🌳"
+        theme: "Chơi nước & Gardens",
+        sticker: "🌳",
+        tone: "green"
       },
       {
         id: "4",
-        label: "31/8",
+        label: "Ngày 4",
         weekday: "Thứ Hai",
         date: "31/8",
         theme: "Oceanarium & biển",
-        sticker: "🐠"
+        sticker: "🐠",
+        tone: "blue"
       },
       {
         id: "5",
-        label: "1/9",
+        label: "Ngày 5",
         weekday: "Thứ Ba",
         date: "1/9",
         theme: "Về Sài Gòn",
-        sticker: "🛫"
+        sticker: "🛫",
+        tone: "plum"
       }
     ],
     types: [
@@ -134,9 +139,14 @@
         title: "Sau Zoo — về hotel nghỉ rồi ăn",
         recommend: [
           {
-            name: "GRUB hoặc Food Exchange",
-            note: "Ưu tiên vì bé cần nghỉ sau Mandai. Tối Thứ Bảy Food Exchange hay đông (LobsterMania).",
+            name: "GRUB",
+            note: "Ưu tiên vì bé cần nghỉ sau Mandai. Casual, gần hotel.",
             maps: maps("GRUB 30 Stevens Road #01-06 Novotel Singapore")
+          },
+          {
+            name: "Food Exchange",
+            note: "Buffet tầng 2 Novotel. Tối Thứ Bảy hay đông vì LobsterMania.",
+            maps: maps("Food Exchange Novotel Singapore on Stevens")
           }
         ],
         avoid: "Không dinner phức tạp sau ngày Zoo.",
@@ -145,31 +155,36 @@
         price: "S$30–50 / nhà"
       },
       {
-        id: "f3-bugis",
+        id: "f3-lunch",
         day: "3",
         meal: "Trưa",
-        title: "Bugis / Haji Lane / Arab Street",
+        title: "Trưa theo tuyến sáng — chọn 1",
         recommend: [
           {
-            name: "Haji Lane cafes",
-            note: "Nhẹ, chụp hình, dễ với Chilux nếu tránh chỗ quá chật.",
-            maps: maps("Haji Lane Singapore")
+            name: "Tiong Bahru Bakery Safari",
+            note: "Nếu đi Jacob Ballas. Gần cổng Tanglin, dễ bé, có chỗ ngồi.",
+            maps: maps("Tiong Bahru Bakery Safari Singapore Botanic Gardens")
           },
           {
-            name: "Arab Street — kebab / Middle Eastern",
-            note: "Hummus, flatbread, dễ share. Zam Zam trên North Bridge Rd nếu muốn nasi briyani.",
-            maps: maps("Arab Street Singapore Kampong Glam")
+            name: "Casa Verde",
+            note: "Trong Botanic Gardens. Casual, gần khu vườn.",
+            maps: maps("Casa Verde Singapore Botanic Gardens")
           },
           {
-            name: "Bugis Junction food",
-            note: "Cơm, noodles nhanh. Có Soup Spoon ở Bugis Junction nếu muốn nhẹ.",
-            maps: maps("Bugis Junction Singapore food")
+            name: "Bugis Junction food court",
+            note: "Nếu chọn tuyến phố máy lạnh. Cơm/noodles nhanh. Có Soup Spoon.",
+            maps: maps("Bugis Junction Singapore food court")
+          },
+          {
+            name: "Zam Zam",
+            note: "Chỉ nếu lượn Arab Street. Nasi briyani, gần Sultan Mosque.",
+            maps: maps("Zam Zam Restaurant North Bridge Road Singapore")
           }
         ],
-        avoid: "Lau Pa Sat không gần Bugis (nằm khu CBD). Tránh cafe quá đông nếu đẩy Chilux.",
-        place: "Bugis · Haji Lane",
-        maps: maps("Haji Lane Singapore"),
-        price: "S$25–40 / nhà"
+        avoid: "Haji Lane cafe chật, khó Chilux. Lau Pa Sat không gần Bugis. 12:30 về hotel nghỉ — đừng ăn xong rồi kéo sang Gardens luôn.",
+        place: "Botanic Gardens hoặc Bugis",
+        maps: maps("Tiong Bahru Bakery Safari Singapore Botanic Gardens"),
+        price: "S$20–40 / nhà"
       },
       {
         id: "f3-gardens",
@@ -181,6 +196,11 @@
             name: "Shake Shack Gardens",
             note: "The Canopy, #03-02/03. Mở ~8:30–21:00. Ăn 18:00–19:15 rồi đi Supertree 19:45.",
             maps: maps("Shake Shack Gardens by the Bay 18 Marina Gardens Drive")
+          },
+          {
+            name: "Snack / kem tại The Canopy",
+            note: "Nếu bé no từ trưa hoặc mới chơi nước — ăn nhẹ cho kịp show, đừng ngồi nhà hàng lâu.",
+            maps: maps("The Canopy Gardens by the Bay Singapore")
           }
         ],
         avoid: "Hopscotch là cocktail bar ở Bayfront Plaza, lệch tuyến so với Supertree — không chọn trước show.",
@@ -203,6 +223,11 @@
             name: "Chatterbox Café",
             note: "WEAVE, #02-207. Cơm gà sit-down (~S$23++), không phải quán nhanh. Lunch tới 15:30.",
             maps: maps("Chatterbox Cafe WEAVE Resorts World Sentosa #02-207")
+          },
+          {
+            name: "Ocean Bites",
+            note: "Trong Oceanarium — chỉ khi bé đói giữa chừng, ăn nhanh rồi ra WEAVE.",
+            maps: maps("Singapore Oceanarium Resorts World Sentosa")
           }
         ],
         avoid: "JUMBO/seafood lớn nếu bé không ăn được nhiều. Tránh xếp hàng quá lâu sau Oceanarium.",
@@ -217,9 +242,19 @@
         title: "Về Novotel — tối cuối",
         recommend: [
           {
-            name: "GRUB hoặc Food Exchange",
-            note: "Tối Thứ Hai, gần hotel. Có thể mua snack cho sáng bay.",
+            name: "GRUB",
+            note: "Tối Thứ Hai, gần hotel. Casual, hợp gia đình.",
             maps: maps("GRUB 30 Stevens Road #01-06 Novotel Singapore")
+          },
+          {
+            name: "Food Exchange",
+            note: "Buffet tầng 2 Novotel. Có thể mua snack cho sáng bay.",
+            maps: maps("Food Exchange Novotel Singapore on Stevens")
+          },
+          {
+            name: "Orchard food court (shuttle)",
+            note: "Nếu bé đã nghỉ và muốn đổi món: shuttle hotel → Wheelock Place / ION, chọn 1 chỗ rồi về sớm.",
+            maps: maps("ION Orchard Singapore")
           }
         ],
         avoid: "Không ăn quá muộn — mai checkout sớm.",
@@ -277,7 +312,11 @@
         baby: false,
         prebook: true,
         place: "Chuyến bay đi",
-        notes: ["Landing Changi ~12:20", "Sau đó immigration + lấy hành lý"],
+        notes: [
+          "Landing Changi ~12:20",
+          "Immigration + hành lý có thể 30–60 phút",
+          "Kích hoạt SIM và test Grab trước khi ra khỏi sân bay"
+        ],
         link: "",
         maps: maps("Changi Airport Singapore")
       },
@@ -293,10 +332,10 @@
         prebook: false,
         place: "Jewel Changi Airport",
         notes: [
-          "Không mua attraction trả tiền",
+          "Không mua attraction trả tiền (Canopy Park)",
           "Baby Care Room B2–L4",
           "Ăn trưa: Shake Shack tầng 2 (#02-256) hoặc Din Tai Fung tầng 3",
-          "Mua SIM tại Arrival nếu chưa có eSIM"
+          "Nếu immigration chậm: chỉ Rain Vortex + lunch, rồi Grab về hotel"
         ],
         eat: "Shake Shack #02-256 hoặc Din Tai Fung #03-214 — dễ cho bé",
         link: "https://www.jewelchangiairport.com/",
@@ -312,8 +351,8 @@
         price: 25,
         baby: false,
         prebook: false,
-        place: "~20–25 phút",
-        notes: ["Không MRT ngày đầu vì vali + Chilux"],
+        place: "~25–40 phút",
+        notes: ["Thứ Sáu chiều dễ kẹt — chừa buffer. Không MRT ngày đầu vì vali + Chilux"],
         link: "",
         maps: "https://www.google.com/maps/dir/?api=1&origin=Jewel+Changi+Airport&destination=Novotel+Singapore+on+Stevens"
       },
@@ -349,10 +388,10 @@
         prebook: true,
         place: "Mandai Wildlife Reserve",
         notes: [
-          "Grab từ Novotel ~20–25 phút",
+          "Grab từ Novotel ~25–35 phút · Zoo mở 8:30",
           "Bé <3 FREE — mang hộ chiếu bé",
-          "Ưu tiên Orangutan, Panda, KidzWorld",
-          "Tram miễn phí trong vé"
+          "Ưu tiên: Orangutan, tram, KidzWorld. Gấu trúc KHÔNG ở Zoo — nằm River Wonders",
+          "Nếu bỏ River: ở lại KidzWorld chơi thêm, về hotel ~14:00"
         ],
         eat: "Trưa tại Ah Meng hoặc KidzWorld Cafe",
         link: "https://www.mandai.com/en/singapore-zoo.html",
@@ -389,10 +428,10 @@
         prebook: true,
         place: "Mandai",
         notes: [
-          "Mở ~10:00",
-          "Bé <3 FREE",
-          "Nếu mệt → bỏ River, về hotel",
-          "Ưu tiên Giant Panda + Amazon area"
+          "Mở 10:00 · Giant Panda Forest tới ~18:15",
+          "Bé <3 FREE. Chỉ vào nếu bé còn vui sau Zoo",
+          "Ưu tiên: Giant Panda (máy lạnh) → ra về. Amazon River Quest nếu hàng ngắn",
+          "Mệt → bỏ River, không tiếc vé phụ bằng việc bé quấy"
         ],
         link: "https://www.mandai.com/en/river-wonders.html",
         maps: maps("River Wonders Singapore Mandai")
@@ -417,57 +456,82 @@
         id: "d3-pool",
         day: "3",
         time: "08:30",
-        end: "10:30",
+        end: "10:00",
         title: "Novotel pool / Kids Room",
         type: "rest",
         price: 0,
         baby: true,
         prebook: false,
         place: "Novotel Stevens",
-        notes: ["Xả năng lượng trước Bugis + Gardens", "Breakfast trong hotel nếu có"],
+        notes: [
+          "Chỉ 60–90 phút — giữ sức cho chiều Gardens",
+          "Breakfast trong hotel trước khi ra"
+        ],
         link: "",
         maps: maps("Novotel Singapore on Stevens")
       },
       {
         id: "d3-bugis",
         day: "3",
-        time: "11:00",
-        end: "14:00",
-        title: "Bugis · Haji Lane · Arab Street",
+        time: "10:15",
+        end: "12:30",
+        title: "Chọn 1: Jacob Ballas hoặc Bugis Junction",
         type: "attraction",
         price: 0,
-        baby: false,
+        baby: true,
         prebook: false,
-        place: "Bugis / Kampong Glam",
+        place: "Gần hotel / Bugis",
         notes: [
-          "Shuttle/bus → Stevens MRT → Bugis",
-          "Lunch ~12:00 tại Haji Lane / Arab Street",
-          "14:00 Grab sang Gardens — không kéo Chilux bộ dài"
+          "Ưu tiên: Jacob Ballas Children's Garden (free, Grab ~8–12 phút). Mở CN 8:00–19:00. Water play hợp bé. Chilux để cổng — bế vào",
+          "Nếu muốn phố máy lạnh: Bugis Junction / Bugis+. Lunch tại food court rồi về",
+          "Haji Lane Chủ Nhật hẹp, đông, khó đẩy xe — không ưu tiên",
+          "12:30 Grab về hotel ăn/nghỉ — đừng kéo sang Gardens luôn"
         ],
-        eat: "Cafe Haji Lane hoặc món Ả Rập Arab Street",
+        eat: "Tiong Bahru Bakery Safari (nếu Botanic) hoặc Bugis Junction food court",
+        link: "https://www.nparks.gov.sg/sbg/our-gardens/bukit-timah-core/jacob-ballas-childrens-garden",
+        maps: maps("Jacob Ballas Children's Garden Singapore Botanic Gardens")
+      },
+      {
+        id: "d3-rest",
+        day: "3",
+        time: "13:00",
+        end: "15:30",
+        title: "Nghỉ bắt buộc — Novotel",
+        type: "rest",
+        price: 0,
+        baby: true,
+        prebook: false,
+        place: "Hotel",
+        notes: [
+          "Ngày 3 dễ quá tải nếu Bugis + Gardens không nghỉ",
+          "Ăn trưa nhẹ nếu chưa ăn ngoài · bé ngủ/nằm điều hòa",
+          "15:30 Grab sang Gardens — Cloud Forest mát hơn buổi chiều"
+        ],
+        eat: "Snack hotel nếu bé đói",
         link: "",
-        maps: maps("Haji Lane Singapore")
+        maps: maps("Novotel Singapore on Stevens")
       },
       {
         id: "d3-gardens",
         day: "3",
-        time: "14:30",
-        end: "18:00",
-        title: "Cloud Forest + Flower Dome + Supertree",
+        time: "16:00",
+        end: "18:15",
+        title: "Cloud Forest (+ Children's Garden nếu còn sức)",
         type: "attraction",
         price: 92,
         baby: true,
         prebook: true,
         place: "Gardens by the Bay",
         notes: [
-          "Cloud Forest #1 cho bé",
-          "Jurassic World Experience 2026 trong Cloud Forest",
+          "Vào Cloud Forest trước (máy lạnh, hợp bé). Jurassic World Experience 2026 nếu còn",
           "Bé <3 FREE",
+          "Flower Dome: bỏ nếu mệt",
+          "Tùy chọn: Far East Children's Garden — CN mở 9:00–19:00, last entry 18:00, waterplay đóng 18:30. Free. Nếu đã chơi Jacob Ballas buổi sáng thì bỏ",
           "Có JCB → bundle FD+CF+Observatory ~S$60/adult"
         ],
         eat: "Tối: Shake Shack The Canopy trước show 19:45",
         link: "https://www.gardensbythebay.com.sg/",
-        maps: maps("Gardens by the Bay Singapore")
+        maps: maps("Cloud Forest Gardens by the Bay Singapore")
       },
       {
         id: "d3-dinner",
@@ -480,7 +544,11 @@
         baby: false,
         prebook: false,
         place: "Shake Shack The Canopy",
-        notes: ["Ưu tiên món đơn giản cho bé", "Xong trước 19:15 để kịp Rhapsody"],
+        notes: [
+          "Ưu tiên món đơn giản cho bé",
+          "Xong trước 19:20 để kịp Rhapsody 19:45",
+          "Đứng hơi lùi khi xem show — dễ ra nếu bé mệt"
+        ],
         eat: "Burger/fries tại Shake Shack #03-02/03",
         link: "",
         maps: maps("Shake Shack Gardens by the Bay 18 Marina Gardens Drive")
@@ -503,7 +571,7 @@
       {
         id: "d4-ocean",
         day: "4",
-        time: "08:30",
+        time: "09:20",
         end: "12:30",
         title: "Singapore Oceanarium",
         type: "attraction",
@@ -512,10 +580,10 @@
         prebook: true,
         place: "Resorts World Sentosa",
         notes: [
-          "Grab từ Novotel",
-          "Bé under 4 FREE",
-          "Stroller được phép",
-          "Không mua Dolphin / Pier Adventure"
+          "Grab ~09:20 từ Novotel — Oceanarium mở 10:00 (đừng đi 8:30, sẽ đứng chờ)",
+          "Bé under 4 FREE · stroller OK · indoor mát",
+          "2–3 giờ là đủ. Không mua Dolphin / Pier Adventure",
+          "Nếu bé đói sớm: Ocean Bites trong khu Oceanarium"
         ],
         eat: "Trưa PUTIEN #01-209 hoặc Chatterbox Café #02-207 tại WEAVE",
         link: "https://www.singaporeoceanarium.com/",
@@ -542,13 +610,18 @@
         day: "4",
         time: "14:30",
         end: "16:30",
-        title: "Palawan Beach walk",
+        title: "Palawan Beach — hoặc ở lại máy lạnh",
         type: "attraction",
         price: 0,
         baby: false,
         prebook: false,
-        place: "Sentosa",
-        notes: ["REST 13:30–14:30 trước", "Không thêm vé", "Bé mệt → về luôn", "Snack/kem gần beach nếu cần"],
+        place: "Sentosa / RWS",
+        notes: [
+          "REST 13:30–14:30 trong RWS trước (máy lạnh)",
+          "Palawan 14:30 nắng gắt tháng 8 — chỉ đi nếu bé còn vui, có mũ/nước. Playground + Southernmost Point, không thêm vé",
+          "Phương án mát hơn: ngồi WEAVE / khu RWS, kem, rồi Grab về hotel pool",
+          "Bé mệt → về luôn, đừng cố beach"
+        ],
         link: "",
         maps: maps("Palawan Beach Sentosa")
       },
@@ -563,7 +636,10 @@
         baby: true,
         prebook: false,
         place: "Hotel",
-        notes: ["Dinner 19:00 gần hotel · ngủ 20:00"],
+        notes: [
+          "Dinner 19:00 gần hotel · ngủ 20:00",
+          "Tùy chọn: shuttle sang Orchard (ION / Wheelock) nếu muốn đổi món — về trước 20:00"
+        ],
         eat: "Dinner nhẹ — tối cuối trước ngày bay",
         link: "",
         maps: maps("Novotel Singapore on Stevens")
@@ -579,7 +655,11 @@
         baby: true,
         prebook: false,
         place: "Novotel Stevens",
-        notes: ["Checkout 10:00", "10:15 Grab → Changi T1"],
+        notes: [
+          "Checkout 10:00 — gói đồ tối 31/8",
+          "Pool chỉ nếu gói xong. 10:15 Grab → Changi T1",
+          "Bay 13:25, có mặt ~10:45 là đủ (≥120 phút)"
+        ],
         eat: "Breakfast hotel — đủ no trước khi ra sân bay",
         link: "",
         maps: maps("Novotel Singapore on Stevens")

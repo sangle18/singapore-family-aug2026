@@ -1,6 +1,7 @@
 (() => {
   const data = window.TRIP_DATA;
   const storageKey = "sg-family-tickets-v1";
+  const doneKey = "sg-family-done-v1";
   const state = {
     day: "all",
     type: "all",
@@ -59,15 +60,34 @@
         sticker: "📍",
         weekday: "",
         date: "",
-        theme: ""
+        theme: "",
+        tone: ""
       }
     );
   }
 
   function dayLine(id) {
     const d = dayById(id);
-    if (d.weekday && d.date) return `${d.weekday} ${d.date}`;
+    if (d.weekday && d.date) return `Ngày ${d.id} · ${d.weekday} ${d.date}`;
     return d.label || id;
+  }
+
+  function clusterHeadHtml(meta, compact, progress) {
+    const num = meta.id && meta.id !== "all" ? `Ngày ${meta.id}` : "";
+    const prog = progress
+      ? `<p class="day-progress">${progress.done}/${progress.total} đã xong</p>`
+      : "";
+    return `
+      <header class="day-cluster-head${compact ? " compact" : ""}${meta.tone ? " tone-" + meta.tone : ""}">
+        <span class="sticker" aria-hidden="true">${meta.sticker || "📍"}</span>
+        <div>
+          ${num ? `<p class="day-num">${num}</p>` : ""}
+          <p class="day-kicker">${meta.weekday || ""} · ${meta.date || meta.label}</p>
+          <h3>${meta.theme || meta.label}</h3>
+          ${prog}
+        </div>
+      </header>
+    `;
   }
 
   function groupByDay(list) {
@@ -93,7 +113,10 @@
     items.forEach((item) => {
       const btn = document.createElement("button");
       btn.type = "button";
-      btn.className = "chip" + (state[key] === item.id ? " active" : "");
+      btn.className =
+        "chip" +
+        (state[key] === item.id ? " active" : "") +
+        (item.tone ? ` tone-${item.tone}` : "");
       btn.innerHTML = item.sticker
         ? `<span class="chip-sticker" aria-hidden="true">${item.sticker}</span><span>${item.label}</span>`
         : item.label;
@@ -132,35 +155,73 @@
     return list;
   }
 
-  function renderItemButton(item) {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "item" + (state.selectedId === item.id ? " selected" : "");
-    btn.innerHTML = `
-      <div class="item-top">
-        <span class="item-time">${item.time}${item.end ? "–" + item.end : ""}</span>
-        <span class="sticker-mini" title="${typeLabel[item.type] || item.type}">${typeSticker[item.type] || "📍"}</span>
-      </div>
-      <p class="item-title">${item.title}</p>
-      <div class="item-tags">
-        <span class="tag ${item.type}">${typeLabel[item.type] || item.type}</span>
-        ${item.baby ? `<span class="tag">Baby facility</span>` : ""}
-        ${item.prebook ? `<span class="tag">Mua trước</span>` : ""}
-        ${item.maps ? `<span class="tag">Maps</span>` : ""}
-        ${item.price > 0 ? `<span class="tag">~S$${item.price}</span>` : `<span class="tag">Free / incl.</span>`}
-      </div>
+  function loadDoneState() {
+    try {
+      return JSON.parse(localStorage.getItem(doneKey) || "{}");
+    } catch {
+      return {};
+    }
+  }
+
+  function saveDoneState(map) {
+    localStorage.setItem(doneKey, JSON.stringify(map));
+  }
+
+  function isDone(id) {
+    return !!loadDoneState()[id];
+  }
+
+  function setDone(id, value) {
+    const next = loadDoneState();
+    next[id] = value;
+    saveDoneState(next);
+  }
+
+  function renderItemRow(item) {
+    const done = isDone(item.id);
+    const row = document.createElement("article");
+    row.className =
+      "item" +
+      (state.selectedId === item.id ? " selected" : "") +
+      (done ? " completed" : "");
+    row.innerHTML = `
+      <label class="item-check">
+        <input type="checkbox" ${done ? "checked" : ""} aria-label="Đánh dấu đã xong: ${item.title}" />
+      </label>
+      <button type="button" class="item-body">
+        <div class="item-top">
+          <span class="item-time">${item.time}${item.end ? "–" + item.end : ""}</span>
+          <span class="sticker-mini" title="${typeLabel[item.type] || item.type}">${typeSticker[item.type] || "📍"}</span>
+        </div>
+        <p class="item-title">${item.title}</p>
+        <div class="item-tags">
+          <span class="tag ${item.type}">${typeLabel[item.type] || item.type}</span>
+          ${item.baby ? `<span class="tag">Baby facility</span>` : ""}
+          ${item.prebook ? `<span class="tag">Mua trước</span>` : ""}
+          ${item.maps ? `<span class="tag">Maps</span>` : ""}
+          ${item.price > 0 ? `<span class="tag">~S$${item.price}</span>` : `<span class="tag">Free / incl.</span>`}
+        </div>
+      </button>
     `;
-    btn.addEventListener("click", () => {
+    const checkbox = row.querySelector("input");
+    checkbox.addEventListener("click", (e) => e.stopPropagation());
+    checkbox.addEventListener("change", () => {
+      setDone(item.id, checkbox.checked);
+      renderTimeline();
+    });
+    row.querySelector(".item-body").addEventListener("click", () => {
       state.selectedId = item.id;
       renderTimeline();
       renderDetail();
     });
-    return btn;
+    return row;
   }
 
   function renderTimeline() {
     const list = filteredItems();
-    els.resultCount.textContent = `${list.length} mục khớp bộ lọc`;
+    const doneMap = loadDoneState();
+    const doneCount = list.filter((i) => doneMap[i.id]).length;
+    els.resultCount.textContent = `${list.length} mục khớp bộ lọc · ${doneCount} đã xong`;
     els.timeline.innerHTML = "";
 
     if (!list.length) {
@@ -175,19 +236,15 @@
 
     groupByDay(list).forEach((group) => {
       const cluster = document.createElement("section");
-      cluster.className = "day-cluster";
-      cluster.innerHTML = `
-        <header class="day-cluster-head">
-          <span class="sticker" aria-hidden="true">${group.meta.sticker || "📍"}</span>
-          <div>
-            <p class="day-kicker">${group.meta.weekday || ""} · ${group.meta.date || group.meta.label}</p>
-            <h3>${group.meta.theme || group.meta.label}</h3>
-          </div>
-        </header>
-      `;
+      cluster.className = "day-cluster" + (group.meta.tone ? ` tone-${group.meta.tone}` : "");
+      const progress = {
+        done: group.items.filter((i) => doneMap[i.id]).length,
+        total: group.items.length
+      };
+      cluster.innerHTML = clusterHeadHtml(group.meta, false, progress);
       const holder = document.createElement("div");
       holder.className = "day-cluster-items";
-      group.items.forEach((item) => holder.appendChild(renderItemButton(item)));
+      group.items.forEach((item) => holder.appendChild(renderItemRow(item)));
       cluster.appendChild(holder);
       els.timeline.appendChild(cluster);
     });
@@ -198,27 +255,43 @@
   function renderDetail() {
     const item = data.items.find((i) => i.id === state.selectedId);
     if (!item) {
+      els.detailPanel.classList.remove("completed");
       els.detailPanel.innerHTML = `<p class="detail-empty">Chọn một mục bên trái để xem chi tiết.</p>`;
       return;
     }
     const meta = dayById(item.day);
+    const done = isDone(item.id);
+    els.detailPanel.classList.toggle("completed", done);
     els.detailPanel.innerHTML = `
       <span class="sticker detail-sticker" aria-hidden="true">${meta.sticker || typeSticker[item.type] || "📍"}</span>
+      ${meta.id && meta.id !== "all" ? `<p class="day-num tone-${meta.tone || ""}">Ngày ${meta.id}</p>` : ""}
       <h3>${item.title}</h3>
       <p class="meta-line">${dayLine(item.day)} · ${item.time}${item.end ? "–" + item.end : ""} · ${item.place}</p>
       <div class="item-tags" style="margin-bottom:0.75rem">
         <span class="tag ${item.type}">${typeLabel[item.type]}</span>
         ${item.baby ? `<span class="tag">Baby facility</span>` : ""}
         ${item.prebook ? `<span class="tag">Cần mua trước</span>` : ""}
+        ${done ? `<span class="tag">Đã xong</span>` : ""}
       </div>
       ${item.eat ? `<p class="meta-line"><strong>Nên ăn:</strong> ${item.eat}</p>` : ""}
       <ul>${(item.notes || []).map((n) => `<li>${n}</li>`).join("")}</ul>
       <div class="detail-actions">
+        <label class="toggle">
+          <input type="checkbox" id="detailDone" ${done ? "checked" : ""} />
+          <span>${done ? "Đã check-in" : "Check-in / đánh dấu xong"}</span>
+        </label>
         ${item.maps ? `<a class="btn primary small" href="${item.maps}" target="_blank" rel="noopener">Google Maps</a>` : ""}
         ${item.link ? `<a class="btn ghost small" href="${item.link}" target="_blank" rel="noopener">Trang chính thức</a>` : ""}
         <button type="button" class="btn ghost small" id="copyItem">Copy ghi chú</button>
       </div>
     `;
+    const doneBox = document.getElementById("detailDone");
+    if (doneBox) {
+      doneBox.addEventListener("change", () => {
+        setDone(item.id, doneBox.checked);
+        renderTimeline();
+      });
+    }
     const copyBtn = document.getElementById("copyItem");
     if (copyBtn) {
       copyBtn.addEventListener("click", async () => {
@@ -243,12 +316,12 @@
     }
   }
 
-  function recHtml(r) {
+  function recHtml(r, linkNames) {
     if (typeof r === "string") return `<li>${r}</li>`;
-    return `<li>
-      <span class="rec-copy"><strong>${r.name}</strong> — ${r.note}</span>
-      ${r.maps ? `<a class="maps-mini" href="${r.maps}" target="_blank" rel="noopener">Maps</a>` : ""}
-    </li>`;
+    const name = r.maps && linkNames
+      ? `<a class="place-link" href="${r.maps}" target="_blank" rel="noopener">${r.name}</a>`
+      : `<strong>${r.name}</strong>`;
+    return `<li><span class="rec-copy">${name}${r.note ? ` — ${r.note}` : ""}</span></li>`;
   }
 
   function renderFood() {
@@ -257,30 +330,29 @@
     els.foodGrid.innerHTML = groupByDay(list)
       .map(
         (group) => `
-      <section class="food-cluster">
-        <header class="day-cluster-head compact">
-          <span class="sticker" aria-hidden="true">${group.meta.sticker || "🍜"}</span>
-          <div>
-            <p class="day-kicker">${group.meta.weekday || ""} · ${group.meta.date || group.meta.label}</p>
-            <h3>${group.meta.theme || group.meta.label}</h3>
-          </div>
-        </header>
+      <section class="food-cluster${group.meta.tone ? " tone-" + group.meta.tone : ""}">
+        ${clusterHeadHtml(group.meta, true)}
         <div class="food-cluster-grid">
           ${group.items
-            .map(
-              (f) => `
+            .map((f) => {
+              const multi = f.recommend.length > 1;
+              return `
             <article class="food-card">
               <div class="meal"><span class="sticker-mini">${f.meal === "Tối" ? "🌙" : "☀️"}</span>${f.meal}</div>
               <h3>${f.title}</h3>
               <p class="place-line">${f.place}</p>
-              <ul>${f.recommend.map(recHtml).join("")}</ul>
+              <ul>${f.recommend.map((r) => recHtml(r, multi)).join("")}</ul>
               ${f.avoid ? `<p class="avoid">Lưu ý: ${f.avoid}</p>` : ""}
               <div class="food-actions">
-                <a class="btn primary small" href="${f.maps}" target="_blank" rel="noopener">Google Maps</a>
+                ${
+                  multi
+                    ? ""
+                    : `<a class="btn primary small" href="${f.maps}" target="_blank" rel="noopener">Google Maps</a>`
+                }
                 <span class="price">${f.price}</span>
               </div>
-            </article>`
-            )
+            </article>`;
+            })
             .join("")}
         </div>
       </section>`
@@ -359,6 +431,71 @@
     `;
   }
 
+  function overlaps(a, b, pad) {
+    return !(
+      a.right + pad < b.left ||
+      a.left - pad > b.right ||
+      a.bottom + pad < b.top ||
+      a.top - pad > b.bottom
+    );
+  }
+
+  function placeHeroStickers() {
+    const field = document.querySelector(".sticker-field");
+    const copy = document.querySelector(".hero-copy");
+    if (!field || !copy) return;
+
+    const all = Array.from(field.querySelectorAll(".float-sticker"));
+    const fieldRect = field.getBoundingClientRect();
+    const copyRect = copy.getBoundingClientRect();
+    const size = all[0] ? all[0].offsetWidth || 50 : 50;
+    const wide = fieldRect.width >= 640;
+    const slots = wide
+      ? [
+          { x: [0.03, 0.11], y: [0.05, 0.14] },
+          { x: [0.84, 0.93], y: [0.04, 0.13] },
+          { x: [0.58, 0.70], y: [0.05, 0.14] },
+          { x: [0.86, 0.94], y: [0.30, 0.44] },
+          { x: [0.80, 0.90], y: [0.58, 0.70] }
+        ]
+      : [
+          { x: [0.04, 0.12], y: [0.04, 0.12] },
+          { x: [0.80, 0.90], y: [0.04, 0.12] },
+          { x: [0.82, 0.92], y: [0.22, 0.34] }
+        ];
+    const rots = wide ? [10, -12, 7, -8, 14] : [9, -11, 8];
+    const stickers = all.slice().sort(() => Math.random() - 0.5);
+
+    all.forEach((el) => el.classList.remove("is-placed"));
+
+    stickers.forEach((el, i) => {
+      const slot = slots[i];
+      if (!slot) return;
+      let placed = false;
+      for (let n = 0; n < 8; n += 1) {
+        const x = (slot.x[0] + Math.random() * (slot.x[1] - slot.x[0])) * (fieldRect.width - size);
+        const y = (slot.y[0] + Math.random() * (slot.y[1] - slot.y[0])) * (fieldRect.height - size);
+        const abs = {
+          left: fieldRect.left + x,
+          top: fieldRect.top + y,
+          right: fieldRect.left + x + size,
+          bottom: fieldRect.top + y + size
+        };
+        if (overlaps(abs, copyRect, 28)) continue;
+        const rot = (rots[i] || 8) + (Math.random() * 6 - 3);
+        el.style.left = `${x}px`;
+        el.style.top = `${y}px`;
+        el.style.right = "auto";
+        el.style.bottom = "auto";
+        el.style.transform = `rotate(${rot.toFixed(1)}deg)`;
+        el.classList.add("is-placed");
+        placed = true;
+        break;
+      }
+      if (!placed) el.classList.remove("is-placed");
+    });
+  }
+
   function bind() {
     els.searchInput.addEventListener("input", () => {
       state.search = els.searchInput.value;
@@ -390,4 +527,9 @@
   renderFood();
   renderTickets();
   renderBudget();
+  window.requestAnimationFrame(placeHeroStickers);
+  window.addEventListener("resize", () => {
+    window.clearTimeout(placeHeroStickers._t);
+    placeHeroStickers._t = window.setTimeout(placeHeroStickers, 180);
+  });
 })();
