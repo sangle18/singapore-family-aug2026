@@ -61,6 +61,7 @@ a {
 }
 
 .hero {
+  position: relative;
   max-width: var(--max);
   margin: 0 auto;
   padding: 1.25rem 1.25rem 2.5rem;
@@ -69,6 +70,71 @@ a {
   grid-template-rows: auto 1fr auto;
   gap: 2rem;
   animation: rise 0.9s ease both;
+}
+
+.sticker-field {
+  position: absolute;
+  inset: 4.5rem 0.5rem 5rem;
+  pointer-events: none;
+  z-index: 0;
+  grid-area: 1 / 1 / -1 / 1;
+}
+
+.hero-copy,
+.topnav,
+.hero-meta {
+  position: relative;
+  z-index: 1;
+}
+
+.float-sticker {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 3.1rem;
+  height: 3.1rem;
+  font-size: 1.55rem;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 3px 0 rgba(20, 48, 44, 0.08), 0 10px 22px rgba(20, 48, 44, 0.12);
+  border: 3px solid #fff;
+}
+
+.float-sticker.s1 { top: 8%; right: 8%; transform: rotate(12deg); }
+.float-sticker.s2 { top: 28%; right: 22%; transform: rotate(-14deg); }
+.float-sticker.s3 { bottom: 18%; right: 6%; transform: rotate(8deg); }
+.float-sticker.s4 { top: 42%; right: 4%; transform: rotate(-6deg); }
+.float-sticker.s5 { bottom: 8%; right: 26%; transform: rotate(16deg); }
+
+.sticker {
+  display: grid;
+  place-items: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  flex: 0 0 2.7rem;
+  font-size: 1.4rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 3px 0 rgba(20, 48, 44, 0.08), 0 8px 16px rgba(20, 48, 44, 0.1);
+  border: 3px solid #fff;
+  transform: rotate(-8deg);
+}
+
+.sticker-mini {
+  display: inline-grid;
+  place-items: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  font-size: 0.95rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 0 rgba(20, 48, 44, 0.08), 0 4px 10px rgba(20, 48, 44, 0.08);
+  transform: rotate(8deg);
+}
+
+.chip-sticker {
+  font-size: 0.95rem;
+  line-height: 1;
 }
 
 @keyframes rise {
@@ -265,6 +331,9 @@ main {
 }
 
 .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.65);
   color: var(--ink);
@@ -340,10 +409,54 @@ main {
 
 .timeline {
   display: grid;
-  gap: 0.65rem;
+  gap: 1.15rem;
   max-height: 70vh;
   overflow: auto;
   padding-right: 0.2rem;
+}
+
+.day-cluster {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.day-cluster-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.2rem 0.1rem 0.35rem;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 72%, rgba(255, 255, 255, 0));
+}
+
+.day-cluster-head.compact {
+  position: static;
+  background: none;
+  padding-bottom: 0.1rem;
+}
+
+.day-kicker {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.day-cluster-head h3 {
+  margin: 0.05rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.day-cluster-items {
+  display: grid;
+  gap: 0.55rem;
 }
 
 .item {
@@ -427,6 +540,12 @@ main {
   background: var(--sand);
   padding: 1.1rem 1.15rem 1.25rem;
   min-height: 240px;
+}
+
+.detail-sticker {
+  float: right;
+  margin: 0 0 0.5rem 0.5rem;
+  transform: rotate(9deg);
 }
 
 .detail-empty {
@@ -591,6 +710,11 @@ main {
 .food-grid {
   margin-top: 1rem;
   display: grid;
+  gap: 1.25rem;
+}
+
+.food-cluster-grid {
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 0.75rem;
 }
@@ -605,6 +729,9 @@ main {
 }
 
 .food-card .meal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -631,8 +758,30 @@ main {
   color: var(--ink);
 }
 
+.food-card li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.45rem;
+  align-items: start;
+}
+
 .food-card li + li {
   margin-top: 0.25rem;
+}
+
+.food-card .rec-copy {
+  min-width: 0;
+}
+
+.maps-mini {
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(15, 122, 108, 0.1);
+  color: var(--accent);
 }
 
 .food-card .avoid {
@@ -711,5 +860,21 @@ main {
 
   .topnav-links {
     display: none;
+  }
+
+  .float-sticker {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.15rem;
+  }
+
+  .float-sticker.s2,
+  .float-sticker.s5 {
+    display: none;
+  }
+
+  .day-cluster-head {
+    position: static;
+    background: none;
   }
 }

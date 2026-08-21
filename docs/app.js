@@ -22,6 +22,15 @@
     hotel: "Khách sạn"
   };
 
+  const typeSticker = {
+    flight: "✈️",
+    attraction: "🎟️",
+    food: "🍜",
+    transport: "🚗",
+    rest: "😴",
+    hotel: "🏨"
+  };
+
   const els = {
     dayFilter: document.getElementById("dayFilter"),
     typeFilter: document.getElementById("typeFilter"),
@@ -42,6 +51,42 @@
     foodGrid: document.getElementById("foodGrid")
   };
 
+  function dayById(id) {
+    return (
+      data.days.find((d) => d.id === id) || {
+        id,
+        label: id,
+        sticker: "📍",
+        weekday: "",
+        date: "",
+        theme: ""
+      }
+    );
+  }
+
+  function dayLine(id) {
+    const d = dayById(id);
+    if (d.weekday && d.date) return `${d.weekday} ${d.date}`;
+    return d.label || id;
+  }
+
+  function groupByDay(list) {
+    const order = [];
+    const grouped = new Map();
+    list.forEach((item) => {
+      if (!grouped.has(item.day)) {
+        grouped.set(item.day, []);
+        order.push(item.day);
+      }
+      grouped.get(item.day).push(item);
+    });
+    return order.map((day) => ({
+      day,
+      meta: dayById(day),
+      items: grouped.get(day)
+    }));
+  }
+
   function renderChips(container, items, key, onChange) {
     if (!container) return;
     container.innerHTML = "";
@@ -49,7 +94,9 @@
       const btn = document.createElement("button");
       btn.type = "button";
       btn.className = "chip" + (state[key] === item.id ? " active" : "");
-      btn.textContent = item.label;
+      btn.innerHTML = item.sticker
+        ? `<span class="chip-sticker" aria-hidden="true">${item.sticker}</span><span>${item.label}</span>`
+        : item.label;
       btn.addEventListener("click", () => {
         state[key] = item.id;
         renderChips(container, items, key, onChange);
@@ -85,6 +132,32 @@
     return list;
   }
 
+  function renderItemButton(item) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "item" + (state.selectedId === item.id ? " selected" : "");
+    btn.innerHTML = `
+      <div class="item-top">
+        <span class="item-time">${item.time}${item.end ? "–" + item.end : ""}</span>
+        <span class="sticker-mini" title="${typeLabel[item.type] || item.type}">${typeSticker[item.type] || "📍"}</span>
+      </div>
+      <p class="item-title">${item.title}</p>
+      <div class="item-tags">
+        <span class="tag ${item.type}">${typeLabel[item.type] || item.type}</span>
+        ${item.baby ? `<span class="tag">Baby facility</span>` : ""}
+        ${item.prebook ? `<span class="tag">Mua trước</span>` : ""}
+        ${item.maps ? `<span class="tag">Maps</span>` : ""}
+        ${item.price > 0 ? `<span class="tag">~S$${item.price}</span>` : `<span class="tag">Free / incl.</span>`}
+      </div>
+    `;
+    btn.addEventListener("click", () => {
+      state.selectedId = item.id;
+      renderTimeline();
+      renderDetail();
+    });
+    return btn;
+  }
+
   function renderTimeline() {
     const list = filteredItems();
     els.resultCount.textContent = `${list.length} mục khớp bộ lọc`;
@@ -100,30 +173,23 @@
     }
     if (!state.selectedId) state.selectedId = list[0].id;
 
-    list.forEach((item) => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "item" + (state.selectedId === item.id ? " selected" : "");
-      btn.innerHTML = `
-        <div class="item-top">
-          <span class="item-day">Ngày ${item.day}</span>
-          <span class="item-time">${item.time}${item.end ? "–" + item.end : ""}</span>
-        </div>
-        <p class="item-title">${item.title}</p>
-        <div class="item-tags">
-          <span class="tag ${item.type}">${typeLabel[item.type] || item.type}</span>
-          ${item.baby ? `<span class="tag">Baby facility</span>` : ""}
-          ${item.prebook ? `<span class="tag">Mua trước</span>` : ""}
-          ${item.maps ? `<span class="tag">Maps</span>` : ""}
-          ${item.price > 0 ? `<span class="tag">~S$${item.price}</span>` : `<span class="tag">Free / incl.</span>`}
-        </div>
+    groupByDay(list).forEach((group) => {
+      const cluster = document.createElement("section");
+      cluster.className = "day-cluster";
+      cluster.innerHTML = `
+        <header class="day-cluster-head">
+          <span class="sticker" aria-hidden="true">${group.meta.sticker || "📍"}</span>
+          <div>
+            <p class="day-kicker">${group.meta.weekday || ""} · ${group.meta.date || group.meta.label}</p>
+            <h3>${group.meta.theme || group.meta.label}</h3>
+          </div>
+        </header>
       `;
-      btn.addEventListener("click", () => {
-        state.selectedId = item.id;
-        renderTimeline();
-        renderDetail();
-      });
-      els.timeline.appendChild(btn);
+      const holder = document.createElement("div");
+      holder.className = "day-cluster-items";
+      group.items.forEach((item) => holder.appendChild(renderItemButton(item)));
+      cluster.appendChild(holder);
+      els.timeline.appendChild(cluster);
     });
 
     renderDetail();
@@ -135,9 +201,11 @@
       els.detailPanel.innerHTML = `<p class="detail-empty">Chọn một mục bên trái để xem chi tiết.</p>`;
       return;
     }
+    const meta = dayById(item.day);
     els.detailPanel.innerHTML = `
+      <span class="sticker detail-sticker" aria-hidden="true">${meta.sticker || typeSticker[item.type] || "📍"}</span>
       <h3>${item.title}</h3>
-      <p class="meta-line">Ngày ${item.day} · ${item.time}${item.end ? "–" + item.end : ""} · ${item.place}</p>
+      <p class="meta-line">${dayLine(item.day)} · ${item.time}${item.end ? "–" + item.end : ""} · ${item.place}</p>
       <div class="item-tags" style="margin-bottom:0.75rem">
         <span class="tag ${item.type}">${typeLabel[item.type]}</span>
         ${item.baby ? `<span class="tag">Baby facility</span>` : ""}
@@ -156,7 +224,7 @@
       copyBtn.addEventListener("click", async () => {
         const text = [
           item.title,
-          `Ngày ${item.day} ${item.time}-${item.end || ""}`,
+          `${dayLine(item.day)} ${item.time}-${item.end || ""}`,
           item.place,
           item.eat ? `Nên ăn: ${item.eat}` : "",
           ...(item.notes || []).map((n) => `- ${n}`),
@@ -175,23 +243,47 @@
     }
   }
 
+  function recHtml(r) {
+    if (typeof r === "string") return `<li>${r}</li>`;
+    return `<li>
+      <span class="rec-copy"><strong>${r.name}</strong> — ${r.note}</span>
+      ${r.maps ? `<a class="maps-mini" href="${r.maps}" target="_blank" rel="noopener">Maps</a>` : ""}
+    </li>`;
+  }
+
   function renderFood() {
     if (!els.foodGrid) return;
     const list = data.foods.filter((f) => state.foodDay === "all" || f.day === state.foodDay);
-    els.foodGrid.innerHTML = list
+    els.foodGrid.innerHTML = groupByDay(list)
       .map(
-        (f) => `
-      <article class="food-card">
-        <div class="meal">Ngày ${f.day} · ${f.meal}</div>
-        <h3>${f.title}</h3>
-        <p class="place-line">${f.place}</p>
-        <ul>${f.recommend.map((r) => `<li>${r}</li>`).join("")}</ul>
-        ${f.avoid ? `<p class="avoid">Lưu ý: ${f.avoid}</p>` : ""}
-        <div class="food-actions">
-          <a class="btn primary small" href="${f.maps}" target="_blank" rel="noopener">Google Maps</a>
-          <span class="price">${f.price}</span>
+        (group) => `
+      <section class="food-cluster">
+        <header class="day-cluster-head compact">
+          <span class="sticker" aria-hidden="true">${group.meta.sticker || "🍜"}</span>
+          <div>
+            <p class="day-kicker">${group.meta.weekday || ""} · ${group.meta.date || group.meta.label}</p>
+            <h3>${group.meta.theme || group.meta.label}</h3>
+          </div>
+        </header>
+        <div class="food-cluster-grid">
+          ${group.items
+            .map(
+              (f) => `
+            <article class="food-card">
+              <div class="meal"><span class="sticker-mini">${f.meal === "Tối" ? "🌙" : "☀️"}</span>${f.meal}</div>
+              <h3>${f.title}</h3>
+              <p class="place-line">${f.place}</p>
+              <ul>${f.recommend.map(recHtml).join("")}</ul>
+              ${f.avoid ? `<p class="avoid">Lưu ý: ${f.avoid}</p>` : ""}
+              <div class="food-actions">
+                <a class="btn primary small" href="${f.maps}" target="_blank" rel="noopener">Google Maps</a>
+                <span class="price">${f.price}</span>
+              </div>
+            </article>`
+            )
+            .join("")}
         </div>
-      </article>`
+      </section>`
       )
       .join("");
   }
