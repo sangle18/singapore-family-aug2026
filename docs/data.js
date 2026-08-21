@@ -16,6 +16,142 @@ window.TRIP_DATA = {
     { id: "rest", label: "Nghỉ" },
     { id: "hotel", label: "Khách sạn" }
   ],
+  foods: [
+    {
+      id: "f1-jewel",
+      day: "1",
+      meal: "Trưa",
+      title: "Jewel Changi — ăn nhẹ sau landing",
+      recommend: [
+        "Shake Shack (L1) — burger/fries, dễ cho bé",
+        "Din Tai Fung — xiao long bao nếu muốn món nóng",
+        "FairPrice Finest / convenience — sữa, snack, nước"
+      ],
+      avoid: "Đừng ăn quá no — tối còn dinner gần hotel",
+      place: "Jewel Changi Airport",
+      maps: "https://maps.google.com/?q=Jewel+Changi+Airport+Singapore",
+      price: "S$25–45 / nhà"
+    },
+    {
+      id: "f1-dinner",
+      day: "1",
+      meal: "Tối",
+      title: "Gần Novotel — tối ngày đầu",
+      recommend: [
+        "GRUB Stevens Road — casual, gần hotel",
+        "Food Exchange (trong Novotel) — buffet/à la carte, bé mệt thì không cần đi xa",
+        "Soup spoon / cafe quanh Stevens nếu muốn nhẹ"
+      ],
+      avoid: "Không kéo bé đi Orchard tối ngày đầu",
+      place: "Stevens Road",
+      maps: "https://maps.google.com/?q=GRUB+Stevens+Road+Singapore",
+      price: "S$30–50 / nhà"
+    },
+    {
+      id: "f2-zoo",
+      day: "2",
+      meal: "Trưa",
+      title: "Trong Singapore Zoo",
+      recommend: [
+        "Ah Meng Restaurant — ngồi ổn, có diaper facility",
+        "KidzWorld Cafe — nhanh, gần khu chơi bé",
+        "Uống nước / trái cây mang theo trong balo"
+      ],
+      avoid: "Đừng chờ quá lâu nếu bé đói — chọn KidzWorld Cafe",
+      place: "Singapore Zoo",
+      maps: "https://maps.google.com/?q=Ah+Meng+Restaurant+Singapore+Zoo",
+      price: "S$30–45 / nhà"
+    },
+    {
+      id: "f2-dinner",
+      day: "2",
+      meal: "Tối",
+      title: "Sau Zoo — về hotel nghỉ rồi ăn",
+      recommend: [
+        "Ăn tại Novotel / GRUB — ưu tiên vì bé cần nghỉ sau Mandai",
+        "Nếu còn sức: Orchard food court (via shuttle) — chọn 1 chỗ rồi về sớm"
+      ],
+      avoid: "Không dinner phức tạp sau ngày Zoo",
+      place: "Novotel / Stevens",
+      maps: "https://maps.google.com/?q=Novotel+Singapore+on+Stevens",
+      price: "S$30–50 / nhà"
+    },
+    {
+      id: "f3-bugis",
+      day: "3",
+      meal: "Trưa",
+      title: "Bugis / Haji Lane / Arab Street",
+      recommend: [
+        "Lau Pa Sat gần hơn nếu lệch tuyến — nhưng ưu tiên khu Bugis",
+        "Haji Lane cafes — nhẹ, chụp hình, dễ với bé",
+        "Arab Street: Turkish / Middle Eastern — kebab, hummus, flatbread",
+        "Bugis Street / food courts — cơm, noodles nhanh"
+      ],
+      avoid: "Tránh cafe quá đông/chật nếu đẩy Chilux",
+      place: "Bugis · Haji Lane",
+      maps: "https://maps.google.com/?q=Haji+Lane+Singapore",
+      price: "S$25–40 / nhà"
+    },
+    {
+      id: "f3-gardens",
+      day: "3",
+      meal: "Tối",
+      title: "Gardens by the Bay — trước Rhapsody",
+      recommend: [
+        "Shake Shack Gardens — nhanh, quen miệng bé",
+        "Hopscotch — nếu muốn ngồi thoải hơn",
+        "Ăn xong ~19:15 → đi chỗ xem Garden Rhapsody 19:45"
+      ],
+      avoid: "Đừng book nhà hàng fine-dining — dễ trễ show",
+      place: "Gardens by the Bay",
+      maps: "https://maps.google.com/?q=Shake+Shack+Gardens+by+the+Bay",
+      price: "S$35–55 / nhà"
+    },
+    {
+      id: "f4-rws",
+      day: "4",
+      meal: "Trưa",
+      title: "Resorts World Sentosa",
+      recommend: [
+        "PUTIEN — ẩm thực Phúc Kiến, dễ share, hợp gia đình",
+        "Chatterbox Café — nhanh hơn nếu bé mệt",
+        "Tránh xếp hàng quá lâu sau Oceanarium"
+      ],
+      avoid: "JUMBO/seafood lớn nếu bé không ăn được nhiều",
+      place: "Resorts World Sentosa",
+      maps: "https://maps.google.com/?q=PUTIEN+Resorts+World+Sentosa",
+      price: "S$40–70 / nhà"
+    },
+    {
+      id: "f4-dinner",
+      day: "4",
+      meal: "Tối",
+      title: "Về Novotel — tối cuối",
+      recommend: [
+        "Dinner gần hotel / Orchard đơn giản",
+        "Có thể mua snack cho sáng bay (1/9)"
+      ],
+      avoid: "Không ăn quá muộn — mai checkout sớm",
+      place: "Stevens / Orchard",
+      maps: "https://maps.google.com/?q=Novotel+Singapore+on+Stevens",
+      price: "S$30–50 / nhà"
+    },
+    {
+      id: "f5-airport",
+      day: "5",
+      meal: "Trưa",
+      title: "Changi T1 — trước giờ bay 13:25",
+      recommend: [
+        "Ăn sớm trong T1 sau check-in (~12:00)",
+        "Chọn món quen: noodles, rice, cafe",
+        "Nước + snack cabin cho bé"
+      ],
+      avoid: "Đừng ra ngoài sân bay ăn rồi vào lại sát giờ",
+      place: "Changi Airport T1",
+      maps: "https://maps.google.com/?q=Changi+Airport+Terminal+1",
+      price: "S$25–40 / nhà"
+    }
+  ],
   items: [
     {
       id: "d1-checkin",
@@ -34,7 +170,8 @@ window.TRIP_DATA = {
         "Tag Chilux + hỏi gate-check",
         "Mang hộ chiếu cả nhà"
       ],
-      link: "https://www.flyscoot.com/"
+      link: "https://www.flyscoot.com/",
+      maps: "https://maps.google.com/?q=Tan+Son+Nhat+International+Airport+Terminal+2"
     },
     {
       id: "d1-flight",
@@ -48,7 +185,8 @@ window.TRIP_DATA = {
       prebook: true,
       place: "Chuyến bay đi",
       notes: ["Landing Changi ~12:20", "Sau đó immigration + lấy hành lý"],
-      link: ""
+      link: "",
+      maps: "https://maps.google.com/?q=Changi+Airport+Singapore"
     },
     {
       id: "d1-jewel",
@@ -64,10 +202,12 @@ window.TRIP_DATA = {
       notes: [
         "Không mua attraction trả tiền",
         "Baby Care Room B2–L4",
-        "Ăn trưa + diaper change",
+        "Ăn trưa: Shake Shack / Din Tai Fung",
         "Mua SIM tại Arrival nếu chưa có eSIM"
       ],
-      link: "https://www.jewelchangiairport.com/"
+      eat: "Shake Shack L1 hoặc Din Tai Fung — dễ cho bé",
+      link: "https://www.jewelchangiairport.com/",
+      maps: "https://maps.google.com/?q=Jewel+Changi+Airport+Singapore"
     },
     {
       id: "d1-grab-hotel",
@@ -81,7 +221,8 @@ window.TRIP_DATA = {
       prebook: false,
       place: "~20–25 phút",
       notes: ["Không MRT ngày đầu vì vali + Chilux"],
-      link: ""
+      link: "",
+      maps: "https://www.google.com/maps/dir/Jewel+Changi+Airport/Novotel+Singapore+on+Stevens"
     },
     {
       id: "d1-hotel",
@@ -97,9 +238,11 @@ window.TRIP_DATA = {
       notes: [
         "Đã trả S$839.08 / 4 đêm",
         "17:00–18:30 bé nghỉ",
-        "Dinner: Novotel hoặc GRUB Stevens"
+        "Dinner: Novotel Food Exchange hoặc GRUB Stevens"
       ],
-      link: "https://all.accor.com/hotel/9543/index.en.shtml"
+      eat: "GRUB Stevens hoặc ăn trong khách sạn",
+      link: "https://all.accor.com/hotel/9543/index.en.shtml",
+      maps: "https://maps.google.com/?q=Novotel+Singapore+on+Stevens+28+Stevens+Road"
     },
     {
       id: "d2-zoo",
@@ -116,10 +259,11 @@ window.TRIP_DATA = {
         "Grab từ Novotel ~20–25 phút",
         "Bé <3 FREE — mang hộ chiếu bé",
         "Ưu tiên Orangutan, Panda, KidzWorld",
-        "Tram miễn phí trong vé",
-        "Nursing: Main Entrance, KidzWorld, Reptile Kingdom"
+        "Tram miễn phí trong vé"
       ],
-      link: "https://www.mandai.com/en/singapore-zoo.html"
+      eat: "Trưa tại Ah Meng hoặc KidzWorld Cafe",
+      link: "https://www.mandai.com/en/singapore-zoo.html",
+      maps: "https://maps.google.com/?q=Singapore+Zoo+Mandai"
     },
     {
       id: "d2-lunch",
@@ -132,8 +276,13 @@ window.TRIP_DATA = {
       baby: true,
       prebook: false,
       place: "Trong Zoo",
-      notes: ["Ah Meng có diaper-changing facility"],
-      link: ""
+      notes: [
+        "Ah Meng: ngồi ổn + diaper facility",
+        "KidzWorld Cafe: nhanh hơn nếu bé đói"
+      ],
+      eat: "Cơm/noodles đơn giản + nước",
+      link: "",
+      maps: "https://maps.google.com/?q=Ah+Meng+Restaurant+Singapore+Zoo"
     },
     {
       id: "d2-river",
@@ -152,7 +301,8 @@ window.TRIP_DATA = {
         "Nếu mệt → bỏ River, về hotel",
         "Ưu tiên Giant Panda + Amazon area"
       ],
-      link: "https://www.mandai.com/en/river-wonders.html"
+      link: "https://www.mandai.com/en/river-wonders.html",
+      maps: "https://maps.google.com/?q=River+Wonders+Singapore"
     },
     {
       id: "d2-rest",
@@ -165,8 +315,10 @@ window.TRIP_DATA = {
       baby: true,
       prebook: false,
       place: "Hotel",
-      notes: ["Không đi Orchard", "Dinner ~18:30", "Ngủ sớm"],
-      link: ""
+      notes: ["Không đi Orchard", "Dinner ~18:30 gần hotel", "Ngủ sớm"],
+      eat: "Dinner nhẹ tại GRUB / Novotel",
+      link: "",
+      maps: "https://maps.google.com/?q=Novotel+Singapore+on+Stevens"
     },
     {
       id: "d3-pool",
@@ -179,8 +331,9 @@ window.TRIP_DATA = {
       baby: true,
       prebook: false,
       place: "Novotel Stevens",
-      notes: ["Xả năng lượng trước Bugis + Gardens"],
-      link: ""
+      notes: ["Xả năng lượng trước Bugis + Gardens", "Breakfast trong hotel nếu có"],
+      link: "",
+      maps: "https://maps.google.com/?q=Novotel+Singapore+on+Stevens"
     },
     {
       id: "d3-bugis",
@@ -195,10 +348,12 @@ window.TRIP_DATA = {
       place: "Bugis / Kampong Glam",
       notes: [
         "Shuttle/bus → Stevens MRT → Bugis",
-        "Lunch ~12:00",
+        "Lunch ~12:00 tại Haji Lane / Arab Street",
         "14:00 Grab sang Gardens — không kéo Chilux bộ dài"
       ],
-      link: ""
+      eat: "Cafe Haji Lane hoặc món Ả Rập Arab Street",
+      link: "",
+      maps: "https://maps.google.com/?q=Haji+Lane+Singapore"
     },
     {
       id: "d3-gardens",
@@ -215,10 +370,11 @@ window.TRIP_DATA = {
         "Cloud Forest #1 cho bé",
         "Jurassic World Experience 2026 trong Cloud Forest",
         "Bé <3 FREE",
-        "Có JCB → bundle FD+CF+Observatory ~S$60/adult",
-        "Nursing trong Cloud Forest / Canopy / Children’s Garden"
+        "Có JCB → bundle FD+CF+Observatory ~S$60/adult"
       ],
-      link: "https://www.gardensbythebay.com.sg/"
+      eat: "Tối: Shake Shack / Hopscotch trước show 19:45",
+      link: "https://www.gardensbythebay.com.sg/",
+      maps: "https://maps.google.com/?q=Gardens+by+the+Bay+Singapore"
     },
     {
       id: "d3-dinner",
@@ -231,8 +387,10 @@ window.TRIP_DATA = {
       baby: false,
       prebook: false,
       place: "Shake Shack / Hopscotch",
-      notes: ["Ưu tiên món đơn giản cho bé"],
-      link: ""
+      notes: ["Ưu tiên món đơn giản cho bé", "Xong trước 19:15 để kịp Rhapsody"],
+      eat: "Burger/fries hoặc món share nhẹ",
+      link: "",
+      maps: "https://maps.google.com/?q=Shake+Shack+Gardens+by+the+Bay"
     },
     {
       id: "d3-rhapsody",
@@ -246,7 +404,8 @@ window.TRIP_DATA = {
       prebook: false,
       place: "Supertree Grove",
       notes: ["Show 19:45 — không chờ show 2", "20:15 Grab về hotel"],
-      link: ""
+      link: "",
+      maps: "https://maps.google.com/?q=Supertree+Grove+Gardens+by+the+Bay"
     },
     {
       id: "d4-ocean",
@@ -265,7 +424,9 @@ window.TRIP_DATA = {
         "Stroller được phép",
         "Không mua Dolphin / Pier Adventure"
       ],
-      link: "https://www.singaporeoceanarium.com/"
+      eat: "Trưa PUTIEN hoặc Chatterbox tại RWS",
+      link: "https://www.singaporeoceanarium.com/",
+      maps: "https://maps.google.com/?q=Singapore+Oceanarium+Resorts+World+Sentosa"
     },
     {
       id: "d4-lunch",
@@ -278,8 +439,10 @@ window.TRIP_DATA = {
       baby: false,
       prebook: false,
       place: "Resorts World Sentosa",
-      notes: ["Ưu tiên PUTIEN với bé"],
-      link: ""
+      notes: ["Ưu tiên PUTIEN với bé", "Chatterbox nếu muốn nhanh"],
+      eat: "Món share PUTIEN — soup, noodles, veggies",
+      link: "",
+      maps: "https://maps.google.com/?q=PUTIEN+Resorts+World+Sentosa"
     },
     {
       id: "d4-beach",
@@ -292,8 +455,9 @@ window.TRIP_DATA = {
       baby: false,
       prebook: false,
       place: "Sentosa",
-      notes: ["REST 13:30–14:30 trước", "Không thêm vé", "Bé mệt → về luôn"],
-      link: ""
+      notes: ["REST 13:30–14:30 trước", "Không thêm vé", "Bé mệt → về luôn", "Snack/kem gần beach nếu cần"],
+      link: "",
+      maps: "https://maps.google.com/?q=Palawan+Beach+Sentosa"
     },
     {
       id: "d4-pool",
@@ -306,8 +470,10 @@ window.TRIP_DATA = {
       baby: true,
       prebook: false,
       place: "Hotel",
-      notes: ["Dinner 19:00 · ngủ 20:00"],
-      link: ""
+      notes: ["Dinner 19:00 gần hotel · ngủ 20:00"],
+      eat: "Dinner nhẹ — tối cuối trước ngày bay",
+      link: "",
+      maps: "https://maps.google.com/?q=Novotel+Singapore+on+Stevens"
     },
     {
       id: "d5-checkout",
@@ -321,7 +487,9 @@ window.TRIP_DATA = {
       prebook: false,
       place: "Novotel Stevens",
       notes: ["Checkout 10:00", "10:15 Grab → Changi T1"],
-      link: ""
+      eat: "Breakfast hotel — đủ no trước khi ra sân bay",
+      link: "",
+      maps: "https://maps.google.com/?q=Novotel+Singapore+on+Stevens"
     },
     {
       id: "d5-flight",
@@ -338,9 +506,12 @@ window.TRIP_DATA = {
         "Có mặt ~10:45–11:00",
         "Quầy đóng 12:25",
         "Infant → check-in quầy",
+        "Lunch ~12:00 trong T1",
         "Landing SGN T2 ~14:40"
       ],
-      link: "https://www.changiairport.com/"
+      eat: "Ăn trong T1 sau check-in",
+      link: "https://www.changiairport.com/",
+      maps: "https://maps.google.com/?q=Changi+Airport+Terminal+1"
     }
   ],
   tickets: [
