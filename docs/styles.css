@@ -10,8 +10,8 @@
   --card: rgba(255, 255, 255, 0.72);
   --shadow: 0 18px 50px rgba(20, 48, 44, 0.08);
   --radius: 18px;
-  --font-display: "Fraunces", Georgia, serif;
-  --font-ui: "Sora", sans-serif;
+  --font-display: "Literata", "Times New Roman", serif;
+  --font-ui: "Be Vietnam Pro", "Segoe UI", sans-serif;
   --max: 1120px;
 }
 
@@ -30,8 +30,12 @@ body {
   font-family: var(--font-ui);
   color: var(--ink);
   background: var(--bg1);
-  line-height: 1.55;
+  line-height: 1.65;
+  font-size: 16.5px;
+  letter-spacing: 0.01em;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .ambient {
@@ -123,10 +127,10 @@ a {
 .hero-copy h1 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(3.4rem, 11vw, 6.4rem);
-  line-height: 0.92;
+  font-size: clamp(3rem, 9.5vw, 5.4rem);
+  line-height: 1.02;
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 .hero-copy h1 span {
@@ -582,6 +586,87 @@ main {
 
 .info-grid li + li {
   margin-top: 0.28rem;
+}
+
+.food-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.75rem;
+}
+
+.food-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1rem 1.05rem 1.1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.food-card .meal {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+}
+
+.food-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.food-card .place-line {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+
+.food-card ul {
+  margin: 0.15rem 0 0;
+  padding-left: 1.05rem;
+  color: var(--ink);
+}
+
+.food-card li + li {
+  margin-top: 0.25rem;
+}
+
+.food-card .avoid {
+  margin: 0.2rem 0 0;
+  font-size: 0.86rem;
+  color: #8a4b1a;
+  background: rgba(217, 119, 47, 0.1);
+  border-radius: 10px;
+  padding: 0.45rem 0.6rem;
+}
+
+.food-card .food-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.food-card .price {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-left: auto;
+}
+
+.item-title {
+  line-height: 1.35;
+}
+
+.detail ul,
+.ticket-list span,
+.section-head p,
+.lede {
+  line-height: 1.65;
 }
 
 .site-footer {
