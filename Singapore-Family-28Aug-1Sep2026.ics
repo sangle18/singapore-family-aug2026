@@ -1,0 +1,167 @@
+BEGIN:VCALENDAR
+PRODID:-//Family Trip//Singapore 2026//VI
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Singapore Family 28/8–1/9/2026
+X-WR-TIMEZONE:Asia/Singapore
+BEGIN:VTIMEZONE
+TZID:Asia/Singapore
+X-LIC-LOCATION:Asia/Singapore
+BEGIN:STANDARD
+TZOFFSETFROM:+0800
+TZOFFSETTO:+0800
+TZNAME:+08
+DTSTART:19700101T000000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:sg-day0-sgn-checkin@familytrip
+DTSTAMP:20260821T063000Z
+DTSTART;TZID=Asia/Singapore:20260828T064500
+DTEND;TZID=Asia/Singapore:20260828T091500
+SUMMARY:🇻🇳 Tân Sơn Nhất T2 – Scoot check-in
+DESCRIPTION:Có mặt 06:45–07:00.\nScoot SGN→SIN 09:15.\nQuầy đóng 08:15.\nTag Chilux + hỏi gate-check.\nMang hộ chiếu cả nhà.
+LOCATION:Tan Son Nhat Airport Terminal 2
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sg-day0-flight-out@familytrip
+DTSTAMP:20260821T063000Z
+DTSTART;TZID=Asia/Singapore:20260828T091500
+DTEND;TZID=Asia/Singapore:20260828T122000
+SUMMARY:✈️ Scoot SGN → SIN
+DESCRIPTION:Chuyến đi Singapore.\nLanding Changi ~12:20.
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sg-day1-jewel@familytrip
+DTSTAMP:20260821T063000Z
+DTSTART;TZID=Asia/Singapore:20260828T133000
+DTEND;TZID=Asia/Singapore:20260828T153000
+SUMMARY:💦 Jewel Changi – Rain Vortex + lunch + nghỉ
+DESCRIPTION:Không mua attraction.\nBaby Care Room: B2–L4.\nMua SIM/eSIM tại Arrival nếu chưa có.\nSau đó Grab → Novotel (~15:30).
+LOCATION:Jewel Changi Airport
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sg-day1-hotel@familytrip
+DTSTAMP:20260821T063000Z
+DTSTART;TZID=Asia/Singapore:20260828T160000
+DTEND;TZID=Asia/Singapore:20260828T203000
+SUMMARY:🏨 Check-in Novotel Stevens + nghỉ + dinner
+DESCRIPTION:28 Stevens Road.\nBooking: S$839.08 / 4 đêm.\n17:00–18:30 bé nghỉ.\nDinner: Novotel hoặc GRUB Stevens.\nNgủ sớm.
+LOCATION:Novotel Singapore on Stevens\, 28 Stevens Road
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sg-day2-zoo@familytrip
+DTSTAMP:20260821T063000Z
+DTSTART;TZID=Asia/Singapore:20260829T081500
+DTEND;TZID=Asia/Singapore:20260829T120000
+SUMMARY:🦁 Singapore Zoo (Grab từ Novotel)
+DESCRIPTION:Grab 08:15 → Mandai.\nBé dưới 3 tuổi FREE – mang hộ chiếu bé.\nƯu tiên Orangutan\, Panda\, KidzWorld.\nTram miễn phí trong vé.
+LOCATION:Singapore Zoo\, Mandai
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sg-day2-river@familytrip
+DTSTAMP:20260821T063000Z
+DTSTART;TZID=Asia/Singapore:20260829T130000
+DTEND;TZID=Asia/Singapore:20260829T150000
+SUMMARY:🐼 River Wonders (sau lunch)
+DESCRIPTION:River Wonders mở ~10:00.\nBé FREE dưới 3.\nNếu bé mệt → bỏ River\, về hotel nghỉ.\n15:00 Grab về Novotel.\n15:30–18:00 MANDATORY REST.
+LOCATION:River Wonders\, Mandai
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sg-day2-rest@familytrip
+DTSTAMP:20260821T063000Z
+DTSTART;TZID=Asia/Singapore:20260829T153000
+DTEND;TZID=Asia/Singapore:20260829T180000
+SUMMARY:😴 Mandatory rest – Novotel
+DESCRIPTION:Không đi Orchard.\nBé ngủ.\nDinner ~18:30.
+LOCATION:Novotel Singapore on Stevens
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sg-day3-morning@familytrip
+DTSTAMP:20260821T063000Z
+DTSTART;TZID=Asia/Singapore:20260830T083000
+DTEND;TZID=Asia/Singapore:20260830T103000
+SUMMARY:🏊 Novotel pool / Kids Room
+DESCRIPTION:Xả năng lượng trước khi đi Bugis + Gardens.
+LOCATION:Novotel Singapore on Stevens
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sg-day3-bugis@familytrip
+DTSTAMP:20260821T063000Z
+DTSTART;TZID=Asia/Singapore:20260830T110000
+DTEND;TZID=Asia/Singapore:20260830T140000
+SUMMARY:🕌 Bugis + Haji Lane + Arab Street
+DESCRIPTION:Shuttle/bus → Stevens MRT → Bugis.\nLunch ~12:00.\n14:00 Grab → Gardens by the Bay (không kéo Chilux bộ dài).
+LOCATION:Bugis Street / Haji Lane
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sg-day3-gardens@familytrip
+DTSTAMP:20260821T063000Z
+DTSTART;TZID=Asia/Singapore:20260830T143000
+DTEND;TZID=Asia/Singapore:20260830T180000
+SUMMARY:🌿 Gardens – Cloud Forest + Flower Dome + Supertree
+DESCRIPTION:Cloud Forest #1 (có Jurassic World Experience 2026).\nBé chưa đủ 3 → FREE.\nNếu có JCB: bundle FD+CF+Observatory S$60/adult.\nDinner tại Gardens ~18:00 (Shake Shack / Hopscotch).
+LOCATION:Gardens by the Bay
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sg-day3-rhapsody@familytrip
+DTSTAMP:20260821T063000Z
+DTSTART;TZID=Asia/Singapore:20260830T194500
+DTEND;TZID=Asia/Singapore:20260830T201500
+SUMMARY:⭐ Garden Rhapsody (free) rồi Grab về hotel
+DESCRIPTION:Show 19:45 – không chờ show 2.\n20:15 Grab → Novotel.
+LOCATION:Supertree Grove\, Gardens by the Bay
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sg-day4-oceanarium@familytrip
+DTSTAMP:20260821T063000Z
+DTSTART;TZID=Asia/Singapore:20260831T083000
+DTEND;TZID=Asia/Singapore:20260831T123000
+SUMMARY:🐠 Singapore Oceanarium (Grab → Sentosa/RWS)
+DESCRIPTION:Grab từ Novotel ~08:30.\nBé under 4 FREE.\nStroller OK.\nKHÔNG mua Dolphin / Pier Adventure.\nLunch PUTIEN hoặc Chatterbox ~12:30.
+LOCATION:Singapore Oceanarium\, Resorts World Sentosa
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sg-day4-beach@familytrip
+DTSTAMP:20260821T063000Z
+DTSTART;TZID=Asia/Singapore:20260831T143000
+DTEND;TZID=Asia/Singapore:20260831T163000
+SUMMARY:🏖️ Sentosa light walk – Palawan Beach
+DESCRIPTION:13:30–14:30 REST trước.\nKhông thêm vé trả tiền.\nBé mệt → về luôn.\n16:30 Grab → Novotel → pool.
+LOCATION:Palawan Beach\, Sentosa
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sg-day5-checkout@familytrip
+DTSTAMP:20260821T063000Z
+DTSTART;TZID=Asia/Singapore:20260901T070000
+DTEND;TZID=Asia/Singapore:20260901T100000
+SUMMARY:🏨 Breakfast + pool nhẹ + checkout
+DESCRIPTION:Checkout 10:00.\n10:15 Grab → Changi T1.
+LOCATION:Novotel Singapore on Stevens
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sg-day5-changi@familytrip
+DTSTAMP:20260821T063000Z
+DTSTART;TZID=Asia/Singapore:20260901T104500
+DTEND;TZID=Asia/Singapore:20260901T132500
+SUMMARY:✈️ Changi T1 – Scoot check-in → SIN→SGN 13:25
+DESCRIPTION:Có mặt ~10:45–11:00.\nQuầy đóng 12:25.\nĐi infant → check-in quầy.\nLanding SGN T2 ~14:40.
+LOCATION:Changi Airport Terminal 1
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
