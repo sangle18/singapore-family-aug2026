@@ -260,12 +260,90 @@
     return window.matchMedia("(max-width: 860px)").matches;
   }
 
+  function clearSheetPin() {
+    [els.detailPanel, els.detailBackdrop].forEach((el) => {
+      if (!el) return;
+      el.style.top = "";
+      el.style.left = "";
+      el.style.right = "";
+      el.style.bottom = "";
+      el.style.width = "";
+      el.style.height = "";
+      el.style.maxHeight = "";
+    });
+  }
+
+  function parkDetailNodes() {
+    const split = document.querySelector(".layout-split");
+    const panel = document.querySelector(".filters-panel");
+    if (!els.detailPanel) return;
+    if (isMobileLayout()) {
+      if (els.detailBackdrop) document.body.appendChild(els.detailBackdrop);
+      document.body.appendChild(els.detailPanel);
+    } else if (split) {
+      split.appendChild(els.detailPanel);
+      if (els.detailBackdrop && panel) panel.appendChild(els.detailBackdrop);
+      clearSheetPin();
+    }
+  }
+
+  function pinSheetToView() {
+    if (!isMobileLayout() || !state.sheetOpen || !els.detailPanel) {
+      if (!isMobileLayout()) clearSheetPin();
+      return;
+    }
+    const vv = window.visualViewport;
+    if (!vv) {
+      els.detailPanel.style.bottom = "0px";
+      els.detailPanel.style.maxHeight = "78dvh";
+      return;
+    }
+    const fromBottom = Math.max(0, window.innerHeight - vv.offsetTop - vv.height);
+    els.detailPanel.style.left = `${vv.offsetLeft + 10}px`;
+    els.detailPanel.style.right = `${Math.max(10, window.innerWidth - vv.offsetLeft - vv.width + 10)}px`;
+    els.detailPanel.style.bottom = `${fromBottom}px`;
+    els.detailPanel.style.top = "auto";
+    els.detailPanel.style.maxHeight = `${Math.min(vv.height * 0.78, 580)}px`;
+    if (els.detailBackdrop) {
+      els.detailBackdrop.style.top = `${vv.offsetTop}px`;
+      els.detailBackdrop.style.left = `${vv.offsetLeft}px`;
+      els.detailBackdrop.style.width = `${vv.width}px`;
+      els.detailBackdrop.style.height = `${vv.height}px`;
+      els.detailBackdrop.style.right = "auto";
+      els.detailBackdrop.style.bottom = "auto";
+    }
+  }
+
+  function lockPageScroll(lock) {
+    if (lock) {
+      if (document.body.dataset.lockScroll === "1") return;
+      document.body.dataset.lockScroll = "1";
+      document.body.dataset.scrollY = String(window.scrollY);
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${document.body.dataset.scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.width = "100%";
+    } else if (document.body.dataset.lockScroll === "1") {
+      const y = Number(document.body.dataset.scrollY || 0);
+      delete document.body.dataset.lockScroll;
+      delete document.body.dataset.scrollY;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
+      window.scrollTo(0, y);
+    }
+  }
+
   function closeDetailSheet() {
     state.sheetOpen = false;
     syncDetailSheet();
   }
 
   function syncDetailSheet() {
+    parkDetailNodes();
     const open = isMobileLayout() && state.sheetOpen && !!state.selectedId;
     els.detailPanel.classList.toggle("is-open", open);
     els.detailPanel.setAttribute("aria-modal", open ? "true" : "false");
@@ -274,6 +352,8 @@
       els.detailBackdrop.classList.toggle("is-open", open);
     }
     document.body.classList.toggle("sheet-open", open);
+    lockPageScroll(open);
+    pinSheetToView();
   }
 
   function renderDetail() {
@@ -552,6 +632,10 @@
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && state.sheetOpen) closeDetailSheet();
     });
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener("resize", pinSheetToView);
+      window.visualViewport.addEventListener("scroll", pinSheetToView);
+    }
   }
 
   renderChips(els.dayFilter, data.days, "day", renderTimeline);
