@@ -23,6 +23,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -34,14 +36,25 @@ body {
   font-size: 16.5px;
   letter-spacing: 0.01em;
   min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
 }
 
 .ambient {
   position: fixed;
   inset: 0;
   z-index: -1;
+  overflow: hidden;
+  contain: paint;
   background:
     radial-gradient(900px 500px at 12% -10%, rgba(15, 122, 108, 0.28), transparent 60%),
     radial-gradient(700px 420px at 95% 8%, rgba(217, 119, 47, 0.18), transparent 55%),
@@ -74,6 +87,8 @@ a {
 
 .hero-banner {
   position: relative;
+  width: 100%;
+  max-width: 100%;
   aspect-ratio: 16 / 9;
   min-height: 0;
   border-radius: 28px;
@@ -89,8 +104,9 @@ a {
   inset: 0;
   width: 100%;
   height: 100%;
+  max-width: none;
   object-fit: cover;
-  object-position: center center;
+  object-position: center 42%;
   filter: none;
   image-rendering: auto;
   opacity: 0.7;
@@ -434,7 +450,7 @@ main {
 
 .field {
   display: grid;
-  min-width: 160px;
+  min-width: 0;
 }
 
 .field.grow {
@@ -692,6 +708,14 @@ main {
   min-height: 240px;
 }
 
+.detail-close {
+  display: none;
+}
+
+.detail-backdrop {
+  display: none;
+}
+
 .detail.completed {
   background: #e7f6ee;
   border-color: rgba(15, 122, 108, 0.28);
@@ -754,7 +778,7 @@ main {
 
 .ticket-list li {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   gap: 0.75rem;
   align-items: start;
   background: #fff;
@@ -790,7 +814,7 @@ main {
 .budget-grid {
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
   gap: 0.7rem;
 }
 
@@ -870,7 +894,7 @@ main {
 
 .food-cluster-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 0.75rem;
 }
 
@@ -987,21 +1011,23 @@ main {
 @media (max-width: 860px) {
   .hero {
     min-height: auto;
-    padding-top: 1rem;
+    padding: 0.85rem 0.9rem 1.5rem;
   }
 
   .hero-banner {
-    aspect-ratio: 16 / 9;
-    min-height: 0;
+    aspect-ratio: 3 / 4;
+    min-height: 22rem;
     border-radius: 20px;
   }
 
   .hero-copy {
     padding: 1.4rem 1.1rem 1.2rem;
+    max-width: 100%;
   }
 
   .hero-copy h1 {
-    font-size: clamp(2.2rem, 11vw, 3.2rem);
+    font-size: clamp(1.85rem, 9vw, 2.6rem);
+    overflow-wrap: anywhere;
   }
 
   .hero-copy h1 .hero-with {
@@ -1010,16 +1036,77 @@ main {
     white-space: normal;
   }
 
+  .lede {
+    font-size: 0.98rem;
+  }
+
   .hero-meta {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .layout-split {
-    grid-template-columns: 1fr;
+    display: block;
+  }
+
+  .detail-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    background: rgba(12, 28, 24, 0.45);
+  }
+
+  .detail-backdrop.is-open {
+    display: block;
   }
 
   .detail {
-    position: static;
+    position: fixed;
+    left: 0.55rem;
+    right: 0.55rem;
+    bottom: 0.55rem;
+    top: auto;
+    z-index: 50;
+    min-height: 0;
+    max-height: min(78vh, 36rem);
+    overflow: auto;
+    border-radius: 22px;
+    box-shadow: 0 -16px 40px rgba(20, 48, 44, 0.22);
+    padding: 2.6rem 1.05rem calc(1.15rem + env(safe-area-inset-bottom));
+    transform: translateY(110%);
+    visibility: hidden;
+    transition: transform 0.28s ease, visibility 0.28s ease;
+  }
+
+  .detail.is-open {
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .detail-close {
+    display: inline-flex;
+    position: absolute;
+    top: 0.85rem;
+    right: 0.85rem;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 0.28rem 0.7rem;
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .detail-sticker {
+    float: none;
+    margin: 0 0 0.55rem;
+  }
+
+  body.sheet-open {
+    overflow: hidden;
   }
 
   .timeline {
@@ -1043,5 +1130,39 @@ main {
   .day-cluster-head {
     position: static;
     background: none;
+  }
+
+  main,
+  .site-footer {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  .panel {
+    padding: 1.15rem 0.95rem 1.3rem;
+  }
+
+  .ambient {
+    animation: none;
+  }
+
+  .site-footer p,
+  .site-footer code {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 480px) {
+  .ticket-list li {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .ticket-price {
+    grid-column: 2;
+    white-space: normal;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
   }
 }
