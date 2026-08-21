@@ -1,1 +1,182 @@
-test
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Lịch trình gia đình Singapore 28/8–1/9/2026 — Novotel Stevens, Zoo, Gardens, Oceanarium." />
+  <title>Singapore Family · 28/8–1/9/2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+
+  <header class="hero">
+    <nav class="topnav">
+      <a class="brand-mark" href="#top">SG · Family</a>
+      <div class="topnav-links">
+        <a href="#itinerary">Lịch trình</a>
+        <a href="#tickets">Vé trước</a>
+        <a href="#budget">Ngân sách</a>
+        <a href="#hotel">Khách sạn</a>
+      </div>
+    </nav>
+
+    <div class="hero-copy" id="top">
+      <p class="eyebrow">28/8 → 1/9/2026 · 2 adults + bé · Chilux</p>
+      <h1>Singapore<br /><span>Family</span></h1>
+      <p class="lede">Base tại Novotel Stevens. Mỗi ngày một điểm chính, nghỉ bắt buộc chiều, ưu tiên stroller và miễn phí cho bé chưa đủ 3 tuổi.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#itinerary">Xem lịch trình</a>
+        <a class="btn ghost" href="#tickets">Checklist mua vé</a>
+      </div>
+    </div>
+
+    <div class="hero-meta" aria-label="Thông tin nhanh">
+      <div>
+        <strong>4 đêm</strong>
+        <span>Novotel Stevens</span>
+      </div>
+      <div>
+        <strong>S$839</strong>
+        <span>Hotel đã trả</span>
+      </div>
+      <div>
+        <strong>~S$390</strong>
+        <span>Attractions (bé free)</span>
+      </div>
+      <div>
+        <strong>Scoot</strong>
+        <span>SGN T2 ↔ SIN T1</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel filters-panel" id="itinerary" aria-labelledby="itin-title">
+      <div class="section-head">
+        <h2 id="itin-title">Lịch trình có lọc</h2>
+        <p>Chọn ngày, loại hoạt động, hoặc tìm theo tên. Click từng mục để xem chi tiết.</p>
+      </div>
+
+      <div class="controls">
+        <div class="control-block">
+          <label for="dayFilter">Ngày</label>
+          <div class="chip-row" id="dayFilter" role="group" aria-label="Lọc theo ngày"></div>
+        </div>
+
+        <div class="control-block">
+          <label for="typeFilter">Loại</label>
+          <div class="chip-row" id="typeFilter" role="group" aria-label="Lọc theo loại"></div>
+        </div>
+
+        <div class="control-row">
+          <label class="field grow">
+            <span>Tìm</span>
+            <input id="searchInput" type="search" placeholder="Zoo, Grab, Cloud Forest, SIM…" autocomplete="off" />
+          </label>
+          <label class="field">
+            <span>Sắp xếp</span>
+            <select id="sortSelect">
+              <option value="time">Theo giờ</option>
+              <option value="day">Theo ngày</option>
+              <option value="price">Theo chi phí</option>
+            </select>
+          </label>
+          <label class="toggle">
+            <input type="checkbox" id="babyOnly" />
+            <span>Có baby facility</span>
+          </label>
+          <label class="toggle">
+            <input type="checkbox" id="prebookOnly" />
+            <span>Cần mua trước</span>
+          </label>
+        </div>
+      </div>
+
+      <p class="result-count" id="resultCount"></p>
+
+      <div class="layout-split">
+        <div class="timeline" id="timeline" aria-live="polite"></div>
+        <aside class="detail" id="detailPanel" aria-live="polite">
+          <p class="detail-empty">Chọn một mục bên trái để xem chi tiết, map và lưu ý cho bé.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="panel" id="tickets" aria-labelledby="ticket-title">
+      <div class="section-head">
+        <h2 id="ticket-title">Mua trước · Checklist</h2>
+        <p>Tick khi đã book. Trạng thái lưu trên trình duyệt của anh.</p>
+      </div>
+      <div class="ticket-toolbar">
+        <button type="button" class="btn ghost small" id="resetTickets">Reset checklist</button>
+        <p id="ticketProgress"></p>
+      </div>
+      <ul class="ticket-list" id="ticketList"></ul>
+    </section>
+
+    <section class="panel budget-panel" id="budget" aria-labelledby="budget-title">
+      <div class="section-head">
+        <h2 id="budget-title">Ngân sách</h2>
+        <p>Lọc theo nhóm chi phí. Bé free ở Zoo, River Wonders, Gardens, Oceanarium.</p>
+      </div>
+      <div class="chip-row" id="budgetFilter" role="group" aria-label="Lọc ngân sách"></div>
+      <div class="budget-grid" id="budgetGrid"></div>
+      <div class="budget-total" id="budgetTotal"></div>
+    </section>
+
+    <section class="panel" id="hotel" aria-labelledby="hotel-title">
+      <div class="section-head">
+        <h2 id="hotel-title">Base · Novotel Stevens</h2>
+        <p>28 Stevens Road · Shuttle miễn phí Orchard / Stevens MRT · Bus ngay cửa.</p>
+      </div>
+      <div class="info-grid">
+        <article>
+          <h3>Di chuyển</h3>
+          <ul>
+            <li>Shuttle ~30 phút → Wheelock Place &amp; Stevens MRT</li>
+            <li>Bus 105 / 132 / 190 / 972 tại bến 40209</li>
+            <li>Stevens MRT: Downtown + Thomson–East Coast</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Bay</h3>
+          <ul>
+            <li>28/8 Scoot SGN <strong>T2</strong> 09:15 → SIN ~12:20</li>
+            <li>1/9 Scoot SIN <strong>T1</strong> 13:25 → SGN ~14:40</li>
+            <li>Có mặt sân bay ≥120 phút · quầy đóng −60 phút</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Bé · chính sách</h3>
+          <ul>
+            <li>Sinh 20/9/2023 → chưa đủ 3 tuổi suốt chuyến</li>
+            <li>Zoo / River / Gardens: free &lt;3 · Oceanarium free &lt;4</li>
+            <li>Mang hộ chiếu bé để xác minh tuổi</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Quy tắc không mệt</h3>
+          <ul>
+            <li>Chilux: mang</li>
+            <li>Mỗi ngày 1 main attraction</li>
+            <li>15:30–18:00 = giờ nghỉ vàng</li>
+            <li>Mandai / Sentosa / Changi = Grab</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Singapore Family · Private trip board · Import lịch từ file <code>Singapore-Family-28Aug-1Sep2026.ics</code></p>
+    <p><a href="https://github.com/sangle18/singapore-family-aug2026">Repo GitHub</a></p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
