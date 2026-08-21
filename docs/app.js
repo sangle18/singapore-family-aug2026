@@ -10,6 +10,7 @@
     babyOnly: false,
     prebookOnly: false,
     selectedId: null,
+    sheetOpen: false,
     budgetGroup: "all",
     foodDay: "all"
   };
@@ -42,6 +43,7 @@
     resultCount: document.getElementById("resultCount"),
     timeline: document.getElementById("timeline"),
     detailPanel: document.getElementById("detailPanel"),
+    detailBackdrop: document.getElementById("detailBackdrop"),
     ticketList: document.getElementById("ticketList"),
     ticketProgress: document.getElementById("ticketProgress"),
     resetTickets: document.getElementById("resetTickets"),
@@ -211,8 +213,8 @@
     });
     row.querySelector(".item-body").addEventListener("click", () => {
       state.selectedId = item.id;
+      if (isMobileLayout()) state.sheetOpen = true;
       renderTimeline();
-      renderDetail();
     });
     return row;
   }
@@ -226,13 +228,15 @@
 
     if (!list.length) {
       els.timeline.innerHTML = `<p class="detail-empty">Không có mục nào. Thử bỏ bớt filter.</p>`;
+      renderDetail();
       return;
     }
 
     if (state.selectedId && !list.some((i) => i.id === state.selectedId)) {
-      state.selectedId = list[0].id;
+      state.selectedId = isMobileLayout() ? null : list[0].id;
+      if (!state.selectedId) state.sheetOpen = false;
     }
-    if (!state.selectedId) state.selectedId = list[0].id;
+    if (!state.selectedId && !isMobileLayout()) state.selectedId = list[0].id;
 
     groupByDay(list).forEach((group) => {
       const cluster = document.createElement("section");
@@ -252,17 +256,39 @@
     renderDetail();
   }
 
+  function isMobileLayout() {
+    return window.matchMedia("(max-width: 860px)").matches;
+  }
+
+  function closeDetailSheet() {
+    state.sheetOpen = false;
+    syncDetailSheet();
+  }
+
+  function syncDetailSheet() {
+    const open = isMobileLayout() && state.sheetOpen && !!state.selectedId;
+    els.detailPanel.classList.toggle("is-open", open);
+    els.detailPanel.setAttribute("aria-modal", open ? "true" : "false");
+    if (els.detailBackdrop) {
+      els.detailBackdrop.hidden = !open;
+      els.detailBackdrop.classList.toggle("is-open", open);
+    }
+    document.body.classList.toggle("sheet-open", open);
+  }
+
   function renderDetail() {
     const item = data.items.find((i) => i.id === state.selectedId);
     if (!item) {
-      els.detailPanel.classList.remove("completed");
+      els.detailPanel.classList.remove("completed", "is-open");
       els.detailPanel.innerHTML = `<p class="detail-empty">Chọn một mục bên trái để xem chi tiết.</p>`;
+      syncDetailSheet();
       return;
     }
     const meta = dayById(item.day);
     const done = isDone(item.id);
     els.detailPanel.classList.toggle("completed", done);
     els.detailPanel.innerHTML = `
+      <button type="button" class="detail-close" id="closeDetail" aria-label="Đóng chú thích">Đóng</button>
       <span class="sticker detail-sticker" aria-hidden="true">${meta.sticker || typeSticker[item.type] || "📍"}</span>
       ${meta.id && meta.id !== "all" ? `<p class="day-num tone-${meta.tone || ""}">Ngày ${meta.id}</p>` : ""}
       <h3>${item.title}</h3>
@@ -314,6 +340,9 @@
         }
       });
     }
+    const closeBtn = document.getElementById("closeDetail");
+    if (closeBtn) closeBtn.addEventListener("click", closeDetailSheet);
+    syncDetailSheet();
   }
 
   function recHtml(r, linkNames) {
@@ -517,6 +546,12 @@
       localStorage.removeItem(storageKey);
       renderTickets();
     });
+    if (els.detailBackdrop) {
+      els.detailBackdrop.addEventListener("click", closeDetailSheet);
+    }
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && state.sheetOpen) closeDetailSheet();
+    });
   }
 
   renderChips(els.dayFilter, data.days, "day", renderTimeline);
@@ -531,5 +566,6 @@
   window.addEventListener("resize", () => {
     window.clearTimeout(placeHeroStickers._t);
     placeHeroStickers._t = window.setTimeout(placeHeroStickers, 180);
+    syncDetailSheet();
   });
 })();
