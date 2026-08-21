@@ -23,7 +23,7 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -37,7 +37,7 @@ body {
   letter-spacing: 0.01em;
   min-height: 100vh;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -186,8 +186,8 @@ a {
 }
 
 @keyframes rise {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .topnav {
@@ -1052,7 +1052,7 @@ main {
     display: none;
     position: fixed;
     inset: 0;
-    z-index: 40;
+    z-index: 80;
     background: rgba(12, 28, 24, 0.45);
   }
 
@@ -1064,23 +1064,28 @@ main {
     position: fixed;
     left: 0.55rem;
     right: 0.55rem;
-    bottom: 0.55rem;
+    bottom: 0;
     top: auto;
-    z-index: 50;
+    z-index: 90;
     min-height: 0;
-    max-height: min(78vh, 36rem);
+    max-height: min(78dvh, 36rem);
     overflow: auto;
-    border-radius: 22px;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 22px 22px 0 0;
     box-shadow: 0 -16px 40px rgba(20, 48, 44, 0.22);
     padding: 2.6rem 1.05rem calc(1.15rem + env(safe-area-inset-bottom));
-    transform: translateY(110%);
     visibility: hidden;
-    transition: transform 0.28s ease, visibility 0.28s ease;
+    pointer-events: none;
   }
 
   .detail.is-open {
-    transform: translateY(0);
     visibility: visible;
+    pointer-events: auto;
+  }
+
+  body.sheet-open {
+    overflow: hidden;
+    touch-action: none;
   }
 
   .detail-close {
@@ -1103,10 +1108,6 @@ main {
   .detail-sticker {
     float: none;
     margin: 0 0 0.55rem;
-  }
-
-  body.sheet-open {
-    overflow: hidden;
   }
 
   .timeline {
