@@ -9,7 +9,8 @@
     babyOnly: false,
     prebookOnly: false,
     selectedId: null,
-    budgetGroup: "all"
+    budgetGroup: "all",
+    foodDay: "all"
   };
 
   const typeLabel = {
@@ -36,10 +37,13 @@
     resetTickets: document.getElementById("resetTickets"),
     budgetFilter: document.getElementById("budgetFilter"),
     budgetGrid: document.getElementById("budgetGrid"),
-    budgetTotal: document.getElementById("budgetTotal")
+    budgetTotal: document.getElementById("budgetTotal"),
+    foodDayFilter: document.getElementById("foodDayFilter"),
+    foodGrid: document.getElementById("foodGrid")
   };
 
-  function renderChips(container, items, key) {
+  function renderChips(container, items, key, onChange) {
+    if (!container) return;
     container.innerHTML = "";
     items.forEach((item) => {
       const btn = document.createElement("button");
@@ -48,9 +52,8 @@
       btn.textContent = item.label;
       btn.addEventListener("click", () => {
         state[key] = item.id;
-        renderChips(container, items, key);
-        if (key === "budgetGroup") renderBudget();
-        else renderTimeline();
+        renderChips(container, items, key, onChange);
+        onChange();
       });
       container.appendChild(btn);
     });
@@ -64,7 +67,7 @@
       if (state.babyOnly && !item.baby) return false;
       if (state.prebookOnly && !item.prebook) return false;
       if (q) {
-        const hay = `${item.title} ${item.place} ${item.notes.join(" ")}`.toLowerCase();
+        const hay = `${item.title} ${item.place} ${(item.notes || []).join(" ")} ${item.eat || ""}`.toLowerCase();
         if (!hay.includes(q)) return false;
       }
       return true;
@@ -111,6 +114,7 @@
           <span class="tag ${item.type}">${typeLabel[item.type] || item.type}</span>
           ${item.baby ? `<span class="tag">Baby facility</span>` : ""}
           ${item.prebook ? `<span class="tag">Mua trước</span>` : ""}
+          ${item.maps ? `<span class="tag">Maps</span>` : ""}
           ${item.price > 0 ? `<span class="tag">~S$${item.price}</span>` : `<span class="tag">Free / incl.</span>`}
         </div>
       `;
@@ -139,16 +143,27 @@
         ${item.baby ? `<span class="tag">Baby facility</span>` : ""}
         ${item.prebook ? `<span class="tag">Cần mua trước</span>` : ""}
       </div>
-      <ul>${item.notes.map((n) => `<li>${n}</li>`).join("")}</ul>
+      ${item.eat ? `<p class="meta-line"><strong>Nên ăn:</strong> ${item.eat}</p>` : ""}
+      <ul>${(item.notes || []).map((n) => `<li>${n}</li>`).join("")}</ul>
       <div class="detail-actions">
-        ${item.link ? `<a class="btn primary small" href="${item.link}" target="_blank" rel="noopener">Mở trang chính thức</a>` : ""}
+        ${item.maps ? `<a class="btn primary small" href="${item.maps}" target="_blank" rel="noopener">Google Maps</a>` : ""}
+        ${item.link ? `<a class="btn ghost small" href="${item.link}" target="_blank" rel="noopener">Trang chính thức</a>` : ""}
         <button type="button" class="btn ghost small" id="copyItem">Copy ghi chú</button>
       </div>
     `;
     const copyBtn = document.getElementById("copyItem");
     if (copyBtn) {
       copyBtn.addEventListener("click", async () => {
-        const text = `${item.title}\nNgày ${item.day} ${item.time}-${item.end || ""}\n${item.place}\n- ${item.notes.join("\n- ")}`;
+        const text = [
+          item.title,
+          `Ngày ${item.day} ${item.time}-${item.end || ""}`,
+          item.place,
+          item.eat ? `Nên ăn: ${item.eat}` : "",
+          ...(item.notes || []).map((n) => `- ${n}`),
+          item.maps || ""
+        ]
+          .filter(Boolean)
+          .join("\n");
         try {
           await navigator.clipboard.writeText(text);
           copyBtn.textContent = "Đã copy";
@@ -158,6 +173,27 @@
         }
       });
     }
+  }
+
+  function renderFood() {
+    if (!els.foodGrid) return;
+    const list = data.foods.filter((f) => state.foodDay === "all" || f.day === state.foodDay);
+    els.foodGrid.innerHTML = list
+      .map(
+        (f) => `
+      <article class="food-card">
+        <div class="meal">Ngày ${f.day} · ${f.meal}</div>
+        <h3>${f.title}</h3>
+        <p class="place-line">${f.place}</p>
+        <ul>${f.recommend.map((r) => `<li>${r}</li>`).join("")}</ul>
+        ${f.avoid ? `<p class="avoid">Lưu ý: ${f.avoid}</p>` : ""}
+        <div class="food-actions">
+          <a class="btn primary small" href="${f.maps}" target="_blank" rel="noopener">Google Maps</a>
+          <span class="price">${f.price}</span>
+        </div>
+      </article>`
+      )
+      .join("");
   }
 
   function loadTicketState() {
@@ -207,7 +243,7 @@
       { id: "tickets", label: "Vé / SIM" },
       { id: "daily", label: "Chi tiêu ngày" }
     ];
-    renderChips(els.budgetFilter, groups, "budgetGroup");
+    renderChips(els.budgetFilter, groups, "budgetGroup", renderBudget);
 
     const list = data.budget.filter(
       (b) => state.budgetGroup === "all" || b.group === state.budgetGroup
@@ -254,10 +290,12 @@
     });
   }
 
-  renderChips(els.dayFilter, data.days, "day");
-  renderChips(els.typeFilter, data.types, "type");
+  renderChips(els.dayFilter, data.days, "day", renderTimeline);
+  renderChips(els.typeFilter, data.types, "type", renderTimeline);
+  renderChips(els.foodDayFilter, data.days, "foodDay", renderFood);
   bind();
   renderTimeline();
+  renderFood();
   renderTickets();
   renderBudget();
 })();
