@@ -23,7 +23,7 @@
 | 09:15 | Bay SGN → SIN |
 | 12:20 | Landing Changi |
 | 12:20–13:30 | Immigration + luggage + **mua SIM** (nếu chưa eSIM) |
-| 13:30–15:30 | **Jewel** – Rain Vortex, lunch, baby room B2–L4 |
+| 13:30–15:30 | **Jewel** – Rain Vortex, lunch **Yun Nans #02-217**, baby room B2–L4 |
 | 15:30–16:10 | Grab → Novotel (~25–40 phút, chiều Thứ Sáu dễ kẹt) |
 | 16:00–18:30 | Check-in + bé nghỉ |
 | 18:30–20:00 | Dinner (Novotel / GRUB Stevens) |
