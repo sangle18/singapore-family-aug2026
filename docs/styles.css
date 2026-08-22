@@ -185,6 +185,12 @@ a {
   line-height: 1;
 }
 
+.chip-date {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  opacity: 0.88;
+}
+
 @keyframes rise {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -693,10 +699,12 @@ main {
   color: var(--accent);
 }
 
+.tag.flight { background: rgba(47, 107, 176, 0.14); color: #255a96; }
+.tag.attraction { background: rgba(15, 122, 108, 0.14); color: #0b6b5e; }
 .tag.food { background: rgba(217, 119, 47, 0.12); color: #a85a18; }
 .tag.transport { background: rgba(30, 90, 120, 0.12); color: #1e5a78; }
 .tag.rest { background: rgba(90, 90, 120, 0.1); color: #4a4a66; }
-.tag.hotel { background: rgba(20, 48, 44, 0.08); color: var(--ink); }
+.tag.hotel { background: rgba(20, 48, 44, 0.08); color: #3a4a46; }
 
 .detail {
   position: sticky;
@@ -787,8 +795,32 @@ main {
   padding: 0.85rem 0.95rem;
 }
 
-.ticket-list li.done {
-  opacity: 0.62;
+.ticket-list li.optional {
+  border-style: dashed;
+}
+
+.ticket-skip {
+  margin-top: 1rem;
+  padding: 0.95rem 1.05rem 1.05rem;
+  background: rgba(217, 119, 47, 0.08);
+  border: 1px solid rgba(217, 119, 47, 0.22);
+  border-radius: 14px;
+}
+
+.ticket-skip h3 {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.ticket-skip ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--ink-soft);
+}
+
+.ticket-skip li + li {
+  margin-top: 0.28rem;
 }
 
 .ticket-list label {
@@ -836,8 +868,55 @@ main {
   font-size: 1.4rem;
 }
 
-.budget-card small {
+.budget-card .vnd {
+  display: block;
+  margin-top: 0.12rem;
+  font-size: 0.88rem;
+  font-weight: 600;
   color: var(--ink-soft);
+}
+
+.fx-strip {
+  margin-top: 1rem;
+  padding: 0.95rem 1.05rem 1rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.fx-kicker,
+.fx-meta,
+.fx-examples {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+}
+
+.fx-kicker {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.fx-rate {
+  margin: 0.2rem 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  letter-spacing: -0.02em;
+}
+
+.fx-rate strong {
+  color: var(--accent);
+}
+
+.fx-examples {
+  font-size: 0.88rem;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.fx-meta {
+  margin-top: 0.35rem;
 }
 
 .budget-total {

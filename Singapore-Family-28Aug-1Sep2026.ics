@@ -88,40 +88,50 @@ BEGIN:VEVENT
 UID:sg-day3-morning@familytrip
 DTSTAMP:20260821T063000Z
 DTSTART;TZID=Asia/Singapore:20260830T083000
-DTEND;TZID=Asia/Singapore:20260830T103000
+DTEND;TZID=Asia/Singapore:20260830T094500
 SUMMARY:🏊 Novotel pool / Kids Room
-DESCRIPTION:Xả năng lượng trước khi đi Bugis + Gardens.
+DESCRIPTION:Xả năng lượng. 10:00 Grab → Gardens.\nBackup: TEL thẳng Stevens → Gardens by the Bay.
 LOCATION:Novotel Singapore on Stevens
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:sg-day3-bugis@familytrip
-DTSTAMP:20260821T063000Z
-DTSTART;TZID=Asia/Singapore:20260830T110000
-DTEND;TZID=Asia/Singapore:20260830T140000
-SUMMARY:🕌 Bugis + Haji Lane + Arab Street
-DESCRIPTION:Shuttle/bus → Stevens MRT → Bugis.\nLunch ~12:00.\n14:00 Grab → Gardens by the Bay (không kéo Chilux bộ dài).
-LOCATION:Bugis Street / Haji Lane
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:sg-day3-gardens@familytrip
 DTSTAMP:20260821T063000Z
-DTSTART;TZID=Asia/Singapore:20260830T143000
-DTEND;TZID=Asia/Singapore:20260830T180000
-SUMMARY:🌿 Gardens – Cloud Forest + Flower Dome + Supertree
-DESCRIPTION:Cloud Forest #1 (có Jurassic World Experience 2026).\nBé chưa đủ 3 → FREE.\nNếu có JCB: bundle FD+CF+Observatory S$60/adult.\nDinner tại Gardens ~18:00 (Shake Shack / Hopscotch).
+DTSTART;TZID=Asia/Singapore:20260830T101500
+DTEND;TZID=Asia/Singapore:20260830T130000
+SUMMARY:Cloud Forest + Flower Dome + Supertree
+DESCRIPTION:Cloud Forest trước (máy lạnh). Bé <3 FREE.\nSupertree Grove chụp ban ngày — không chờ Rhapsody.\n~12:15 Canopy rồi Grab về nghỉ.\nBackup: TEL Stevens → Gardens by the Bay (~19 phút).
 LOCATION:Gardens by the Bay
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:sg-day3-rhapsody@familytrip
+UID:sg-day3-rest@familytrip
 DTSTAMP:20260821T063000Z
-DTSTART;TZID=Asia/Singapore:20260830T194500
-DTEND;TZID=Asia/Singapore:20260830T201500
-SUMMARY:⭐ Garden Rhapsody (free) rồi Grab về hotel
-DESCRIPTION:Show 19:45 – không chờ show 2.\n20:15 Grab → Novotel.
-LOCATION:Supertree Grove\, Gardens by the Bay
+DTSTART;TZID=Asia/Singapore:20260830T133000
+DTEND;TZID=Asia/Singapore:20260830T161500
+SUMMARY:Nghỉ bắt buộc – Novotel
+DESCRIPTION:Bé ngủ điều hòa.\n16:20 Grab → Merlion Park.\nBackup: bus 190 từ 40209 → Hill St\, đi bộ ~10 phút.
+LOCATION:Novotel Singapore on Stevens
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sg-day3-merlion@familytrip
+DTSTAMP:20260821T063000Z
+DTSTART;TZID=Asia/Singapore:20260830T164500
+DTEND;TZID=Asia/Singapore:20260830T181500
+SUMMARY:Merlion Park – chụp hình
+DESCRIPTION:Tượng gốc, free, Chilux OK.\nÁnh sáng đẹp 17:30–19:00.
+LOCATION:Merlion Park
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:sg-day3-dinner@familytrip
+DTSTAMP:20260821T063000Z
+DTSTART;TZID=Asia/Singapore:20260830T183000
+DTEND;TZID=Asia/Singapore:20260830T200000
+SUMMARY:Dinner gần Merlion
+DESCRIPTION:Ưu tiên Super Loco Customs House (kids menu, mở 17:00 CN).\nHoặc Song Fa Raffles City / Lau Pa Sat satay.\n20:15 Grab về hotel.
+LOCATION:Super Loco Customs House
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
@@ -130,7 +140,7 @@ DTSTAMP:20260821T063000Z
 DTSTART;TZID=Asia/Singapore:20260831T083000
 DTEND;TZID=Asia/Singapore:20260831T123000
 SUMMARY:🐠 Singapore Oceanarium (Grab → Sentosa/RWS)
-DESCRIPTION:Grab từ Novotel ~08:30.\nBé under 4 FREE.\nStroller OK.\nKHÔNG mua Dolphin / Pier Adventure.\nLunch PUTIEN hoặc Chatterbox ~12:30.
+DESCRIPTION:Grab từ Novotel ~09:20.\nBé under 4 FREE.\nStroller OK.\nKHÔNG mua Dolphin / Pier Adventure.\nLunch PUTIEN hoặc Chatterbox ~12:30.\nBackup MRT: TEL → Outram Park đổi NE → HarbourFront.
 LOCATION:Singapore Oceanarium\, Resorts World Sentosa
 STATUS:CONFIRMED
 END:VEVENT
