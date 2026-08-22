@@ -65,17 +65,17 @@
         id: "f1-jewel",
         day: "1",
         meal: "Trưa",
-        title: "Jewel Changi — ăn nhẹ sau landing",
+        title: "Jewel Changi — ăn trưa sau landing",
         recommend: [
           {
-            name: "Shake Shack",
-            note: "Tầng 2, #02-256 — burger/fries, dễ cho bé. Mở 10:30–22:00.",
-            maps: maps("Shake Shack Jewel Changi Airport #02-256")
+            name: "Yun Nans",
+            note: "Tầng 2, #02-217 — sit-down Yunnan. Ưu tiên steam pot chicken soup + rice noodles; món nhẹ sau chuyến bay, hợp bé. Mở 10:00–22:00.",
+            maps: maps("Yun Nans Jewel Changi Airport #02-217")
           },
           {
-            name: "Din Tai Fung",
-            note: "Tầng 3, #03-214 — xiao long bao nếu muốn món nóng.",
-            maps: maps("Din Tai Fung Jewel Changi Airport #03-214")
+            name: "Shake Shack",
+            note: "Cùng tầng 2, #02-256 — chỉ nếu hàng Yun Nans dài hoặc bé cần ăn nhanh.",
+            maps: maps("Shake Shack Jewel Changi Airport #02-256")
           },
           {
             name: "FairPrice Finest",
@@ -83,10 +83,10 @@
             maps: maps("FairPrice Finest Jewel Changi Airport")
           }
         ],
-        avoid: "Đừng ăn quá no — tối còn dinner gần hotel. Shake Shack không ở tầng 1.",
+        avoid: "Đừng ăn quá no — tối còn dinner gần hotel.",
         place: "Jewel Changi Airport",
         maps: maps("Jewel Changi Airport Singapore"),
-        price: "S$25–45 / nhà"
+        price: "S$35–60 / nhà"
       },
       {
         id: "f1-dinner",
@@ -334,10 +334,10 @@
         notes: [
           "Không mua attraction trả tiền (Canopy Park)",
           "Baby Care Room B2–L4",
-          "Ăn trưa: Shake Shack tầng 2 (#02-256) hoặc Din Tai Fung tầng 3",
+          "Ăn trưa: Yun Nans tầng 2 (#02-217) — sit-down, soup gà. Hàng dài thì Shake Shack #02-256",
           "Nếu immigration chậm: chỉ Rain Vortex + lunch, rồi Grab về hotel"
         ],
-        eat: "Shake Shack #02-256 hoặc Din Tai Fung #03-214 — dễ cho bé",
+        eat: "Yun Nans #02-217 (ưu tiên) hoặc Shake Shack #02-256",
         link: "https://www.jewelchangiairport.com/",
         maps: maps("Jewel Changi Airport Singapore")
       },
