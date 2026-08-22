@@ -12,12 +12,13 @@
     selectedId: null,
     sheetOpen: false,
     budgetGroup: "all",
-    foodDay: "all"
+    foodDay: "all",
+    fx: { sgdVnd: 20490, at: null, source: "ước tính" }
   };
 
   const typeLabel = {
     flight: "Bay",
-    attraction: "Attraction",
+    attraction: "Tham quan",
     food: "Ăn uống",
     transport: "Di chuyển",
     rest: "Nghỉ",
@@ -45,11 +46,13 @@
     detailPanel: document.getElementById("detailPanel"),
     detailBackdrop: document.getElementById("detailBackdrop"),
     ticketList: document.getElementById("ticketList"),
+    ticketSkip: document.getElementById("ticketSkip"),
     ticketProgress: document.getElementById("ticketProgress"),
     resetTickets: document.getElementById("resetTickets"),
     budgetFilter: document.getElementById("budgetFilter"),
     budgetGrid: document.getElementById("budgetGrid"),
     budgetTotal: document.getElementById("budgetTotal"),
+    fxStrip: document.getElementById("fxStrip"),
     foodDayFilter: document.getElementById("foodDayFilter"),
     foodGrid: document.getElementById("foodGrid")
   };
@@ -119,9 +122,16 @@
         "chip" +
         (state[key] === item.id ? " active" : "") +
         (item.tone ? ` tone-${item.tone}` : "");
+      const caption =
+        item.date && item.id !== "all" ? `${item.label} · ${item.date}` : item.label;
+      btn.setAttribute("aria-label", caption);
+      const visual =
+        item.date && item.id !== "all"
+          ? `${item.label} <span class="chip-date">· ${item.date}</span>`
+          : item.label;
       btn.innerHTML = item.sticker
-        ? `<span class="chip-sticker" aria-hidden="true">${item.sticker}</span><span>${item.label}</span>`
-        : item.label;
+        ? `<span class="chip-sticker" aria-hidden="true">${item.sticker}</span><span>${visual}</span>`
+        : visual;
       btn.addEventListener("click", () => {
         state[key] = item.id;
         renderChips(container, items, key, onChange);
@@ -489,6 +499,7 @@
       if (map[t.id]) done += 1;
       const li = document.createElement("li");
       if (map[t.id]) li.classList.add("done");
+      if (t.optional) li.classList.add("optional");
       li.innerHTML = `
         <input type="checkbox" id="${t.id}" ${map[t.id] ? "checked" : ""} />
         <label for="${t.id}">
@@ -507,6 +518,86 @@
       els.ticketList.appendChild(li);
     });
     els.ticketProgress.textContent = `${done}/${data.tickets.length} đã xong`;
+    if (els.ticketSkip && data.ticketSkip) {
+      els.ticketSkip.innerHTML = `
+        <h3>Không mua</h3>
+        <ul>${data.ticketSkip.map((n) => `<li>${n}</li>`).join("")}</ul>
+      `;
+    }
+  }
+
+  function formatVnd(sgd) {
+    return "₫" + Math.round(sgd * state.fx.sgdVnd).toLocaleString("vi-VN");
+  }
+
+  function formatRate(n) {
+    return Math.round(Number(n) || 0).toLocaleString("vi-VN");
+  }
+
+  function formatFxWhen(at) {
+    if (!at) return "vừa lấy";
+    const d = new Date(at);
+    if (Number.isNaN(d.getTime())) return String(at);
+    return d.toLocaleString("vi-VN", { dateStyle: "short", timeStyle: "short" });
+  }
+
+  function readCachedFx() {
+    try {
+      const raw = JSON.parse(localStorage.getItem("sg-family-fx-v1") || "null");
+      if (!raw || !raw.sgdVnd || !raw.savedAt) return null;
+      if (Date.now() - raw.savedAt > 6 * 60 * 60 * 1000) return null;
+      return raw;
+    } catch {
+      return null;
+    }
+  }
+
+  async function fetchJson(url) {
+    const ctrl = new AbortController();
+    const t = window.setTimeout(() => ctrl.abort(), 7000);
+    try {
+      const res = await fetch(url, { signal: ctrl.signal });
+      if (!res.ok) throw new Error("fx http");
+      return await res.json();
+    } finally {
+      window.clearTimeout(t);
+    }
+  }
+
+  async function loadFx() {
+    const cached = readCachedFx();
+    if (cached) {
+      state.fx = { sgdVnd: cached.sgdVnd, at: cached.at, source: cached.source };
+      renderBudget();
+    }
+
+    const apply = (sgdVnd, at, source) => {
+      if (!sgdVnd || sgdVnd < 1000) return false;
+      state.fx = { sgdVnd, at, source };
+      localStorage.setItem(
+        "sg-family-fx-v1",
+        JSON.stringify({ sgdVnd, at, source, savedAt: Date.now() })
+      );
+      renderBudget();
+      return true;
+    };
+
+    try {
+      const d = await fetchJson("https://open.er-api.com/v6/latest/SGD");
+      if (apply(d.rates && d.rates.VND, d.time_last_update_utc || "", "open.er-api.com")) return;
+    } catch {
+      /* thử nguồn phụ */
+    }
+    try {
+      const d = await fetchJson(
+        "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/sgd.min.json"
+      );
+      const n = d.sgd && d.sgd.vnd;
+      if (apply(n, d.date || "", "currency-api")) return;
+    } catch {
+      /* giữ cache hoặc ước tính */
+    }
+    if (!cached) renderBudget();
   }
 
   function renderBudget() {
@@ -527,6 +618,7 @@
       <article class="budget-card">
         <h3>${b.label}</h3>
         <p>S$${b.amount.toLocaleString("en-SG")}</p>
+        <span class="vnd">${formatVnd(b.amount)}</span>
         <small>${b.note}</small>
       </article>`
       )
@@ -535,9 +627,20 @@
     const sum = list.reduce((acc, b) => acc + b.amount, 0);
     const all = data.budget.reduce((acc, b) => acc + b.amount, 0);
     els.budgetTotal.innerHTML = `
-      <span>Đang lọc: <strong>S$${sum.toLocaleString("en-SG")}</strong></span>
-      <span>Tổng ước tính tại SG: <strong>S$${all.toLocaleString("en-SG")}</strong> ≈ ₫${Math.round(all * 20490).toLocaleString("vi-VN")}</span>
+      <span>Đang lọc: <strong>S$${sum.toLocaleString("en-SG")}</strong> · ${formatVnd(sum)}</span>
+      <span>Tổng ước tính tại SG: <strong>S$${all.toLocaleString("en-SG")}</strong> · ${formatVnd(all)}</span>
     `;
+
+    if (els.fxStrip) {
+      const when = formatFxWhen(state.fx.at);
+      const live = state.fx.source !== "ước tính";
+      els.fxStrip.innerHTML = `
+        <p class="fx-kicker">${live ? "Tỉ giá trực tiếp" : "Tỉ giá tạm"} · SGD → VND</p>
+        <p class="fx-rate">1 SGD = <strong>${formatRate(state.fx.sgdVnd)} ₫</strong></p>
+        <p class="fx-examples">10 SGD ≈ ${formatVnd(10)} · 50 SGD ≈ ${formatVnd(50)} · 100 SGD ≈ ${formatVnd(100)}</p>
+        <p class="fx-meta">Cập nhật: ${when}${live ? " · " + state.fx.source : " · dùng mức ước tính nếu mạng lỗi"}</p>
+      `;
+    }
   }
 
   function overlaps(a, b, pad) {
@@ -646,6 +749,7 @@
   renderFood();
   renderTickets();
   renderBudget();
+  loadFx();
   window.requestAnimationFrame(placeHeroStickers);
   window.addEventListener("resize", () => {
     window.clearTimeout(placeHeroStickers._t);

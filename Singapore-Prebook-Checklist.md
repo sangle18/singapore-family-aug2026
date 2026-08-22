@@ -1,102 +1,86 @@
 # ✅ Cần mua / làm TRƯỚC khi bay
-**Chuyến:** 28/8 → 1/9/2026 | Novotel Stevens | 2 adults + bé (<3 tuổi) + Chilux
+**Chuyến:** 28/8 → 1/9/2026 | Novotel Stevens | 2 adults + bé (sinh 20/9/2023, chưa đủ 3 tuổi) + Chilux
+
+Bé **free theo ngày sinh** (Zoo / River / Gardens dưới 3; Oceanarium dưới 4). Mang **hộ chiếu bé**. Không đo chiều cao khi vào cổng.
 
 ---
 
-## A. MUA ONLINE TRƯỚC (ưu tiên cao)
+## A. CHỐT MUA (chỉ vé người lớn)
 
-| # | Mục | Khi nào mua | Link / nơi | Ghi chú | ~Giá |
-|---|-----|-------------|------------|---------|------|
-| 1 | **Singapore Zoo** (2 adult) | Trước 27/8 | mandai.com | Bé <3 FREE — mang hộ chiếu bé. Ngày **29/8 (Sat)** | 2× S$49 ≈ **S$98** |
-| 2 | **River Wonders** (2 adult) | Cùng lúc Zoo | mandai.com | Có thể mua **Zoo + River combo** nếu rẻ hơn tách lẻ. Bé FREE | 2× S$45 ≈ **S$90** |
-| 3 | **Flower Dome + Cloud Forest** | Trước 29/8 | gardensbythebay.com.sg | Ngày **30/8**. Bé <3 FREE. Có JCB → xem bundle S$60/adult (FD+CF+Observatory) | 2× S$46 ≈ **S$92** (hoặc JCB) |
-| 4 | **Singapore Oceanarium** | Trước 30/8 | singaporeoceanarium.com hoặc Sentosa.com | Ngày **31/8**. Bé **under 4 FREE**. Stroller OK. **Không** mua Dolphin / Pier | 2× S$50–55 ≈ **S$100–110** |
-| 5 | **SIM / eSIM** | Trước bay hoặc ngay landing | Xem mục B bên dưới | Cần data cho Grab + maps | **S$12–30** |
+| # | Mục | Ngày | Gói | ~Giá |
+|---|-----|------|-----|------|
+| 1 | **Singapore Zoo + tram** | 29/8 | CoupleDeal 2 adults (Ketnoi) hoặc 2 adult Mandai | Ketnoi **₫1.442.000** / official ~S$98 |
+| 2 | **Flower Dome + Cloud Forest** | 30/8 sáng | 2 Domes, không kèm Chinatown. Bé free | Ketnoi **₫694k × 2 ≈ ₫1.388.000** / official ~S$92 |
+| 3 | **Singapore Oceanarium** | 31/8 | Combo **2 adults**. Bé &lt;4 free. Không Dolphin / Pier | Ketnoi **₫1.900.000** / official ~S$100–110 |
+| 4 | **SIM / eSIM** | Cả chuyến | 4 vé **Zoo+Gardens** trên Ketnoi → sim Singtel 100GB **tặng**. Không thì M1/Singtel ~S$12 tại Changi | **₫0 hoặc ~S$12** |
 
-### Không cần mua trước
-| Mục | Lý do |
-|-----|-------|
-| Jewel attractions | Ngày 1 chỉ xem free (Rain Vortex / Forest Valley) |
-| Garden Rhapsody | Free, không vé |
-| Sentosa beach walk | Free (chỉ phí vào đảo nếu có) |
-| Tourist pass MRT | Không cần — contactless + Grab linh hoạt hơn |
-| Universal / Cable Car / Night Safari | Không nằm trong lịch |
+Bảng giá Ketnoi: https://ketnoisingapore.com/bang-gia-ve-tham-quan-singapore
+
+**Tổng 3 vé chắc Zoo + Gardens + Oceanarium (không River, có sim tặng):** khoảng **₫4,73 triệu**.
 
 ---
 
-## B. SIM / eSIM (chốt 1 phương án)
+## B. TÙY
 
-### Em khuyên nhà anh (dễ nhất)
-
-**Option 1 — eSIM mua trước (tiện nhất)**  
-- Singtel / StarHub / M1 Tourist eSIM **online** trước khi bay  
-- Hoặc Airalo / Holafly nếu muốn kích hoạt ngay trên máy  
-- Cài QR **trước khi lên máy bay**, bật data khi landing Changi  
-
-**Option 2 — Mua tại Changi Arrival (đơn giản, không lo tương thích)**  
-- Quầy Singtel / StarHub / M1 hoặc máy bán SIM (mọi terminal)  
-- Mang **hộ chiếu** — bắt buộc đăng ký  
-- Gói phổ biến: **~S$12 / 100GB / 12–15 ngày** → dư cho 4 ngày  
-
-| Nhà mạng | Gợi ý gói | Giá tham khảo |
-|----------|-----------|---------------|
-| **M1** | Tourist SIM/eSIM 100GB / 15 ngày | ~S$12 |
-| **StarHub** | Tourist eSIM / physical | ~S$12–32 |
-| **Singtel** | hi!Tourist | ~S$12–30 |
-
-👉 **Với 4 ngày:** gói **S$12** là đủ.  
-👉 **Nên lấy 1 SIM chính** (điện thoại bố/mẹ dùng Grab) + điện thoại kia dùng WiFi hotel / hotspot.
-
-### Checklist SIM
-- [ ] Máy có hỗ trợ eSIM? (Settings → Cellular → Add eSIM)
-- [ ] Nếu không eSIM → mua **physical SIM** tại Changi Arrival
-- [ ] Mang hộ chiếu khi mua/đăng ký
-- [ ] Test data + **Grab** trước khi ra khỏi sân bay
+**River Wonders (gấu trúc)** — mua sau nếu bé còn vui hết Zoo. 2 adult, không thuyền. ~₫1.442.000 / ~S$90. Vé đại lý thường không hoàn.
 
 ---
 
-## C. LÀM / CHUẨN BỊ TRƯỚC (không phải vé)
+## C. KHÔNG MUA
 
-| # | Việc | Deadline |
-|---|------|----------|
-| 1 | Check booking Scoot + mang boarding pass / app | 27/8 |
-| 2 | Check Novotel confirmation (S$839.08) + giờ shuttle | 27/8 |
-| 3 | In / lưu vé QR: Zoo, River, Gardens, Oceanarium | Trước từng ngày |
-| 4 | Hộ chiếu cả 3 người (bé cần để free entry) | Luôn mang |
-| 5 | Chilux + túi bọc / cover gửi máy bay | 28/8 sáng |
-| 6 | Tải app: **Grab**, Scoot, Google Maps, (Mandai / Gardens nếu có) | Trước bay |
-| 7 | Thẻ thanh toán contactless (MRT/bus) hoặc dùng thẻ ngân hàng | — |
-| 8 | Nếu có **thẻ JCB** → dùng promo Gardens bundle | 30/8 |
+- Vé **trẻ em** / FamilyDeal (2 large + 1 child)
+- USS, Harry Potter, Wings of Time, cáp treo, SkyHelix
+- Zoo/River **+ Exploria**
+- Jewel Canopy / lưới / mê cung (Ngày 1 chỉ Rain Vortex free)
+- Dolphin, Pier Adventure, Night Safari, Bird Paradise, Tourist Pass MRT
 
 ---
 
-## D. Thứ tự mua đề xuất (đỡ quên)
+## D. ĐÃ XONG
+
+- Hotel Novotel Stevens (S$839.08)
+- Scoot khứ hồi
+
+---
+
+## E. SIM nếu không lấy quà Ketnoi
+
+- 1 SIM chính (Grab + maps). Máy kia WiFi hotel / hotspot
+- eSIM trước bay, hoặc physical SIM tại Changi Arrival (mang hộ chiếu)
+- Test data + Grab trước khi ra khỏi sân bay
+
+---
+
+## F. CHUẨN BỊ KHÁC
+
+| Việc | Deadline |
+|------|----------|
+| Check Scoot + Novotel | 27/8 |
+| Lưu QR vé đã mua | Trước từng ngày |
+| Hộ chiếu cả 3 | Luôn mang |
+| Chilux + túi bọc gửi máy bay | 28/8 sáng |
+| App: Grab, Scoot, Google Maps | Trước bay |
+| Thẻ contactless / thẻ ngân hàng | — |
+| Có thẻ JCB → hỏi giảm 2 Domes tại cổng (nếu không mua Ketnoi) | — |
+
+---
+
+## G. Thứ tự
 
 ```
 Hôm nay → tuần trước bay:
-  □ SIM/eSIM (hoặc chốt mua ở Changi)
-  □ Zoo + River Wonders (29/8)
-  □ Flower Dome + Cloud Forest (30/8)
-  □ Oceanarium (31/8)
+  □ Zoo CoupleDeal (29/8)
+  □ 2 Domes Gardens (30/8)
+  □ Oceanarium 2 adults (31/8)
+  □ SIM (tặng VUI Pass từ Zoo+Gardens, hoặc mua Changi)
 
-Ngày 28/8 lúc landing:
-  □ Kích hoạt SIM
-  □ Test Grab
-  □ Jewel (free) → hotel
+Sau Zoo 29/8, chỉ nếu bé còn sức:
+  □ River Wonders 2 adults
+
+Landing 28/8:
+  □ Kích hoạt SIM + test Grab
+  □ Jewel free → hotel
+
+Ngày 3:
+  □ Gardens sáng + Merlion chiều (free)
 ```
-
----
-
-## E. Tổng tiền cần “chốt trước” (ước tính)
-
-| Mục | SGD |
-|-----|-----|
-| Zoo + River | ~188 |
-| Gardens FD+CF | ~92 |
-| Oceanarium | ~100–110 |
-| SIM | ~12–30 |
-| **Tổng cần mua trước / sớm** | **~S$390–420** |
-
-≈ **₫8–8,6 triệu** (chưa gồm food/Grab tại chỗ).
-
-Hotel + Scoot: đã xử lý riêng.
