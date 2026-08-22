@@ -2,9 +2,9 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Lịch trình gia đình Singapore 28/8–1/9/2026 — Novotel Stevens, Zoo, Gardens, Oceanarium." />
-  <title>Singapore Family – cùng Lê Patê · 28/8–1/9/2026</title>
+  <title>Singapore Family · 28/8–1/9/2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Literata:opsz,wght@7..72,600;7..72,700&display=swap" rel="stylesheet" />
@@ -25,24 +25,13 @@
       </div>
     </nav>
 
-    <div class="hero-banner" id="top">
-      <img class="hero-photo" src="images/marina-bay.jpg" alt="Marina Bay Sands lúc chạng vạng — Singapore" width="1024" height="576" />
-      <div class="hero-banner-fade" aria-hidden="true"></div>
-      <div class="sticker-field" aria-hidden="true">
-        <span class="float-sticker s1">✈️</span>
-        <span class="float-sticker s2">🐼</span>
-        <span class="float-sticker s3">🌳</span>
-        <span class="float-sticker s4">🐠</span>
-        <span class="float-sticker s5">🍜</span>
-      </div>
-      <div class="hero-copy">
-        <p class="eyebrow">28/8 → 1/9/2026 · 2 adults + bé · Chilux</p>
-        <h1>Singapore<br /><span>Family</span> <span class="hero-with">– cùng Lê Patê</span></h1>
-        <p class="lede">Base tại Novotel Stevens. Mỗi ngày một điểm chính, nghỉ bắt buộc chiều, ưu tiên stroller và miễn phí cho bé chưa đủ 3 tuổi.</p>
-        <div class="hero-cta">
-          <a class="btn primary" href="#itinerary">Xem lịch trình</a>
-          <a class="btn ghost" href="#tickets">Checklist mua vé</a>
-        </div>
+    <div class="hero-copy" id="top">
+      <p class="eyebrow">28/8 → 1/9/2026 · 2 adults + bé · Chilux</p>
+      <h1>Singapore<br /><span>Family</span></h1>
+      <p class="lede">Base tại Novotel Stevens. Mỗi ngày một điểm chính, nghỉ bắt buộc chiều, ưu tiên stroller và miễn phí cho bé chưa đủ 3 tuổi.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#itinerary">Xem lịch trình</a>
+        <a class="btn ghost" href="#tickets">Checklist mua vé</a>
       </div>
     </div>
 
@@ -69,8 +58,8 @@
   <main>
     <section class="panel filters-panel" id="itinerary" aria-labelledby="itin-title">
       <div class="section-head">
-        <h2 id="itin-title">Lịch trình theo cụm</h2>
-        <p>Tick từng mục khi xong — dòng sẽ đổi màu. Trên điện thoại, chạm một mục để xem chú thích ngay.</p>
+        <h2 id="itin-title">Lịch trình có lọc</h2>
+        <p>Chọn ngày, loại hoạt động, hoặc tìm theo tên. Click từng mục để xem chi tiết.</p>
       </div>
 
       <div class="controls">
@@ -116,16 +105,19 @@
           <p class="detail-empty">Chọn một mục bên trái để xem chi tiết, map và lưu ý cho bé.</p>
         </aside>
       </div>
-      <div class="detail-backdrop" id="detailBackdrop" hidden></div>
     </section>
 
     <section class="panel" id="food" aria-labelledby="food-title">
       <div class="section-head">
         <h2 id="food-title">Nên ăn gì theo ngày</h2>
-        <p>Gợi ý đã rà Google Maps (địa chỉ, tầng, giờ mở). Mỗi chỗ có link riêng. Lọc theo cụm ngày bên dưới.</p>
+        <p>Gợi ý món dễ cho bé + link Google Maps. Lọc theo ngày bên dưới.</p>
       </div>
       <div class="chip-row" id="foodDayFilter" role="group" aria-label="Lọc món theo ngày"></div>
+      <h3 class="subsection-title">Gợi ý chính</h3>
       <div class="food-grid" id="foodGrid"></div>
+      <h3 class="subsection-title additional-heading">Additional options <span class="badge-additional">từ plan tham khảo</span></h3>
+      <p class="subsection-note">Không bắt buộc — chỉ dùng khi còn sức hoặc muốn đổi món.</p>
+      <div class="food-grid additional-grid" id="additionalGrid"></div>
     </section>
 
     <section class="panel" id="tickets" aria-labelledby="ticket-title">
