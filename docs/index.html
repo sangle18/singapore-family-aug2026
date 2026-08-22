@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Lịch trình gia đình Singapore 28/8–1/9/2026 — Novotel Stevens, Zoo, Gardens, Oceanarium." />
+  <meta name="description" content="Lịch trình gia đình Singapore 28/8–1/9/2026 — Novotel Stevens, Zoo, Gardens, Merlion, Oceanarium." />
   <title>Singapore Family – cùng Lê Patê · 28/8–1/9/2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -131,20 +131,22 @@
     <section class="panel" id="tickets" aria-labelledby="ticket-title">
       <div class="section-head">
         <h2 id="ticket-title">Mua trước · Checklist</h2>
-        <p>Tick khi đã book. Trạng thái lưu trên trình duyệt của anh.</p>
+        <p>Chỉ vé người lớn. Bé free theo ngày sinh — mang hộ chiếu. Tick khi đã book; trạng thái lưu trên trình duyệt.</p>
       </div>
       <div class="ticket-toolbar">
         <button type="button" class="btn ghost small" id="resetTickets">Reset checklist</button>
         <p id="ticketProgress"></p>
       </div>
       <ul class="ticket-list" id="ticketList"></ul>
+      <div class="ticket-skip" id="ticketSkip"></div>
     </section>
 
     <section class="panel budget-panel" id="budget" aria-labelledby="budget-title">
       <div class="section-head">
         <h2 id="budget-title">Ngân sách</h2>
-        <p>Lọc theo nhóm chi phí. Bé free ở Zoo, River Wonders, Gardens, Oceanarium.</p>
+        <p>Tỉ giá SGD → VND lấy trực tiếp. Bé free ở Zoo, River Wonders, Gardens, Oceanarium.</p>
       </div>
+      <div class="fx-strip" id="fxStrip" aria-live="polite">Đang lấy tỉ giá SGD → VND…</div>
       <div class="chip-row" id="budgetFilter" role="group" aria-label="Lọc ngân sách"></div>
       <div class="budget-grid" id="budgetGrid"></div>
       <div class="budget-total" id="budgetTotal"></div>
@@ -159,9 +161,10 @@
         <article>
           <h3>Di chuyển</h3>
           <ul>
-            <li>Shuttle ~30 phút → Wheelock Place &amp; Stevens MRT</li>
-            <li>Bus 105 / 132 / 190 / 972 tại bến 40209</li>
-            <li>Stevens MRT: Downtown + Thomson–East Coast</li>
+            <li>Shuttle 30 phút/chuyến (8:00–9:40) → Wheelock Place &amp; Stevens MRT</li>
+            <li>Bến <strong>40209</strong> ngay cửa: bus 105 / 132 / 190 / 972 (hướng Orchard)</li>
+            <li>Stevens MRT: Downtown + Thomson–East Coast (TEL thẳng Gardens)</li>
+            <li>Grab mặc định. MRT/bus chỉ dự phòng — chi tiết trong từng ngày</li>
           </ul>
         </article>
         <article>
@@ -187,6 +190,7 @@
             <li>Mỗi ngày 1 main attraction</li>
             <li>15:30–18:00 = giờ nghỉ vàng</li>
             <li>Mandai / Sentosa / Changi = Grab</li>
+            <li>MRT/bus = dự phòng (bé &lt;0,9m free, không cần thẻ)</li>
           </ul>
         </article>
       </div>
