@@ -29,17 +29,17 @@
 | 18:30–20:00 | Dinner (Novotel / GRUB Stevens) |
 | 20:30 | Ngủ |
 
-### DAY 2 — Thứ Bảy 29/8 | Zoo + River (tùy sức)
+### DAY 2 — Thứ Bảy 29/8 | Zoo + River Wonders
 | Giờ | Việc |
 |-----|------|
-| 07:30 | Breakfast hotel |
-| 08:15 | Grab → Mandai (Zoo mở 8:30) |
-| 08:45–12:00 | **Singapore Zoo** — orangutan, tram, KidzWorld. Gấu trúc **không** ở Zoo |
-| 12:00–13:00 | Lunch Ah Meng / KidzWorld Cafe |
-| 13:00–15:00 | **River Wonders chỉ nếu bé còn vui** — ưu tiên Giant Panda (máy lạnh). Mệt → về |
+| 07:30 | Breakfast |
+| 08:15 | Grab → Mandai |
+| 09:00–12:00 | **Singapore Zoo** (bé FREE <3) |
+| 12:00–13:00 | Lunch Ah Meng / KidzWorld Cafe *(additional: **Mama Panda Kitchen**)* |
+| 13:00–15:00 | **River Wonders** (nếu mệt → bỏ) |
 | 15:00 | Grab về hotel |
 | 15:30–18:00 | **MANDATORY REST** |
-| 18:30 | Dinner gần hotel → ngủ |
+| 18:30 | Dinner → ngủ |
 
 ### DAY 3 — Chủ Nhật 30/8 | Gardens → Merlion
 | Giờ | Việc |
@@ -56,11 +56,11 @@
 |-----|------|
 | 09:20 | Grab → RWS — Oceanarium **mở 10:00** |
 | 10:00–12:30 | **Singapore Oceanarium** (bé FREE <4, stroller OK) |
-| 12:30–13:30 | Lunch PUTIEN / Chatterbox |
+| 12:30–13:30 | Lunch PUTIEN / Chatterbox *(additional: **Good Old Days**)* |
 | 13:30–14:30 | REST máy lạnh tại RWS |
 | 14:30–16:30 | Palawan chỉ nếu bé còn vui (nắng gắt). Không thì WEAVE/kem rồi về hotel pool |
 | 16:30 | Grab → Novotel → pool |
-| 19:00 | Dinner gần hotel hoặc shuttle Orchard nếu muốn đổi món |
+| 19:00 | Dinner → ngủ |
 
 ### DAY 5 — Thứ Ba 1/9 | Hotel → Changi → SGN
 | Giờ | Việc |
@@ -114,6 +114,19 @@ Tap thẻ Visa/Mastercard contactless (hoặc Apple Pay). Bé **dưới 0,9 m** 
 | **Tổng** | **~1.720–1.860** |
 
 ≈ ₫35–38 triệu (1 SGD ≈ 20.490 VND), chưa gồm Scoot.
+
+---
+
+## Additional options (từ plan tham khảo — không bắt buộc)
+
+| Ngày | Loại | Gợi ý | Khi nào dùng |
+|------|------|-------|--------------|
+| 2 | 🍜 Ăn | **Mama Panda Kitchen** (Mandai) | Thay/bổ sung Ah Meng nếu đông hoặc bé thích theme gấu trúc |
+| 4 | 🍜 Ăn | **Good Old Days** (Sentosa) | Thay PUTIEN nếu muốn món SG đơn giản, bé mệt |
+| Sáng | 🍜 Ăn | **218 Coffee** (Kaya toast) | Breakfast kiểu SG — Grab gần Novotel |
+| 3 | 🍜 Ăn | **Lau Pa Sat** | Đã có trong dinner Ngày 3 — hawker, khó Chilux hơn Super Loco |
+
+Maps: xem trên page https://sangle18.github.io/singapore-family-aug2026/#food
 
 ---
 

@@ -125,6 +125,11 @@
             name: "KidzWorld Cafe",
             note: "Nhanh hơn nếu bé đói. Gần khu chơi. Thứ Bảy mở ~10:00–18:00.",
             maps: maps("KidzWorld Cafe Singapore Zoo")
+          },
+          {
+            name: "Mama Panda Kitchen",
+            note: "Additional — Mandai, theme gấu trúc. Chỉ nếu Ah Meng đông hoặc muốn đổi món trước/sau River.",
+            maps: maps("Mama Panda Kitchen River Wonders Mandai")
           }
         ],
         avoid: "Đừng chờ quá lâu nếu bé đói — chọn KidzWorld Cafe.",
@@ -223,6 +228,11 @@
             name: "Ocean Bites",
             note: "Trong Oceanarium — chỉ khi bé đói giữa chừng, ăn nhanh rồi ra WEAVE.",
             maps: maps("Singapore Oceanarium Resorts World Sentosa")
+          },
+          {
+            name: "Good Old Days",
+            note: "Additional — món SG đơn giản. Chỉ nếu PUTIEN/Chatterbox đông hoặc bé mệt, muốn ăn nhanh.",
+            maps: maps("Good Old Days Resorts World Sentosa")
           }
         ],
         avoid: "JUMBO/seafood lớn nếu bé không ăn được nhiều. Tránh xếp hàng quá lâu sau Oceanarium.",
