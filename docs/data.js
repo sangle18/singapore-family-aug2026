@@ -612,56 +612,43 @@ window.TRIP_DATA = {
   tickets: [
     {
       id: "t-zoo",
-      title: "CoupleDeal: Singapore Zoo + Tram",
-      meta: "29/8 · Ketnoi · tìm đúng tên này · 1 gói = 2 adults · bé FREE · không mua vé trẻ em",
-      price: "≈ ₫1.442.000",
-      url: "https://ketnoisingapore.com/bang-gia-ve-tham-quan-singapore",
-      search: "CoupleDeal: Singapore Zoo + Tram"
+      title: "Singapore Zoo (2 adults)",
+      meta: "29/8 · mandai.com · bé FREE",
+      price: "≈ S$98",
+      url: "https://www.mandai.com/en/tickets-and-passes/single-attractions/singapore-zoo.html"
     },
     {
       id: "t-river",
-      title: "River Wonders (Excluded Boat) ×2",
-      meta: "29/8 · Ketnoi · 2 vé người lớn · không gồm thuyền Amazon",
-      price: "≈ ₫1.442.000",
-      url: "https://ketnoisingapore.com/bang-gia-ve-tham-quan-singapore",
-      search: "River Wonders (Excluded Boat)"
+      title: "River Wonders (2 adults)",
+      meta: "29/8 · có thể mua combo với Zoo",
+      price: "≈ S$90",
+      url: "https://www.mandai.com/en/tickets-and-passes/single-attractions/river-wonders.html"
     },
     {
       id: "t-gardens",
-      title: "Gardens: Flower Dome & Cloud Forest ×2",
-      meta: "30/8 · Ketnoi · Jurassic World · không mua City 2in1 + Chinatown",
-      price: "≈ ₫1.388.000",
-      url: "https://ketnoisingapore.com/bang-gia-ve-tham-quan-singapore",
-      search: "Flower Dome & Cloud Forest: Jurassic World"
+      title: "Flower Dome + Cloud Forest",
+      meta: "30/8 · JCB bundle nếu có thẻ",
+      price: "≈ S$92",
+      url: "https://www.gardensbythebay.com.sg/"
     },
     {
       id: "t-ocean",
-      title: "Oceanarium - Combo 2 Adults",
-      meta: "31/8 · Ketnoi · 1 gói 2 adults · bé under 4 FREE · thường tặng Sentosa Express",
-      price: "≈ ₫1.900.000",
-      url: "https://ketnoisingapore.com/bang-gia-ve-tham-quan-singapore",
-      search: "Singapore Oceanarium - Combo 2 Adults"
+      title: "Singapore Oceanarium",
+      meta: "31/8 · bé under 4 FREE · stroller OK",
+      price: "≈ S$100–110",
+      url: "https://www.singaporeoceanarium.com/"
     },
     {
       id: "t-sim",
-      title: "SIM / eSIM (hoặc VUI Pass Sim)",
-      meta: "Mua 4 vé Ketnoi → hỏi VUI Pass Sim Singtel 100GB · hoặc mua tại Changi",
-      price: "₫0–166k / S$12–30",
-      url: "https://ketnoisingapore.com/bang-gia-ve-tham-quan-singapore",
-      search: "Singapore VUI Pass"
+      title: "SIM / eSIM tourist",
+      meta: "M1/StarHub/Singtel · ~100GB / 12–15 ngày",
+      price: "S$12–30",
+      url: "https://www.changiairport.com/en/at-changi/facilities-and-services-directory/changi-airport-sim-card-purchase-buy-sim-card-singapore.html"
     }
   ],
-  ticketAvoid: [
-    "Zoo + Exploria (Couple/Family) — Exploria không nằm lịch",
-    "FamilyDeal có vé trẻ em — bé free",
-    "Sentosa 3in1 / 5in1 / USS combo",
-    "Gardens City 2in1 + Chinatown Heritage",
-    "Floral Fantasy / Gardens Tour xe điện — không bắt buộc"
-  ],
-  ticketTotalNote: "4 vé chính ≈ ₫6,17 triệu (tiết kiệm ~₫1,6–1,8 triệu so với cửa chính)",
   budget: [
     { id: "hotel", label: "Hotel", amount: 839, note: "Đã trả", group: "fixed" },
-    { id: "attractions", label: "Attractions", amount: 301, note: "Ketnoi ~₫6,17tr (Zoo+River+Gardens+Ocean)", group: "tickets" },
+    { id: "attractions", label: "Attractions", amount: 390, note: "Zoo+River+Gardens+Ocean", group: "tickets" },
     { id: "food", label: "Food", amount: 285, note: "Ước tính mid", group: "daily" },
     { id: "grab", label: "Grab + Sentosa", amount: 150, note: "Transport chính", group: "daily" },
     { id: "mrt", label: "MRT / Bus", amount: 40, note: "Contactless", group: "daily" },
