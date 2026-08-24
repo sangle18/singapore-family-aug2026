@@ -613,42 +613,43 @@ window.TRIP_DATA = {
     {
       id: "t-zoo",
       title: "Singapore Zoo (2 adults)",
-      meta: "29/8 · mandai.com · bé FREE",
-      price: "≈ S$98",
+      meta: "29/8 · official mandai.com · bé FREE · Ketnoi CoupleDeal ≈ ₫1.442.000 (~S$70)",
+      price: "Official ≈ S$98",
       url: "https://www.mandai.com/en/tickets-and-passes/single-attractions/singapore-zoo.html"
     },
     {
       id: "t-river",
       title: "River Wonders (2 adults)",
-      meta: "29/8 · có thể mua combo với Zoo",
-      price: "≈ S$90",
+      meta: "29/8 · official · bé FREE · Ketnoi ×2 ≈ ₫1.442.000 (~S$70)",
+      price: "Official ≈ S$90",
       url: "https://www.mandai.com/en/tickets-and-passes/single-attractions/river-wonders.html"
     },
     {
       id: "t-gardens",
       title: "Flower Dome + Cloud Forest",
-      meta: "30/8 · JCB bundle nếu có thẻ",
-      price: "≈ S$92",
+      meta: "30/8 · official · bé FREE · Ketnoi ×2 ≈ ₫1.388.000 (~S$68)",
+      price: "Official ≈ S$92",
       url: "https://www.gardensbythebay.com.sg/"
     },
     {
       id: "t-ocean",
       title: "Singapore Oceanarium",
-      meta: "31/8 · bé under 4 FREE · stroller OK",
-      price: "≈ S$100–110",
+      meta: "31/8 · official · bé under 4 FREE · Ketnoi Combo 2A ≈ ₫1.900.000 (~S$93)",
+      price: "Official ≈ S$100–110",
       url: "https://www.singaporeoceanarium.com/"
     },
     {
       id: "t-sim",
       title: "SIM / eSIM tourist",
-      meta: "M1/StarHub/Singtel · ~100GB / 12–15 ngày",
+      meta: "Changi M1/StarHub/Singtel · hoặc hỏi VUI Pass khi mua đủ 4 vé Ketnoi",
       price: "S$12–30",
       url: "https://www.changiairport.com/en/at-changi/facilities-and-services-directory/changi-airport-sim-card-purchase-buy-sim-card-singapore.html"
     }
   ],
   budget: [
     { id: "hotel", label: "Hotel", amount: 839, note: "Đã trả", group: "fixed" },
-    { id: "attractions", label: "Attractions", amount: 390, note: "Zoo+River+Gardens+Ocean", group: "tickets" },
+    { id: "attractions", label: "Attractions (official)", amount: 390, note: "Cửa chính Zoo+River+Gardens+Ocean", group: "tickets" },
+    { id: "attractions-ketnoi", label: "Attractions (Ketnoi)", amount: 301, note: "≈ ₫6,17tr nếu mua 4 dòng trang Checklist Ketnoi", group: "tickets" },
     { id: "food", label: "Food", amount: 285, note: "Ước tính mid", group: "daily" },
     { id: "grab", label: "Grab + Sentosa", amount: 150, note: "Transport chính", group: "daily" },
     { id: "mrt", label: "MRT / Bus", amount: 40, note: "Contactless", group: "daily" },
