@@ -189,7 +189,7 @@ a {
 
 .hero-meta {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 0.75rem;
   padding: 1rem 0 0;
   border-top: 1px solid var(--line);
