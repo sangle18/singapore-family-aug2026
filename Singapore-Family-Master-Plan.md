@@ -26,7 +26,7 @@
 | 13:30–15:30 | **Jewel** – Rain Vortex, lunch **Yun Nans #02-217** (PUTIEN nếu hàng dài), baby room B2–L4 |
 | 15:30–16:10 | Grab → Novotel (~25–40 phút, chiều Thứ Sáu dễ kẹt) |
 | 16:00–18:30 | Check-in + bé nghỉ |
-| 18:30–20:00 | Dinner (Novotel / GRUB Stevens) |
+| 18:30–20:00 | Dinner: Novotel / GRUB. Tùy chọn **Wee Nam Kee** (United Square, Grab ~10 phút) nếu bé còn sức |
 | 20:30 | Ngủ |
 
 ### DAY 2 — Thứ Bảy 29/8 | Zoo + River Wonders
@@ -39,7 +39,7 @@
 | 13:00–15:00 | **River Wonders** (nếu mệt → bỏ) |
 | 15:00 | Grab về hotel |
 | 15:30–18:00 | **MANDATORY REST** |
-| 18:30 | Dinner → ngủ |
+| 18:30 | Dinner GRUB / hotel. Tùy chọn **Wee Nam Kee** nếu bé còn sức → ngủ |
 
 ### DAY 3 — Chủ Nhật 30/8 | Gardens → Merlion
 | Giờ | Việc |
@@ -60,7 +60,7 @@
 | 13:30–14:30 | REST máy lạnh tại RWS |
 | 14:30–16:30 | Palawan chỉ nếu bé còn vui (nắng gắt). Không thì WEAVE/kem rồi về hotel pool |
 | 16:30 | Grab → Novotel → pool |
-| 19:00 | Dinner sit-down gần hotel (GRUB / Food Exchange). Orchard: Paradise Dynasty |
+| 19:00 | Dinner: GRUB / **Wee Nam Kee** (Thomson). Orchard: Paradise Dynasty. Về trước 20:00 |
 
 ### DAY 5 — Thứ Ba 1/9 | Hotel → Changi → SGN
 | Giờ | Việc |
@@ -123,6 +123,7 @@ Tap thẻ Visa/Mastercard contactless (hoặc Apple Pay). Bé nhà anh **trên 0
 
 | Ngày | Loại | Gợi ý | Khi nào dùng |
 |------|------|-------|--------------|
+| 1–2–4 | 🍜 Ăn | **Wee Nam Kee** (United Square) | Cơm gà sit-down gần hotel. Grab ~10 phút. Tối, về trước 20:00 |
 | 2 | 🍜 Ăn | **Mama Panda Kitchen** (Mandai) | Thay/bổ sung Ah Meng nếu đông hoặc bé thích theme gấu trúc |
 | 3 | 🍜 Ăn | **Heap Seng Leong** (Lavender) | Sáng kopitiam — kaya toast + Kopi Gu You. Bỏ pool. Đóng ~16:00. Tiền mặt |
 | 3 | 🍜 Ăn | **Hortus** (Flower Dome) | Trưa sit-down trong Dome — không Canopy burger |

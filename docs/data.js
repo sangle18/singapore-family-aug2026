@@ -103,6 +103,11 @@
             name: "Food Exchange",
             note: "Buffet trong Novotel, tầng 2. Bé mệt thì không cần ra ngoài.",
             maps: maps("Food Exchange Novotel Singapore on Stevens")
+          },
+          {
+            name: "Wee Nam Kee (United Square)",
+            note: "101 Thomson Road #01-08. Cơm gà sit-down, máy lạnh. Grab ~10 phút từ Novotel. Mở 11:00–21:00. Chỉ nếu bé còn sức sau chuyến bay — ăn ~18:30, về trước 20:00.",
+            maps: maps("Wee Nam Kee Chicken Rice United Square 101 Thomson Road")
           }
         ],
         avoid: "Không kéo bé đi Orchard tối ngày đầu. Soup Spoon không còn cửa hàng ở Stevens.",
@@ -147,6 +152,11 @@
             name: "Food Exchange",
             note: "Buffet tầng 2 Novotel. Tối Thứ Bảy hay đông vì LobsterMania.",
             maps: maps("Food Exchange Novotel Singapore on Stevens")
+          },
+          {
+            name: "Wee Nam Kee (United Square)",
+            note: "Cơm gà sit-down, Grab ~10 phút. Chỉ nếu bé còn sức sau Zoo — ưu tiên GRUB gần hotel. Đóng 21:00, về trước 20:00.",
+            maps: maps("Wee Nam Kee Chicken Rice United Square 101 Thomson Road")
           }
         ],
         avoid: "Không dinner phức tạp sau ngày Zoo.",
@@ -262,6 +272,11 @@
             name: "Food Exchange",
             note: "Buffet tầng 2 Novotel. Có thể mua snack cho sáng bay.",
             maps: maps("Food Exchange Novotel Singapore on Stevens")
+          },
+          {
+            name: "Wee Nam Kee (United Square)",
+            note: "Cơm gà sit-down, máy lạnh. Grab ~10 phút từ Novotel. Mở tới 21:00. Ăn ~18:30, về trước 20:00. Tối cuối — không kéo sang Orchard nếu bé mệt.",
+            maps: maps("Wee Nam Kee Chicken Rice United Square 101 Thomson Road")
           },
           {
             name: "Paradise Dynasty (ION / Wheelock)",
@@ -385,9 +400,10 @@
         notes: [
           "Đã trả S$839.08 / 4 đêm",
           "17:00–18:30 bé nghỉ",
-          "Dinner: GRUB #01-06 hoặc Food Exchange tầng 2"
+          "Dinner: GRUB #01-06 hoặc Food Exchange tầng 2",
+          "Tùy chọn Wee Nam Kee: cơm gà sit-down, United Square #01-08, Grab ~10 phút. Chỉ nếu bé còn sức — ăn ~18:30, về trước 20:00"
         ],
-        eat: "GRUB Stevens hoặc Food Exchange trong khách sạn",
+        eat: "GRUB / Food Exchange. Tùy chọn Wee Nam Kee (Thomson Rd)",
         link: "https://all.accor.com/hotel/9543/index.en.shtml",
         maps: maps("Novotel Singapore on Stevens 28 Stevens Road")
       },
@@ -463,8 +479,13 @@
         baby: true,
         prebook: false,
         place: "Hotel",
-        notes: ["Không đi Orchard", "Dinner ~18:30 gần hotel", "Ngủ sớm"],
-        eat: "Dinner nhẹ tại GRUB / Novotel",
+        notes: [
+          "Không đi Orchard",
+          "Dinner ~18:30 gần hotel. Ưu tiên GRUB / Food Exchange",
+          "Tùy chọn Wee Nam Kee (United Square, Grab ~10 phút) chỉ nếu bé còn sức sau Zoo",
+          "Ngủ sớm"
+        ],
+        eat: "GRUB / Novotel. Tùy chọn Wee Nam Kee cơm gà",
         link: "",
         maps: maps("Novotel Singapore on Stevens")
       },
@@ -649,9 +670,10 @@
         place: "Hotel",
         notes: [
           "Dinner 19:00 gần hotel · ngủ 20:00",
+          "Tùy chọn Wee Nam Kee: cơm gà sit-down, United Square, Grab ~10 phút, đóng 21:00",
           "Tùy chọn Orchard: shuttle + Paradise Dynasty sit-down (ION). Bus 105 / 132 / 190 / 972 từ 40209. Về trước 20:00"
         ],
-        eat: "Dinner nhẹ — tối cuối trước ngày bay",
+        eat: "GRUB / Wee Nam Kee / Paradise Dynasty — về trước 20:00",
         link: "",
         maps: maps("Novotel Singapore on Stevens")
       },
