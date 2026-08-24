@@ -235,7 +235,7 @@
         <input type="checkbox" id="${t.id}" ${map[t.id] ? "checked" : ""} />
         <label for="${t.id}">
           <strong>${t.title}</strong>
-          <span>${t.meta}${t.search ? ` · Ctrl+F: “${t.search}”` : ""}${t.url ? ` · <a href="${t.url}" target="_blank" rel="noopener">mua</a>` : ""}</span>
+          <span>${t.meta}${t.url ? ` · <a href="${t.url}" target="_blank" rel="noopener">mua</a>` : ""}</span>
         </label>
         <div class="ticket-price">${t.price}</div>
       `;
@@ -249,14 +249,6 @@
       els.ticketList.appendChild(li);
     });
     els.ticketProgress.textContent = `${done}/${data.tickets.length} đã xong`;
-    const totalEl = document.getElementById("ticketTotal");
-    if (totalEl && data.ticketTotalNote) {
-      totalEl.textContent = data.ticketTotalNote;
-    }
-    const avoidEl = document.getElementById("ticketAvoidList");
-    if (avoidEl && data.ticketAvoid) {
-      avoidEl.innerHTML = data.ticketAvoid.map((x) => `<li>${x}</li>`).join("");
-    }
   }
 
   function renderBudget() {
