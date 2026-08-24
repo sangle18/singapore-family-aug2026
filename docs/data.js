@@ -73,9 +73,9 @@
             maps: maps("Yun Nans Jewel Changi Airport #02-217")
           },
           {
-            name: "Shake Shack",
-            note: "Cùng tầng 2, #02-256 — chỉ nếu hàng Yun Nans dài hoặc bé cần ăn nhanh.",
-            maps: maps("Shake Shack Jewel Changi Airport #02-256")
+            name: "PUTIEN",
+            note: "Cùng tầng 2, #02-249 — sit-down món Phúc Kiến, dễ share. Lunch tới ~16:00. Chỉ nếu hàng Yun Nans dài.",
+            maps: maps("PUTIEN Jewel Changi Airport #02-249")
           },
           {
             name: "FairPrice Finest",
@@ -83,7 +83,7 @@
             maps: maps("FairPrice Finest Jewel Changi Airport")
           }
         ],
-        avoid: "Đừng ăn quá no — tối còn dinner gần hotel.",
+        avoid: "Đừng ăn quá no — tối còn dinner gần hotel. Không burger / Shake Shack.",
         place: "Jewel Changi Airport",
         maps: maps("Jewel Changi Airport Singapore"),
         price: "S$35–60 / nhà"
@@ -122,12 +122,12 @@
             maps: maps("Ah Meng Restaurant Singapore Zoo 80 Mandai Lake Road")
           },
           {
-            name: "KidzWorld Cafe",
-            note: "Nhanh hơn nếu bé đói. Gần khu chơi. Thứ Bảy mở ~10:00–18:00.",
-            maps: maps("KidzWorld Cafe Singapore Zoo")
+            name: "Mama Panda Kitchen",
+            note: "Sit-down khu Mandai, theme gấu trúc. Nếu sang River và Ah Meng đông — không phải quán nhanh.",
+            maps: maps("Mama Panda Kitchen River Wonders Mandai")
           }
         ],
-        avoid: "Đừng chờ quá lâu nếu bé đói — chọn KidzWorld Cafe.",
+        avoid: "Ưu tiên Ah Meng. KidzWorld Cafe chỉ khi đói gấp — cafeteria, không phải lựa chọn chính.",
         place: "Singapore Zoo",
         maps: maps("Ah Meng Restaurant Singapore Zoo 80 Mandai Lake Road"),
         price: "S$30–45 / nhà"
@@ -155,26 +155,43 @@
         price: "S$30–50 / nhà"
       },
       {
+        id: "f3-breakfast",
+        day: "3",
+        meal: "Sáng",
+        title: "Tùy chọn — Heap Seng Leong (Lavender)",
+        recommend: [
+          {
+            name: "Heap Seng Leong Coffeeshop",
+            note: "10 North Bridge Road #01-5109. Kopitiam từ 1974: kaya toast nướng than, trứng lòng đào, Kopi Gu You (cà phê bơ). Set ~S$4–5. Mở ~05:00, đóng ~16:00 — chỉ breakfast. Grab từ Novotel ~15–20 phút. Bỏ pool, ăn ~08:00–08:45 rồi Grab Gardens (~15 phút). Mang tiền mặt. Bé: toast + trứng; người lớn: Kopi Gu You.",
+            maps: maps("Heap Seng Leong Coffeeshop 10 North Bridge Road #01-5109")
+          }
+        ],
+        avoid: "Không đi Ngày 2 (Zoo ngược hướng) hay Ngày 5 (vali). Không dinner — đóng chiều. Quán quạt, không máy lạnh; Chilux gập nếu chật. Không kéo sang Bugis shopping.",
+        place: "Lavender / North Bridge Road",
+        maps: maps("Heap Seng Leong Coffeeshop 10 North Bridge Road #01-5109 Singapore"),
+        price: "S$12–20 / nhà"
+      },
+      {
         id: "f3-lunch",
         day: "3",
         meal: "Trưa",
-        title: "Gardens — The Canopy trước khi về nghỉ",
+        title: "Gardens — Hortus trong Flower Dome",
         recommend: [
           {
-            name: "Shake Shack Gardens",
-            note: "The Canopy, #03-02/03. Burger/fries, dễ bé. Ăn ~12:15 rồi Grab về hotel.",
-            maps: maps("Shake Shack Gardens by the Bay 18 Marina Gardens Drive")
+            name: "Hortus",
+            note: "Trong Flower Dome, #01-09. Sit-down Địa Trung Hải, máy lạnh, đã có vé Dome. CN bếp ~11:30. Ăn ~12:15, share món, ~45 phút rồi Grab về nghỉ.",
+            maps: maps("Hortus Flower Dome Gardens by the Bay")
           },
           {
-            name: "Snack / kem tại The Canopy",
-            note: "Nếu bé chưa đói nhiều — ăn nhẹ, bữa chính để tối Super Loco.",
-            maps: maps("The Canopy Gardens by the Bay Singapore")
+            name: "Ăn nhẹ rồi để tối Super Loco",
+            note: "Nếu bé chưa đói — snack trong Dome, bữa chính Super Loco sau Merlion. Không Shake Shack / McDonald's ở The Canopy.",
+            maps: maps("Flower Dome Gardens by the Bay Singapore")
           }
         ],
-        avoid: "Đừng ngồi nhà hàng lâu. 13:00 Grab về Novotel nghỉ — chiều còn Merlion.",
-        place: "Gardens by the Bay",
-        maps: maps("Shake Shack Gardens by the Bay 18 Marina Gardens Drive"),
-        price: "S$25–45 / nhà"
+        avoid: "Không burger ở The Canopy. Đừng ngồi quá lâu — 13:00 Grab về Novotel, chiều còn Merlion.",
+        place: "Flower Dome, Gardens by the Bay",
+        maps: maps("Hortus Flower Dome Gardens by the Bay"),
+        price: "S$45–80 / nhà"
       },
       {
         id: "f3-merlion",
@@ -220,12 +237,12 @@
             maps: maps("Chatterbox Cafe WEAVE Resorts World Sentosa #02-207")
           },
           {
-            name: "Ocean Bites",
-            note: "Trong Oceanarium — chỉ khi bé đói giữa chừng, ăn nhanh rồi ra WEAVE.",
-            maps: maps("Singapore Oceanarium Resorts World Sentosa")
+            name: "Good Old Days",
+            note: "Additional — món SG sit-down đơn giản. Chỉ nếu PUTIEN/Chatterbox đông hoặc bé mệt.",
+            maps: maps("Good Old Days Resorts World Sentosa")
           }
         ],
-        avoid: "JUMBO/seafood lớn nếu bé không ăn được nhiều. Tránh xếp hàng quá lâu sau Oceanarium.",
+        avoid: "JUMBO/seafood lớn nếu bé không ăn được nhiều. Tránh xếp hàng quá lâu. Ocean Bites chỉ snack khẩn, không tính là bữa.",
         place: "Resorts World Sentosa",
         maps: maps("PUTIEN 26 Sentosa Gateway #01-209 Resorts World Sentosa"),
         price: "S$40–70 / nhà"
@@ -247,9 +264,9 @@
             maps: maps("Food Exchange Novotel Singapore on Stevens")
           },
           {
-            name: "Orchard food court (shuttle)",
-            note: "Nếu bé đã nghỉ và muốn đổi món: shuttle hotel → Wheelock Place / ION, chọn 1 chỗ rồi về sớm.",
-            maps: maps("ION Orchard Singapore")
+            name: "Paradise Dynasty (ION / Wheelock)",
+            note: "Sit-down dumpling nếu shuttle sang Orchard. Máy lạnh, hợp gia đình. Về trước 20:00.",
+            maps: maps("Paradise Dynasty ION Orchard Singapore")
           }
         ],
         avoid: "Không ăn quá muộn — mai checkout sớm.",
@@ -264,14 +281,14 @@
         title: "Changi T1 — trước giờ bay 13:25",
         recommend: [
           {
-            name: "Ăn trong T1 sau check-in",
-            note: "Khoảng 12:00. Chọn món quen: noodles, rice, cafe. Nước + snack cabin cho bé.",
-            maps: maps("Changi Airport Terminal 1 food court Singapore")
+            name: "Crystal Jade La Mian Xiao Long Bao",
+            note: "T1 airside, mezzanine L3 gần Marhaba Lounge — sau immigration. Sit-down mì / xiao long bao. ~12:00 sau check-in.",
+            maps: maps("Crystal Jade La Mian Xiao Long Bao Changi Airport Terminal 1")
           }
         ],
-        avoid: "Đừng ra ngoài sân bay ăn rồi vào lại sát giờ.",
+        avoid: "Đừng ra ngoài sân bay ăn rồi vào lại sát giờ. Không burger / McDonald's.",
         place: "Changi Airport T1",
-        maps: maps("Changi Airport Terminal 1 Singapore"),
+        maps: maps("Crystal Jade La Mian Xiao Long Bao Changi Airport Terminal 1"),
         price: "S$25–40 / nhà"
       }
     ],
@@ -329,10 +346,10 @@
         notes: [
           "Không mua attraction trả tiền (Canopy Park)",
           "Baby Care Room B2–L4",
-          "Ăn trưa: Yun Nans tầng 2 (#02-217) — sit-down, soup gà. Hàng dài thì Shake Shack #02-256",
+          "Ăn trưa: Yun Nans tầng 2 (#02-217) — sit-down, soup gà. Hàng dài thì PUTIEN #02-249 (không Shake Shack)",
           "Nếu immigration chậm: chỉ Rain Vortex + lunch, rồi Grab về hotel"
         ],
-        eat: "Yun Nans #02-217 (ưu tiên) hoặc Shake Shack #02-256",
+        eat: "Yun Nans #02-217 (ưu tiên) hoặc PUTIEN #02-249",
         link: "https://www.jewelchangiairport.com/",
         maps: maps("Jewel Changi Airport Singapore")
       },
@@ -392,7 +409,7 @@
           "Nếu bỏ River: ở lại KidzWorld chơi thêm, về hotel ~14:00",
           "Sáng không MRT/bus: xe M2 Khatib chỉ từ 8:30, trễ cửa Zoo. Chiều về nếu hết Grab: bus 138 từ Zoo (48131) → Springleaf, TEL về Stevens — hoặc M2 → Khatib rồi MRT"
         ],
-        eat: "Trưa tại Ah Meng hoặc KidzWorld Cafe",
+        eat: "Trưa sit-down Ah Meng; Mama Panda nếu sang River",
         link: "https://www.mandai.com/en/singapore-zoo.html",
         maps: maps("Singapore Zoo Mandai Lake Road")
       },
@@ -401,7 +418,7 @@
         day: "2",
         time: "12:00",
         end: "13:00",
-        title: "Lunch Ah Meng / KidzWorld Cafe",
+        title: "Lunch Ah Meng (sit-down)",
         type: "food",
         price: 40,
         baby: true,
@@ -409,7 +426,7 @@
         place: "Trong Zoo",
         notes: [
           "Ah Meng: ngồi ổn + diaper facility, đối diện Tram Stop 1",
-          "KidzWorld Cafe: nhanh hơn nếu bé đói"
+          "Mama Panda nếu sang River. KidzWorld Cafe chỉ khi đói gấp"
         ],
         eat: "Cơm/noodles đơn giản + nước",
         link: "",
@@ -465,6 +482,7 @@
         notes: [
           "Chỉ 60–75 phút — 10:00 Grab sang Gardens",
           "Breakfast trong hotel trước khi ra",
+          "Tùy chọn Heap Seng Leong: bỏ pool, Grab ~08:00 (Lavender) → Gardens ~09:15. Chỉ sáng, đóng ~16:00",
           "Backup: shuttle/đi bộ Stevens MRT, TEL thẳng Gardens by the Bay"
         ],
         link: "",
@@ -488,9 +506,9 @@
           "Vào Cloud Forest trước (máy lạnh, Jurassic World nếu còn). Bé <3 FREE",
           "Flower Dome tiếp. Supertree Grove đi bộ chụp hình ban ngày — không chờ Rhapsody 19:45 (tối có Merlion)",
           "Children's Garden GBTB: bỏ nếu mệt",
-          "~12:15 ăn nhẹ The Canopy rồi 13:00 Grab về hotel"
+          "~12:15 Hortus trong Flower Dome (sit-down) rồi 13:00 Grab về hotel",
         ],
-        eat: "Shake Shack The Canopy #03-02/03",
+        eat: "Hortus trong Flower Dome — không Shake Shack Canopy",
         link: "https://www.gardensbythebay.com.sg/",
         maps: maps("Cloud Forest Gardens by the Bay Singapore")
       },
@@ -507,7 +525,7 @@
         place: "Hotel",
         notes: [
           "Nghỉ sau Gardens — chiều còn Merlion",
-          "Ăn trưa nhẹ nếu chưa ăn Canopy · bé ngủ/nằm điều hòa",
+          "Ăn trưa Hortus nếu chưa ăn · bé ngủ/nằm điều hòa",
           "16:20 Grab → Merlion Park (~20–25 phút từ Stevens) — ưu tiên",
           "Backup bus: 190 từ 40209 (cửa hotel) → Hill St Grand Park City Hall / High St Ctr, đi bộ ~10 phút tới tượng",
           "Backup MRT: DTL Stevens → Downtown, đi bộ tới Merlion"
@@ -576,7 +594,7 @@
           "Backup MRT: Stevens TEL → Outram Park đổi NE → HarbourFront, đi bộ/Sentosa Express vào RWS. Ra sớm hơn Grab ~20 phút. Bus 132 từ 40209 tới Bukit Merah, không vào HarbourFront",
           "Bé under 4 FREE · stroller OK · indoor mát",
           "2–3 giờ là đủ. Không mua Dolphin / Pier Adventure",
-          "Nếu bé đói sớm: Ocean Bites trong khu Oceanarium"
+          "Nếu bé đói sớm: Ocean Bites chỉ snack, bữa chính PUTIEN/Chatterbox",
         ],
         eat: "Trưa PUTIEN #01-209 hoặc Chatterbox Café #02-207 tại WEAVE",
         link: "https://www.singaporeoceanarium.com/",
@@ -631,7 +649,7 @@
         place: "Hotel",
         notes: [
           "Dinner 19:00 gần hotel · ngủ 20:00",
-          "Tùy chọn Orchard: shuttle hotel hoặc bus 105 / 132 / 190 / 972 từ 40209 → Scotts/Orchard. Về trước 20:00"
+          "Tùy chọn Orchard: shuttle + Paradise Dynasty sit-down (ION). Bus 105 / 132 / 190 / 972 từ 40209. Về trước 20:00"
         ],
         eat: "Dinner nhẹ — tối cuối trước ngày bay",
         link: "",
@@ -672,10 +690,10 @@
           "Có mặt ~10:45–11:00",
           "Quầy đóng 12:25",
           "Infant → check-in quầy",
-          "Lunch ~12:00 trong T1",
+          "Lunch ~12:00 T1 airside: Crystal Jade La Mian (L3), không fast food",
           "Landing SGN T2 ~14:40"
         ],
-        eat: "Ăn trong T1 sau check-in",
+        eat: "Crystal Jade T1 airside L3 sau immigration",
         link: "https://www.changiairport.com/",
         maps: maps("Changi Airport Terminal 1 Singapore")
       }

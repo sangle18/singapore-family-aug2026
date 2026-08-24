@@ -457,7 +457,7 @@
               const multi = f.recommend.length > 1;
               return `
             <article class="food-card">
-              <div class="meal"><span class="sticker-mini">${f.meal === "Tối" ? "🌙" : "☀️"}</span>${f.meal}</div>
+              <div class="meal"><span class="sticker-mini">${f.meal === "Tối" ? "🌙" : f.meal === "Sáng" ? "☕" : "☀️"}</span>${f.meal}</div>
               <h3>${f.title}</h3>
               <p class="place-line">${f.place}</p>
               <ul>${f.recommend.map((r) => recHtml(r, multi)).join("")}</ul>
