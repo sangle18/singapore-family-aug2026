@@ -88,7 +88,7 @@
 
 ## Grab mặc định · MRT / bus dự phòng
 
-Tap thẻ Visa/Mastercard contactless (hoặc Apple Pay). Bé **dưới 0,9 m** đi cùng người lớn đã tap → **free, không cần thẻ**. Bến hotel: **40209** Novotel Mercure @ Stevens (ngay cửa, hướng Orchard). Về hotel: **40201** Chelsea Gardens (đối diện). Shuttle hotel 30 phút/chuyến, 8:00–9:40 → Stevens MRT / Wheelock Place.
+Tap thẻ Visa/Mastercard contactless (hoặc Apple Pay). Bé nhà anh **trên 0,9 m** → MRT/bus phải **tap thẻ riêng** (giá người lớn nếu không có Child Concession). Sentosa Express cũng trả S$4 nếu đi tàu. Ngày 4 mặc định **Grab** (phí theo xe, bé không mua vé). Ketnoi tặng **2 vé Sentosa Express** cho 2 adults — cất QR dự phòng; bé mua thêm S$4 chỉ khi dùng tàu. Bến hotel: **40209** Novotel Mercure @ Stevens (ngay cửa, hướng Orchard). Về hotel: **40201** Chelsea Gardens (đối diện). Shuttle hotel 30 phút/chuyến, 8:00–9:40 → Stevens MRT / Wheelock Place.
 
 | Ngày | Mặc định | Dự phòng (nếu Grab surge / hết xe) |
 |------|----------|-------------------------------------|
@@ -98,7 +98,7 @@ Tap thẻ Visa/Mastercard contactless (hoặc Apple Pay). Bé **dưới 0,9 m** 
 | 3 Gardens | Grab 10:00 | **Tốt nhất:** TEL thẳng Stevens (TE11) → Gardens by the Bay (TE22), ~19 phút. Bus kém hơn: 105/132/190/972 → Orchard, rồi **106** → Bayfront Exit B/MBS |
 | 3 Merlion | Grab 16:20 | **Bus 190** từ 40209 → Hill St Grand Park City Hall / High St Ctr, đi bộ ~10 phút. Hoặc DTL Stevens → Downtown |
 | 3 dinner → hotel | Grab 20:15 | **190** chiều ngược xuống 40201 |
-| 4 Oceanarium | Grab 09:20 | TEL Stevens → Outram Park đổi NE → HarbourFront. **132** từ 40209 tới Bukit Merah, **không** vào HarbourFront |
+| 4 Oceanarium | Grab 09:20 | TEL Stevens → Outram Park đổi NE → HarbourFront + Sentosa Express. **2 vé Express tặng (2 adults)**; bé trên 0,9 m thêm S$4. **132** từ 40209 tới Bukit Merah, **không** vào HarbourFront |
 | 4 tối Orchard | Shuttle / gần hotel | **105 / 132 / 190 / 972** từ 40209 → Scotts/Orchard |
 | 5 hotel → T1 | Grab 10:15 | Không — vali. **36** từ Orchard tới T1 quá chậm |
 
@@ -136,6 +136,7 @@ Maps: xem trên page https://sangle18.github.io/singapore-family-aug2026/#food
 
 ## Baby notes
 - **Hộ chiếu bé** mang mọi ngày có vé free (Zoo / River / Oceanarium / Gardens)
+- Bé **trên 0,9 m**: MRT/bus/Sentosa Express trả phí; attraction vẫn free theo tuổi
 - Zoo nursing: Main Entrance, KidzWorld, Reptile Kingdom
 - Gardens nursing: Cloud Forest, Canopy, Children’s Garden…
 - Jewel baby room: B2–L4
