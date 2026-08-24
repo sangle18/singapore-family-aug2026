@@ -50,7 +50,7 @@ DTSTAMP:20260821T063000Z
 DTSTART;TZID=Asia/Singapore:20260828T160000
 DTEND;TZID=Asia/Singapore:20260828T203000
 SUMMARY:🏨 Check-in Novotel Stevens + nghỉ + dinner
-DESCRIPTION:28 Stevens Road.\nBooking: S$839.08 / 4 đêm.\n17:00–18:30 bé nghỉ.\nDinner: Novotel hoặc GRUB Stevens.\nNgủ sớm.
+DESCRIPTION:28 Stevens Road.\nBooking: S$839.08 / 4 đêm.\n17:00–18:30 bé nghỉ.\nDinner: Novotel hoặc GRUB. Tùy chọn Wee Nam Kee (United Square, Grab ~10 phút) nếu bé còn sức.\nNgủ sớm.
 LOCATION:Novotel Singapore on Stevens\, 28 Stevens Road
 STATUS:CONFIRMED
 END:VEVENT
@@ -80,7 +80,7 @@ DTSTAMP:20260821T063000Z
 DTSTART;TZID=Asia/Singapore:20260829T153000
 DTEND;TZID=Asia/Singapore:20260829T180000
 SUMMARY:😴 Mandatory rest – Novotel
-DESCRIPTION:Không đi Orchard.\nBé ngủ.\nDinner ~18:30.
+DESCRIPTION:Không đi Orchard.\nBé ngủ.\nDinner ~18:30 GRUB / hotel. Tùy chọn Wee Nam Kee nếu còn sức.
 LOCATION:Novotel Singapore on Stevens
 STATUS:CONFIRMED
 END:VEVENT
