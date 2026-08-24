@@ -591,7 +591,7 @@
         place: "Resorts World Sentosa",
         notes: [
           "Grab ~09:20 từ Novotel — Oceanarium mở 10:00 (đừng đi 8:30, sẽ đứng chờ)",
-          "Backup MRT: Stevens TEL → Outram Park đổi NE → HarbourFront, đi bộ/Sentosa Express vào RWS. Ra sớm hơn Grab ~20 phút. Bus 132 từ 40209 tới Bukit Merah, không vào HarbourFront",
+          "Backup MRT: Stevens TEL → Outram Park đổi NE → HarbourFront, đi bộ/Sentosa Express vào RWS. Ketnoi tặng 2 vé Express (2 adults). Bé trên 0,9 m mua thêm S$4. Grab thì không dùng tàu. Bus 132 từ 40209 tới Bukit Merah, không vào HarbourFront",
           "Bé under 4 FREE · stroller OK · indoor mát",
           "2–3 giờ là đủ. Không mua Dolphin / Pier Adventure",
           "Nếu bé đói sớm: Ocean Bites chỉ snack, bữa chính PUTIEN/Chatterbox",
@@ -709,21 +709,21 @@
       {
         id: "t-gardens",
         title: "Flower Dome + Cloud Forest (2 adults)",
-        meta: "Chốt · 30/8 sáng · 2 Domes · bé FREE · không kèm Chinatown",
+        meta: "Chốt · 30/8 sáng · GBTB = Gardens by the Bay · 2 Domes · bé FREE · Ketnoi giảm ₫98.000 / 2 vé",
         price: "₫694k × 2 ≈ ₫1.388.000 hoặc ~S$92",
         url: "https://ketnoisingapore.com/bang-gia-ve-tham-quan-singapore"
       },
       {
         id: "t-ocean",
         title: "Singapore Oceanarium (2 adults)",
-        meta: "Chốt · 31/8 · combo 2 adults · bé under 4 FREE · stroller OK · không Dolphin/Pier",
+        meta: "Chốt · 31/8 · combo 2 adults · bé under 4 FREE theo tuổi · tặng 2 vé Sentosa Express (2 adults). Bé trên 0,9 m: thêm S$4 chỉ nếu đi tàu, Grab thì không dùng",
         price: "₫1.900.000 hoặc ~S$100–110",
         url: "https://ketnoisingapore.com/bang-gia-ve-tham-quan-singapore"
       },
       {
         id: "t-sim",
         title: "SIM / eSIM tourist",
-        meta: "4 vé Zoo+Gardens trên Ketnoi → sim Singtel 100GB tặng. Không thì M1/Singtel ~S$12 tại Changi",
+        meta: "Gói 3 vé Ketnoi (Zoo+GBTB+Ocean) đang tặng 1 SIM. Không thì M1/Singtel ~S$12 tại Changi",
         price: "₫0 hoặc ~S$12",
         url: "https://www.changiairport.com/en/at-changi/facilities-and-services-directory/changi-airport-sim-card-purchase-buy-sim-card-singapore.html"
       },
@@ -737,7 +737,7 @@
       }
     ],
     ticketSkip: [
-      "Vé trẻ em / FamilyDeal (2 large + 1 child) — bé free theo ngày sinh, không đo chiều cao",
+      "Vé trẻ em / FamilyDeal — Zoo/Gardens/Ocean free theo ngày sinh. Bé trên 0,9 m chỉ trả MRT/Sentosa Express, không mua vé attraction trẻ em",
       "USS, Harry Potter, Wings of Time, cáp treo, SkyHelix",
       "Zoo/River + Exploria",
       "Jewel Canopy / lưới / mê cung — Ngày 1 chỉ Rain Vortex free",

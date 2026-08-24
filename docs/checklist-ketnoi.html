@@ -25,7 +25,7 @@
     <div class="hero-copy" style="padding-bottom:0">
       <p class="eyebrow">Trang con · giữ nguyên sticker / ghi chú trên trang chính</p>
       <h1 style="font-size:clamp(2.2rem,7vw,3.6rem)">Checklist<br /><span>Ketnoi</span></h1>
-      <p class="lede">Khớp giá với trang chính (1 SGD ≈ 20.490 VND). Chốt Zoo + Gardens + Ocean ≈ <strong>₫4,73 triệu (~S$231)</strong>; River tùy chọn thêm ≈ ₫1,44 triệu (~S$70).</p>
+      <p class="lede">Khớp giá với trang chính (1 SGD ≈ 20.490 VND). Chốt Zoo + GBTB + Ocean ≈ <strong>₫4,73 triệu (~S$231)</strong>; River tùy chọn thêm ≈ ₫1,44 triệu (~S$70). GBTB = Gardens by the Bay.</p>
       <div class="hero-cta">
         <a class="btn primary" href="https://ketnoisingapore.com/bang-gia-ve-tham-quan-singapore" target="_blank" rel="noopener">Mở bảng giá Ketnoi</a>
         <a class="btn ghost" href="index.html">Về trang chính</a>
@@ -39,7 +39,7 @@
         <h2>Vé chốt (match trang chính)</h2>
         <p>Ctrl+F đúng tên · <strong>2 Adults · 0 Child</strong>.</p>
       </div>
-      <p class="ticket-total">Zoo + Gardens + Ocean ≈ ₫4,73 triệu · có River ≈ ₫6,17 triệu (~S$301)</p>
+      <p class="ticket-total">Zoo + GBTB + Ocean ≈ ₫4,73 triệu · SIM tặng · 2 vé Sentosa Express (2 adults) · có River ≈ ₫6,17 triệu</p>
       <div class="ticket-toolbar">
         <button type="button" class="btn ghost small" id="resetKetnoi">Reset checklist</button>
         <p id="ketnoiProgress"></p>
@@ -52,7 +52,7 @@
         <h2>Đừng mua</h2>
       </div>
       <ul class="avoid-list">
-        <li>Vé trẻ em / FamilyDeal — bé free theo ngày sinh</li>
+        <li>Vé trẻ em / FamilyDeal — attraction free theo ngày sinh. Bé trên 0,9 m chỉ trả MRT/Sentosa Express</li>
         <li>USS, Harry Potter, Wings of Time, cáp treo, SkyHelix</li>
         <li>Zoo/River + Exploria</li>
         <li>Jewel Canopy / Dolphin / Pier Adventure</li>
@@ -62,10 +62,11 @@
     <section class="panel">
       <div class="section-head"><h2>Tin nhắn gửi Ketnoi</h2></div>
       <pre class="copy-box" id="copyBox">2 adults, không trẻ em trả phí.
-Ngày 29/8: Zoo CoupleDeal (+ River Wonders ×2 nếu còn sức)
-Ngày 30/8: Gardens Flower Dome + Cloud Forest ×2
+Ngày 29/8: Zoo CoupleDeal
+Ngày 30/8: GBTB (Gardens Flower Dome + Cloud Forest) ×2
 Ngày 31/8: Oceanarium Combo 2 Adults
-Không Exploria, không USS, không FamilyDeal trẻ em.</pre>
+Không River, không Exploria, không USS, không FamilyDeal trẻ em.
+Xác nhận: SIM tặng, giảm 98k GBTB, 2 vé Sentosa Express người lớn.</pre>
       <div class="hero-cta" style="margin-top:1rem">
         <button type="button" class="btn primary small" id="copyMsg">Copy tin nhắn</button>
       </div>
@@ -80,10 +81,10 @@ Không Exploria, không USS, không FamilyDeal trẻ em.</pre>
     const KEY = "sg-ketnoi-checklist-v1";
     const items = [
       { id: "k-zoo", title: "CoupleDeal: Singapore Zoo + Tram", meta: "29/8 · match trang chính ₫1.442.000 hoặc ~S$98", price: "₫1.442.000 · ~S$70", search: "CoupleDeal: Singapore Zoo + Tram" },
-      { id: "k-gardens", title: "Flower Dome & Cloud Forest ×2", meta: "30/8 · match trang chính ≈ ₫1.388.000 hoặc ~S$92", price: "₫1.388.000 · ~S$68", search: "Flower Dome & Cloud Forest: Jurassic World" },
-      { id: "k-ocean", title: "Oceanarium - Combo 2 Adults", meta: "31/8 · match trang chính ₫1.900.000 hoặc ~S$100–110", price: "₫1.900.000 · ~S$93", search: "Singapore Oceanarium - Combo 2 Adults" },
+      { id: "k-gardens", title: "GBTB: Flower Dome & Cloud Forest ×2", meta: "30/8 · Gardens by the Bay · Ketnoi giảm ₫98.000 / 2 vé", price: "₫1.388.000 · ~S$68", search: "Flower Dome & Cloud Forest: Jurassic World" },
+      { id: "k-ocean", title: "Oceanarium - Combo 2 Adults", meta: "31/8 · tặng 2 vé Sentosa Express (2 adults). Bé trên 0,9 m: thêm S$4 chỉ nếu đi tàu", price: "₫1.900.000 · ~S$93", search: "Singapore Oceanarium - Combo 2 Adults" },
       { id: "k-river", title: "River Wonders ×2 (tùy)", meta: "29/8 · optional trên board · mua nếu bé còn vui", price: "₫1.442.000 · ~S$70", search: "River Wonders (Excluded Boat)" },
-      { id: "k-sim", title: "VUI Pass Sim (optional)", meta: "4 vé Ketnoi → hỏi Sim Singtel 100GB", price: "₫0–166k", search: "Singapore VUI Pass" }
+      { id: "k-sim", title: "SIM tặng (gói 3 vé)", meta: "Ketnoi đang tặng 1 SIM với Zoo+GBTB+Ocean", price: "₫0", search: "Singapore VUI Pass" }
     ];
     function load(){ try{return JSON.parse(localStorage.getItem(KEY)||"{}");}catch{return{}} }
     function save(m){ localStorage.setItem(KEY, JSON.stringify(m)); }
