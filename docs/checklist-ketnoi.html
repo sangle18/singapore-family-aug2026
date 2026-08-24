@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Checklist mua vé KetnoiSingapore cho chuyến Singapore Family 28/8–1/9/2026" />
+  <title>Checklist Ketnoi · Singapore Family</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Literata:opsz,wght@7..72,600;7..72,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+
+  <header class="hero" style="min-height:auto;padding-bottom:1.5rem;grid-template-rows:auto auto;">
+    <nav class="topnav">
+      <a class="brand-mark" href="index.html">SG · Family</a>
+      <div class="topnav-links">
+        <a href="index.html">← Lịch trình chính</a>
+        <a href="index.html#tickets">Vé official</a>
+        <a href="https://ketnoisingapore.com/bang-gia-ve-tham-quan-singapore" target="_blank" rel="noopener">Bảng giá Ketnoi</a>
+      </div>
+    </nav>
+    <div class="hero-copy" style="padding-bottom:0">
+      <p class="eyebrow">Trang con · không ghi đè lịch trình chính</p>
+      <h1 style="font-size:clamp(2.2rem,7vw,3.6rem)">Checklist<br /><span>Ketnoi</span></h1>
+      <p class="lede">Mua đúng 4 dòng cho 2 adults (bé free). Tổng ≈ ₫6,17 triệu — tiết kiệm hơn cửa chính / Agoda.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="https://ketnoisingapore.com/bang-gia-ve-tham-quan-singapore" target="_blank" rel="noopener">Mở bảng giá Ketnoi</a>
+        <a class="btn ghost" href="index.html">Về trang chính</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel" aria-labelledby="buy-title">
+      <div class="section-head">
+        <h2 id="buy-title">4 dòng cần mua</h2>
+        <p>Ctrl+F tên bên dưới trên bảng Ketnoi. Chọn <strong>2 Adults · 0 Child</strong>.</p>
+      </div>
+      <p class="ticket-total">4 vé chính ≈ ₫6,17 triệu (tiết kiệm ~₫1,6–1,8 triệu so với cửa chính)</p>
+      <div class="ticket-toolbar">
+        <button type="button" class="btn ghost small" id="resetKetnoi">Reset checklist</button>
+        <p id="ketnoiProgress"></p>
+      </div>
+      <ul class="ticket-list" id="ketnoiList"></ul>
+    </section>
+
+    <section class="panel" aria-labelledby="avoid-title">
+      <div class="section-head">
+        <h2 id="avoid-title">Đừng mua (combo thừa)</h2>
+        <p>Giảm % nhưng tổng vẫn cao / điểm không nằm lịch nhà mình.</p>
+      </div>
+      <ul class="avoid-list">
+        <li>Zoo + Exploria (Couple/Family) — Exploria không nằm lịch</li>
+        <li>FamilyDeal có vé trẻ em — bé free</li>
+        <li>Sentosa 3in1 / 5in1 / USS combo</li>
+        <li>Gardens City 2in1 + Chinatown Heritage</li>
+        <li>Floral Fantasy / Gardens Tour xe điện — không bắt buộc</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <h2>Tin nhắn gửi Ketnoi (copy)</h2>
+      </div>
+      <pre class="copy-box" id="copyBox">2 adults, không trẻ em trả phí.
+Ngày 29/8: Zoo CoupleDeal + River Wonders ×2
+Ngày 30/8: Gardens Flower Dome + Cloud Forest ×2
+Ngày 31/8: Oceanarium Combo 2 Adults
+Không Exploria, không USS, không FamilyDeal trẻ em.</pre>
+      <div class="hero-cta" style="margin-top:1rem">
+        <button type="button" class="btn primary small" id="copyMsg">Copy tin nhắn</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><a href="index.html">← Quay lại lịch trình chính</a> · Checklist Ketnoi không thay đổi itinerary / vé official trên trang home.</p>
+  </footer>
+
+  <script>
+    const KEY = "sg-ketnoi-checklist-v1";
+    const items = [
+      {
+        id: "k-zoo",
+        title: "CoupleDeal: Singapore Zoo + Tram",
+        meta: "29/8 · 1 gói = 2 adults · bé FREE · Ctrl+F đúng tên",
+        price: "≈ ₫1.442.000",
+        search: "CoupleDeal: Singapore Zoo + Tram"
+      },
+      {
+        id: "k-river",
+        title: "River Wonders (Excluded Boat) ×2",
+        meta: "29/8 · 2 vé người lớn · không gồm thuyền",
+        price: "≈ ₫1.442.000",
+        search: "River Wonders (Excluded Boat)"
+      },
+      {
+        id: "k-gardens",
+        title: "Gardens: Flower Dome & Cloud Forest ×2",
+        meta: "30/8 · Jurassic World · không mua City 2in1",
+        price: "≈ ₫1.388.000",
+        search: "Flower Dome & Cloud Forest: Jurassic World"
+      },
+      {
+        id: "k-ocean",
+        title: "Oceanarium - Combo 2 Adults",
+        meta: "31/8 · 1 gói 2 adults · bé under 4 FREE",
+        price: "≈ ₫1.900.000",
+        search: "Singapore Oceanarium - Combo 2 Adults"
+      },
+      {
+        id: "k-sim",
+        title: "Hỏi VUI Pass Sim (optional)",
+        meta: "Nếu mua đủ 4 vé → hỏi Sim Singtel 100GB",
+        price: "₫0–166k",
+        search: "Singapore VUI Pass"
+      }
+    ];
+
+    function load() {
+      try { return JSON.parse(localStorage.getItem(KEY) || "{}"); } catch { return {}; }
+    }
+    function save(m) { localStorage.setItem(KEY, JSON.stringify(m)); }
+
+    function render() {
+      const map = load();
+      const list = document.getElementById("ketnoiList");
+      list.innerHTML = "";
+      let done = 0;
+      items.forEach((t) => {
+        if (map[t.id]) done += 1;
+        const li = document.createElement("li");
+        if (map[t.id]) li.classList.add("done");
+        li.innerHTML = `
+          <input type="checkbox" id="${t.id}" ${map[t.id] ? "checked" : ""} />
+          <label for="${t.id}">
+            <strong>${t.title}</strong>
+            <span>${t.meta} · Ctrl+F: “${t.search}”</span>
+          </label>
+          <div class="ticket-price">${t.price}</div>`;
+        li.querySelector("input").addEventListener("change", (e) => {
+          const next = load();
+          next[t.id] = e.target.checked;
+          save(next);
+          render();
+        });
+        list.appendChild(li);
+      });
+      document.getElementById("ketnoiProgress").textContent = `${done}/${items.length} đã xong`;
+    }
+
+    document.getElementById("resetKetnoi").addEventListener("click", () => {
+      localStorage.removeItem(KEY);
+      render();
+    });
+    document.getElementById("copyMsg").addEventListener("click", async () => {
+      const text = document.getElementById("copyBox").textContent;
+      try {
+        await navigator.clipboard.writeText(text);
+        document.getElementById("copyMsg").textContent = "Đã copy";
+        setTimeout(() => (document.getElementById("copyMsg").textContent = "Copy tin nhắn"), 1200);
+      } catch {
+        document.getElementById("copyMsg").textContent = "Copy thủ công";
+      }
+    });
+    render();
+  </script>
+  <style>
+    .copy-box {
+      margin: 0.75rem 0 0;
+      padding: 1rem 1.1rem;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      white-space: pre-wrap;
+      font-family: var(--font-ui);
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--ink);
+    }
+  </style>
+</body>
+</html>
