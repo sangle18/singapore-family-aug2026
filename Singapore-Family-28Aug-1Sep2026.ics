@@ -60,7 +60,7 @@ DTSTAMP:20260821T063000Z
 DTSTART;TZID=Asia/Singapore:20260829T081500
 DTEND;TZID=Asia/Singapore:20260829T120000
 SUMMARY:🦁 Singapore Zoo (Grab từ Novotel)
-DESCRIPTION:Grab 08:15 → Mandai.\nBé dưới 3 tuổi FREE – mang hộ chiếu bé.\nƯu tiên Orangutan\, Panda\, KidzWorld.\nTram miễn phí trong vé.
+DESCRIPTION:Grab 08:15 → Mandai.\nBé dưới 3 tuổi FREE – mang hộ chiếu bé.\nƯu tiên Orangutan\, tram\, KidzWorld.\nLunch sit-down Ah Meng ~12:00 (Mama Panda nếu sang River).
 LOCATION:Singapore Zoo\, Mandai
 STATUS:CONFIRMED
 END:VEVENT
@@ -90,7 +90,7 @@ DTSTAMP:20260821T063000Z
 DTSTART;TZID=Asia/Singapore:20260830T083000
 DTEND;TZID=Asia/Singapore:20260830T094500
 SUMMARY:🏊 Novotel pool / Kids Room
-DESCRIPTION:Xả năng lượng. 10:00 Grab → Gardens.\nBackup: TEL thẳng Stevens → Gardens by the Bay.
+DESCRIPTION:Xả năng lượng. 10:00 Grab → Gardens.\nTùy chọn: bỏ pool\, Grab ~08:00 Heap Seng Leong (kaya toast\, đóng ~16:00) rồi Gardens.\nBackup: TEL thẳng Stevens → Gardens by the Bay.
 LOCATION:Novotel Singapore on Stevens
 STATUS:CONFIRMED
 END:VEVENT
@@ -100,7 +100,7 @@ DTSTAMP:20260821T063000Z
 DTSTART;TZID=Asia/Singapore:20260830T101500
 DTEND;TZID=Asia/Singapore:20260830T130000
 SUMMARY:Cloud Forest + Flower Dome + Supertree
-DESCRIPTION:Cloud Forest trước (máy lạnh). Bé <3 FREE.\nSupertree Grove chụp ban ngày — không chờ Rhapsody.\n~12:15 Canopy rồi Grab về nghỉ.\nBackup: TEL Stevens → Gardens by the Bay (~19 phút).
+DESCRIPTION:Cloud Forest trước (máy lạnh). Bé <3 FREE.\nSupertree Grove chụp ban ngày — không chờ Rhapsody.\n~12:15 Hortus trong Flower Dome (sit-down) rồi Grab về nghỉ.\nBackup: TEL Stevens → Gardens by the Bay (~19 phút).
 LOCATION:Gardens by the Bay
 STATUS:CONFIRMED
 END:VEVENT
@@ -170,7 +170,7 @@ DTSTAMP:20260821T063000Z
 DTSTART;TZID=Asia/Singapore:20260901T104500
 DTEND;TZID=Asia/Singapore:20260901T132500
 SUMMARY:✈️ Changi T1 – Scoot check-in → SIN→SGN 13:25
-DESCRIPTION:Có mặt ~10:45–11:00.\nQuầy đóng 12:25.\nĐi infant → check-in quầy.\nLanding SGN T2 ~14:40.
+DESCRIPTION:Có mặt ~10:45–11:00.\nQuầy đóng 12:25.\nĐi infant → check-in quầy.\nLunch ~12:00 Crystal Jade La Mian T1 airside L3 (sit-down).\nLanding SGN T2 ~14:40.
 LOCATION:Changi Airport Terminal 1
 STATUS:CONFIRMED
 END:VEVENT

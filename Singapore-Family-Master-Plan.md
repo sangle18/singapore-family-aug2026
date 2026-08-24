@@ -23,7 +23,7 @@
 | 09:15 | Bay SGN → SIN |
 | 12:20 | Landing Changi |
 | 12:20–13:30 | Immigration + luggage + **mua SIM** (nếu chưa eSIM) |
-| 13:30–15:30 | **Jewel** – Rain Vortex, lunch **Yun Nans #02-217**, baby room B2–L4 |
+| 13:30–15:30 | **Jewel** – Rain Vortex, lunch **Yun Nans #02-217** (PUTIEN nếu hàng dài), baby room B2–L4 |
 | 15:30–16:10 | Grab → Novotel (~25–40 phút, chiều Thứ Sáu dễ kẹt) |
 | 16:00–18:30 | Check-in + bé nghỉ |
 | 18:30–20:00 | Dinner (Novotel / GRUB Stevens) |
@@ -35,7 +35,7 @@
 | 07:30 | Breakfast |
 | 08:15 | Grab → Mandai |
 | 09:00–12:00 | **Singapore Zoo** (bé FREE <3) |
-| 12:00–13:00 | Lunch Ah Meng / KidzWorld Cafe *(additional: **Mama Panda Kitchen**)* |
+| 12:00–13:00 | Lunch **Ah Meng** (sit-down). Mama Panda nếu sang River |
 | 13:00–15:00 | **River Wonders** (nếu mệt → bỏ) |
 | 15:00 | Grab về hotel |
 | 15:30–18:00 | **MANDATORY REST** |
@@ -44,8 +44,8 @@
 ### DAY 3 — Chủ Nhật 30/8 | Gardens → Merlion
 | Giờ | Việc |
 |-----|------|
-| 08:30–09:45 | Pool / Kids Room (ngắn) |
-| 10:15–13:00 | **Cloud Forest + Flower Dome + Supertree** (chụp ban ngày). Bé &lt;3 free. Ăn nhẹ Canopy |
+| 08:30–09:45 | Pool / Kids Room (ngắn). Tùy chọn: breakfast **Heap Seng Leong** (Lavender) rồi Gardens |
+| 10:15–13:00 | **Cloud Forest + Flower Dome + Supertree**. Bé &lt;3 free. Trưa **Hortus** trong Flower Dome (sit-down) |
 | 13:30–16:15 | **Nghỉ hotel** |
 | 16:45–18:15 | **Merlion Park** — chụp hình, free |
 | 18:30–20:00 | Dinner: Super Loco / Song Fa / Lau Pa Sat satay |
@@ -60,7 +60,7 @@
 | 13:30–14:30 | REST máy lạnh tại RWS |
 | 14:30–16:30 | Palawan chỉ nếu bé còn vui (nắng gắt). Không thì WEAVE/kem rồi về hotel pool |
 | 16:30 | Grab → Novotel → pool |
-| 19:00 | Dinner → ngủ |
+| 19:00 | Dinner sit-down gần hotel (GRUB / Food Exchange). Orchard: Paradise Dynasty |
 
 ### DAY 5 — Thứ Ba 1/9 | Hotel → Changi → SGN
 | Giờ | Việc |
@@ -70,17 +70,19 @@
 | 10:00 | Checkout |
 | 10:15 | Grab → **Changi T1** |
 | 10:45–12:00 | Check-in Scoot + immigration |
+| ~12:00 | Lunch **Crystal Jade La Mian** T1 airside L3 (sit-down, không fast food) |
 | 13:25 | Bay SIN → SGN |
 | 14:40 | Tân Sơn Nhất T2 |
 
 ---
 
-## 5 quy tắc không mệt
+## 6 quy tắc không mệt
 1. Chilux: MANG  
 2. Mỗi ngày chỉ 1 main attraction  
 3. 15:30–18:00 = giờ vàng nghỉ  
 4. Zoo / Sentosa / Changi = Grab  
 5. Bé mệt → bỏ điểm phụ ngay  
+6. Ăn **sit-down** (soup, noodles, share món). Không burger / Shake Shack / McDonald's  
 
 ---
 
@@ -122,8 +124,10 @@ Tap thẻ Visa/Mastercard contactless (hoặc Apple Pay). Bé **dưới 0,9 m** 
 | Ngày | Loại | Gợi ý | Khi nào dùng |
 |------|------|-------|--------------|
 | 2 | 🍜 Ăn | **Mama Panda Kitchen** (Mandai) | Thay/bổ sung Ah Meng nếu đông hoặc bé thích theme gấu trúc |
+| 3 | 🍜 Ăn | **Heap Seng Leong** (Lavender) | Sáng kopitiam — kaya toast + Kopi Gu You. Bỏ pool. Đóng ~16:00. Tiền mặt |
+| 3 | 🍜 Ăn | **Hortus** (Flower Dome) | Trưa sit-down trong Dome — không Canopy burger |
 | 4 | 🍜 Ăn | **Good Old Days** (Sentosa) | Thay PUTIEN nếu muốn món SG đơn giản, bé mệt |
-| Sáng | 🍜 Ăn | **218 Coffee** (Kaya toast) | Breakfast kiểu SG — Grab gần Novotel |
+| Sáng | 🍜 Ăn | **218 Coffee** (Kaya toast) | Breakfast gần Novotel nếu không muốn chạy Lavender |
 | 3 | 🍜 Ăn | **Lau Pa Sat** | Đã có trong dinner Ngày 3 — hawker, khó Chilux hơn Super Loco |
 
 Maps: xem trên page https://sangle18.github.io/singapore-family-aug2026/#food

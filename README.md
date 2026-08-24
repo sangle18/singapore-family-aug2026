@@ -24,6 +24,10 @@ Site URL (after Pages is on):
 
 > **Note:** Free GitHub Pages on a **private** repo needs GitHub Pro. Otherwise set the repo to **Public** (or keep using the Markdown/ICS files only).
 
+## Hai thiết bị (laptop + Cursor điện thoại)
+
+GitHub `main` là bản gốc. Mỗi lần mở Cursor: **Pull trước**. Xong việc: **Push ngay**. Máy kia Pull rồi mới sửa tiếp. Đừng để hai máy cùng sửa khi chưa sync.
+
 ## Local preview
 
 ```bash
