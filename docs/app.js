@@ -57,6 +57,15 @@
     foodGrid: document.getElementById("foodGrid")
   };
 
+  // localStorage có thể throw (Safari riêng tư, hết quota) — không để làm hỏng trang / tỉ giá
+  function safeSet(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      /* bỏ qua */
+    }
+  }
+
   function dayById(id) {
     return (
       data.days.find((d) => d.id === id) || {
@@ -176,7 +185,7 @@
   }
 
   function saveDoneState(map) {
-    localStorage.setItem(doneKey, JSON.stringify(map));
+    safeSet(doneKey, JSON.stringify(map));
   }
 
   function isDone(id) {
@@ -287,7 +296,11 @@
     const split = document.querySelector(".layout-split");
     const panel = document.querySelector(".filters-panel");
     if (!els.detailPanel) return;
-    if (isMobileLayout()) {
+    // Chỉ di chuyển node khi đổi layout — tránh appendChild mỗi lần render (mất scroll/focus trong sheet)
+    const wantMobile = isMobileLayout();
+    if (parkDetailNodes.mobile === wantMobile) return;
+    parkDetailNodes.mobile = wantMobile;
+    if (wantMobile) {
       if (els.detailBackdrop) document.body.appendChild(els.detailBackdrop);
       document.body.appendChild(els.detailPanel);
     } else if (split) {
@@ -488,7 +501,7 @@
   }
 
   function saveTicketState(map) {
-    localStorage.setItem(storageKey, JSON.stringify(map));
+    safeSet(storageKey, JSON.stringify(map));
   }
 
   function renderTickets() {
@@ -574,10 +587,7 @@
     const apply = (sgdVnd, at, source) => {
       if (!sgdVnd || sgdVnd < 1000) return false;
       state.fx = { sgdVnd, at, source };
-      localStorage.setItem(
-        "sg-family-fx-v1",
-        JSON.stringify({ sgdVnd, at, source, savedAt: Date.now() })
-      );
+      safeSet("sg-family-fx-v1", JSON.stringify({ sgdVnd, at, source, savedAt: Date.now() }));
       renderBudget();
       return true;
     };
@@ -726,7 +736,11 @@
       renderTimeline();
     });
     els.resetTickets.addEventListener("click", () => {
-      localStorage.removeItem(storageKey);
+      try {
+        localStorage.removeItem(storageKey);
+      } catch {
+        /* bỏ qua */
+      }
       renderTickets();
     });
     if (els.detailBackdrop) {
